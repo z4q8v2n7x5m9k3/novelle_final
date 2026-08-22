@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Novelle Academy article image placeholder">
+  <rect width="1200" height="720" fill="#f7ecdf"/>
+  <rect x="80" y="80" width="1040" height="560" rx="36" fill="#fffaf5" stroke="#986a3e" stroke-opacity=".22" stroke-width="3"/>
+  <circle cx="398" cy="302" r="112" fill="#986a3e" fill-opacity=".16"/>
+  <path d="M180 560l250-210 154 126 104-84 332 168H180z" fill="#986a3e" fill-opacity=".22"/>
+  <text x="600" y="337" fill="#633b2c" font-family="Georgia, serif" font-size="62" text-anchor="middle">Novelle Academy</text>
+  <text x="600" y="393" fill="#7a685d" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">Upload an image from the admin panel</text>
+</svg>

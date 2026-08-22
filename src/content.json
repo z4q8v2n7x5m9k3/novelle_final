@@ -1,0 +1,21 @@
+{
+  "brandName": "Al Novelle",
+  "phone": "050 234 8625",
+  "email": "contact@novelle.ae",
+  "address": "Al Zahiyah, Abu Dhabi, UAE",
+  "homepage": {
+    "hero": {
+      "title": "Build Your Future in Aesthetic Education",
+      "subtitle": "ABU DHABI · UAE · EST. 2026",
+      "description": "A premium training academy for beauty therapy, clinical aesthetics, and advanced laser technologies — built for learners who want recognised skills, hands-on confidence, and a serious career in aesthetics.",
+      "backgroundImage": "/academy-images/academy-approach-session.png"
+    },
+    "bigStatement": {
+      "image1": "/academy-images/training-consultation.png",
+      "image2": "/academy-images/laser-device-training.png"
+    },
+    "academyApproach": {
+      "image": "/academy-images/academy-approach-session.png"
+    }
+  }
+}
