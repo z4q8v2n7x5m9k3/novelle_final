@@ -14,12 +14,12 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import UAEIdentity from '@/components/UAEIdentity';
 import FacilityRental from '@/components/FacilityRental';
+import BlogPreview from '@/components/BlogPreview';
 
 // Removed sections per client request:
 // - ProgrammesGrid (Our Programmes section - client marked remove)
 // - WhyNovelle (Aesthetic Leaders Start Here / Why Students Choose Novelle - client marked remove)
 // - FacultyPreview (replaced by Founders section on About page)
-// - BlogPreview (Career Guidance & Expert Advice / blog preview - client marked remove)
 // - Testimonials (fake testimonials - client marked remove)
 
 export const metadata: Metadata = {
@@ -76,6 +76,9 @@ export default function Home() {
 
       {/* Gallery Preview — updated subtitle, TODO image comments */}
       <GalleryPreview />
+
+      {/* Academy Insights — retained as requested, using approved article content */}
+      <BlogPreview />
 
       {/* FAQs — replaced with client-provided FAQs */}
       <FAQs />

@@ -35,8 +35,8 @@ export default function ProgrammesGrid() {
       )
     },
     {
-      title: "CIBTAC Courses",
-      desc: "Internationally aligned CIBTAC UK Level 1, 2, and 3 education pathways.",
+      title: "Professional Pathways",
+      desc: "Structured, internationally inspired learning for aesthetics and beauty professionals.",
       link: "/courses#cibtac",
       cta: "Coming Soon",
       status: "soon",

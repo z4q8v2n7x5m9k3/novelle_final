@@ -14,7 +14,7 @@ type InquiryPayload = {
   agree?: boolean;
 };
 
-const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'contact@novelle.ae';
+const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'hello@novelle.ae';
 const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Novelle Website <onboarding@resend.dev>';
 
 function escapeHtml(value: unknown) {
@@ -57,12 +57,20 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         from: CONTACT_FROM_EMAIL,
         to: [CONTACT_TO_EMAIL],
-        reply_to: payload.email,
+        reply_to: payload.email || undefined,
         subject,
         html: `
-          <div style="font-family:Arial,sans-serif;color:#4a3728;">
-            <h2>New Novelle Website Enquiry</h2>
-            <table style="border-collapse:collapse;width:100%;max-width:680px;">${buildRows(payload)}</table>
+          <div style="margin:0;background:#faf6f0;padding:32px;font-family:Arial,sans-serif;color:#4a3728;">
+            <div style="max-width:680px;margin:0 auto;background:#ffffff;border:1px solid #eadfd2;border-radius:20px;overflow:hidden;">
+              <div style="background:#3b2f42;padding:24px 28px;color:#ffffff;">
+                <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.72;">Novelle · novelle.ae</div>
+                <h2 style="margin:10px 0 0;font-size:26px;font-weight:500;">New website enquiry</h2>
+              </div>
+              <div style="padding:28px;">
+                <p style="margin:0 0 22px;color:#7a6b63;line-height:1.6;">A new enquiry was submitted through the Novelle website. Reply directly to this email to contact the prospective student.</p>
+                <table style="border-collapse:collapse;width:100%;">${buildRows(payload)}</table>
+              </div>
+            </div>
           </div>
         `,
       }),

@@ -53,7 +53,7 @@ export default function WhyNovelle() {
               boxShadow: '0 4px 12px rgba(99, 59, 44, 0.04)'
             }}>
               <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-              WHY STUDENTS CHOOSE NOVELLE
+              THE NOVELLE LEARNING EXPERIENCE
             </span>
           </div>
           <h2 style={{ 
@@ -63,7 +63,7 @@ export default function WhyNovelle() {
             fontWeight: 400,
             margin: 0
           }}>
-            Aesthetic Leaders Start Here
+            Learn With Purpose. Practise With Confidence.
           </h2>
         </div>
 
@@ -189,7 +189,7 @@ export default function WhyNovelle() {
                <div style={{ borderTop: '1px solid rgba(152, 106, 62, 0.15)', paddingTop: '40px', position: 'relative', zIndex: 1 }}>
                  <div style={{ fontSize: '64px', fontWeight: 400, color: '#4A3728', lineHeight: 1, marginBottom: '16px', fontFamily: "'Playfair Display', Georgia, serif" }}>2</div>
                  <h3 style={{ fontSize: '20px', fontWeight: 400, color: '#4A3728', marginBottom: '8px', fontFamily: "'Playfair Display', Georgia, serif" }}>International Accreditations</h3>
-                 <p style={{ ...textStyle, fontSize: '15px' }}>CIBTAC UK Certified · NCLC USA Certified</p>
+                 <p style={{ ...textStyle, fontSize: '15px' }}>Internationally Inspired · Safety-Led Learning</p>
                </div>
             </div>
 

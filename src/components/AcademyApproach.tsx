@@ -109,7 +109,7 @@ export default function AcademyApproach({ content }: { content?: any }) {
               marginBottom: '40px',
               fontWeight: '500'
             }}>
-              Al Novelle blends clinical knowledge, aesthetic artistry, and supervised practical training to help learners progress from interest to professional-level confidence in beauty therapy, laser technologies, and advanced aesthetics.
+              Novelle combines clear theory, supervised practice, and safety-led training to help learners build professional confidence.
             </p>
             
             {/* Features 2x2 Grid */}
@@ -143,6 +143,19 @@ export default function AcademyApproach({ content }: { content?: any }) {
               ))}
             </div>
 
+            <div className="academy-cta-row scroll-reveal reveal-from-right reveal-delay-6">
+              <a
+                href="https://wa.me/971502348625?text=Hello%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-premium"
+              >
+                <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
+                Speak to Admissions
+              </a>
+              <Link href="/courses" className="editorial-link">View Courses <span aria-hidden="true">&#8594;</span></Link>
+            </div>
+
           </div>
         </div>
 
@@ -150,13 +163,16 @@ export default function AcademyApproach({ content }: { content?: any }) {
 
       <style dangerouslySetInnerHTML={{__html: `
         @media (max-width: 900px) {
+          .academy-approach-section {
+            padding: 56px 14px !important;
+          }
           .academy-grid {
             display: flex !important;
             flex-direction: column-reverse;
-            gap: 40px !important;
+            gap: 28px !important;
           }
           .academy-image-col {
-            min-height: 440px !important;
+            min-height: 310px !important;
             width: 100%;
           }
           .academy-glass-card {
@@ -166,8 +182,11 @@ export default function AcademyApproach({ content }: { content?: any }) {
             bottom: 16px !important;
           }
           .academy-glass-card h4 {
-            font-size: 18px !important;
+            font-size: 16px !important;
           }
+          .academy-content-col h2 { font-size: 2.25rem !important; margin-bottom: 16px !important; }
+          .academy-content-col > p { font-size: 14px !important; margin-bottom: 26px !important; }
+          .academy-cta-row { align-items: stretch; margin-top: 26px !important; }
         }
       `}} />
     </section>

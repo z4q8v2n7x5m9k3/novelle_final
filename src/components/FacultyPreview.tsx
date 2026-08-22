@@ -38,7 +38,7 @@ export default function FacultyPreview() {
             marginTop: 0,
             letterSpacing: '-0.02em'
           }}>
-            Meet Our Founders & Faculty
+            Learn With Experienced Educators
           </h2>
           
           <p className="scroll-reveal reveal-from-left reveal-delay-2" style={{
@@ -92,7 +92,7 @@ export default function FacultyPreview() {
               color: '#633b2c', 
               marginBottom: '16px' 
             }}>
-              CIBTAC Certified
+              Professionally Experienced
             </h3>
             <p style={{ 
               fontFamily: '"General Sans", sans-serif',
@@ -102,7 +102,7 @@ export default function FacultyPreview() {
               margin: 0,
               fontWeight: 500
             }}>
-              Our faculty are trained to international CIBTAC standards, delivering world-class beauty therapy and aesthetic education.
+              Our educators bring practical experience, safety awareness, and internationally inspired teaching to aesthetic education.
             </p>
           </div>
 
@@ -183,7 +183,7 @@ export default function FacultyPreview() {
               color: '#633b2c', 
               marginBottom: '16px' 
             }}>
-              UAE DOH Compliant
+              UAE-Focused Practice
             </h3>
             <p style={{ 
               fontFamily: '"General Sans", sans-serif',

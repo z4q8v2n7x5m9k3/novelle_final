@@ -250,7 +250,8 @@ export default function Hero({ content }: { content?: any }) {
           margin-top: 15px;
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
           pointer-events: auto;
-          cursor: default;
+          cursor: pointer;
+          text-decoration: none;
         }
         .hero-treatment-pill:hover {
           background: rgba(255, 255, 255, 0.18);
@@ -494,10 +495,10 @@ export default function Hero({ content }: { content?: any }) {
                   className="hero-orbit-item"
                   style={{ transform: `rotate(${angle}deg)` } as React.CSSProperties}
                 >
-                  <div className="hero-treatment-pill">
+                  <Link href="/courses" className="hero-treatment-pill" aria-label={`Explore ${cat.label} programmes`}>
                     <img src={cat.img} alt={cat.label} className="hero-pill-img" />
                     <span className="hero-pill-text">{cat.label}</span>
-                  </div>
+                  </Link>
                 </div>
               );
             })}

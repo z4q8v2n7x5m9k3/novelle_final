@@ -34,11 +34,14 @@ export default function BookConsultation() {
       );
       // Try API first, then fallback to WhatsApp
       try {
-        await fetch('/api/inquiries', {
+        const res = await fetch('/api/inquiries', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ source: 'Homepage admissions form', ...formData }),
         });
+        if (!res.ok) throw new Error('API unavailable');
+        const result = await res.json();
+        if (!result.delivered) window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
       } catch {
         // If API fails, open WhatsApp
         window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
@@ -463,12 +466,12 @@ export default function BookConsultation() {
                 <a href="tel:0502348625" className="inquiry-link" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                   <span>📞</span> 050 234 8625 / 050 762 9543
                 </a>
-                <a href="mailto:contact@novelle.ae" className="inquiry-link" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                <a href="mailto:hello@novelle.ae" className="inquiry-link" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <rect x="3" y="5" width="18" height="14" rx="2"></rect>
                     <path d="m3 7 9 6 9-6"></path>
                   </svg>
-                  contact@novelle.ae
+                  hello@novelle.ae
                 </a>
               </div>
             </div>
