@@ -1,9 +1,12 @@
 'use client';
 import React, { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import PageTransition from './PageTransition';
 import LoadingScreen from './LoadingScreen';
 
 export default function ClientProviders({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
@@ -42,7 +45,7 @@ export default function ClientProviders({ children }: { children: React.ReactNod
       observer.disconnect();
       mutation.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <>

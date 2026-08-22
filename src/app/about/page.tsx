@@ -71,7 +71,7 @@ export default function AboutPage() {
 
       <section className="about-vision-section">
         <div className="container">
-          <div className="about-section-heading">
+          <div className="about-section-heading scroll-reveal reveal-from-left">
             <span className="section-eyebrow">VISION &amp; MISSION</span>
             <h2>Education that becomes capability.</h2>
           </div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
 
       <section className="about-founders-section">
         <div className="container">
-          <div className="about-section-heading founders-heading">
+          <div className="about-section-heading founders-heading scroll-reveal reveal-from-left">
             <span className="section-eyebrow">THE PEOPLE BEHIND NOVELLE</span>
             <h2>Two founders. One shared standard.</h2>
             <p>Experienced professionals united by a belief that education should prepare learners for real practice.</p>
@@ -118,13 +118,13 @@ export default function AboutPage() {
 
       <section className="about-standards-section">
         <div className="container">
-          <div className="about-section-heading standards-heading">
+          <div className="about-section-heading standards-heading scroll-reveal reveal-from-left">
             <span className="section-eyebrow">THE NOVELLE STANDARD</span>
             <h2>Built around better learning.</h2>
           </div>
           <div className="about-standards-grid">
-            {standards.map(([number, title, body]) => (
-              <article key={number}>
+            {standards.map(([number, title, body], index) => (
+              <article className={`scroll-reveal ${index % 2 === 0 ? 'reveal-from-left' : 'reveal-from-right'} reveal-delay-${index + 1}`} key={number}>
                 <span>{number}</span><h3>{title}</h3><p>{body}</p>
               </article>
             ))}
@@ -133,7 +133,7 @@ export default function AboutPage() {
       </section>
 
       <section className="about-final-cta">
-        <div className="container about-final-cta-inner">
+        <div className="container about-final-cta-inner scroll-reveal reveal-from-left">
           <span className="section-eyebrow">YOUR NEXT STEP</span>
           <h2>Find the programme that fits your goals.</h2>
           <div>
