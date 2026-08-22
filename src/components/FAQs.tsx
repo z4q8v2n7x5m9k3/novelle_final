@@ -129,7 +129,7 @@ export default function FAQs() {
                 </div>
 
                 {/* Contact Us button with circular logo badge */}
-                <Link href="/contact" style={{ textDecoration: 'none', flexShrink: 0 }}>
+                <a href="https://wa.me/971502348625?text=Hello%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses." target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', flexShrink: 0 }}>
                   <span className="faq-contact-btn" style={{ 
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -154,9 +154,9 @@ export default function FAQs() {
                     }}>
                       <img src="/logos/gold-logomark.png" alt="Novelle" style={{ width: '14px', height: '14px' }} />
                     </span>
-                    Contact us
+                    Chat on WhatsApp
                   </span>
-                </Link>
+                </a>
               </div>
 
             </div>

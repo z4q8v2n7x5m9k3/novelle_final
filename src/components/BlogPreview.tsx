@@ -26,7 +26,18 @@ export default function BlogPreview() {
       .catch(() => setBlogs([]));
   }, []);
 
-  if (blogs.length === 0) return null;
+  if (blogs.length === 0) {
+    return (
+      <section className="blog-preview-section section-padding">
+        <div className="container blog-preview-empty">
+          <span className="badge blog-preview-badge">Academy Insights</span>
+          <h2>Insights coming soon</h2>
+          <p>Thoughtful guidance on aesthetic education, safe practice, and professional development is being prepared by the Novelle team.</p>
+          <Link href="/contact" className="editorial-link">Speak to Admissions <span aria-hidden="true">&#8594;</span></Link>
+        </div>
+      </section>
+    );
+  }
   const [featured, ...sidePosts] = blogs;
 
   return (
@@ -34,8 +45,8 @@ export default function BlogPreview() {
       <div className="container blog-preview-container">
         <div className="blog-preview-header scroll-reveal reveal-from-left">
           <span className="badge blog-preview-badge">Academy Insights</span>
-          <h2>Career Guidance & Expert Advice</h2>
-          <p>Discover clinical advancements, aesthetics training techniques, and beauty industry insights from Novelle&apos;s educators.</p>
+          <h2>Ideas for Better Practice</h2>
+          <p>Explore thoughtful guidance on aesthetic education, safety-led learning, and professional development from the Novelle academy.</p>
         </div>
 
         <div className="blog-preview-grid">
@@ -63,7 +74,7 @@ export default function BlogPreview() {
                 </article>
               </Link>
             ))}
-            <Link href="/blog" className="btn btn-dark blog-preview-all-link scroll-reveal reveal-from-right reveal-delay-5">View All Articles</Link>
+            <Link href="/blog" className="editorial-link blog-preview-all-link scroll-reveal reveal-from-right reveal-delay-5">Explore Academy Insights <span aria-hidden="true">&#8594;</span></Link>
           </div>
         </div>
       </div>

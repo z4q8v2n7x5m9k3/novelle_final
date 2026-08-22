@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function VisionMission() {
   return (
@@ -106,6 +107,19 @@ export default function VisionMission() {
                   </span>
                 </div>
               ))}
+            </div>
+
+            <div className="vision-cta-row scroll-reveal reveal-from-left reveal-delay-6">
+              <Link href="/contact" className="btn-premium">
+                <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
+                Begin Your Learning Journey
+              </Link>
+              <a
+                href="https://wa.me/971502348625?text=Hello%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="editorial-link"
+              >Contact Novelle <span aria-hidden="true">&#8594;</span></a>
             </div>
           </div>
 

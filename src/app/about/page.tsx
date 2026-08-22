@@ -7,11 +7,11 @@ import Link from 'next/link';
 // ─── Inline Founders Component ───────────────────────────────
 function FoundersSection() {
   return (
-    <section style={{ background: '#FAF6F0', padding: '120px 24px' }}>
+    <section className="founders-editorial-section" style={{ background: '#FAF6F0', padding: '120px 24px' }}>
       <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
         {/* Section header */}
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <div className="founders-editorial-header" style={{ textAlign: 'center', marginBottom: '64px' }}>
           <span style={{ 
             display: 'inline-flex',
             alignItems: 'center',
@@ -29,7 +29,7 @@ function FoundersSection() {
             boxShadow: '0 4px 12px rgba(99, 59, 44, 0.04)'
           }}>
             <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-            MEET OUR FOUNDERS
+            THE PEOPLE BEHIND NOVELLE
           </span>
           <h2 style={{ 
             fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
@@ -40,7 +40,7 @@ function FoundersSection() {
             margin: '0 0 16px 0',
             letterSpacing: '-0.02em'
           }}>
-            Expertise Behind Novelle
+            A Shared Standard for Better Education
           </h2>
           <p style={{ 
             fontFamily: '"General Sans", sans-serif',
@@ -87,10 +87,10 @@ function FoundersSection() {
         </div>
 
         {/* Founder Cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', marginBottom: '64px' }}>
+        <div className="founders-editorial-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', marginBottom: '64px' }}>
           
           {/* Founder 1 */}
-          <div style={{ 
+          <div className="founder-editorial-card" style={{
             background: '#FFFFFF',
             borderRadius: '32px',
             padding: '48px 40px',
@@ -146,7 +146,7 @@ function FoundersSection() {
           </div>
 
           {/* Founder 2 */}
-          <div style={{ 
+          <div className="founder-editorial-card" style={{
             background: '#FFFFFF',
             borderRadius: '32px',
             padding: '48px 40px',
@@ -200,7 +200,7 @@ function FoundersSection() {
         </div>
 
         {/* Shared Vision Block */}
-        <div style={{ 
+        <div className="founders-vision-note" style={{
           background: '#1E140F',
           borderRadius: '32px',
           padding: '56px 48px',

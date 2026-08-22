@@ -143,6 +143,19 @@ export default function AcademyApproach({ content }: { content?: any }) {
               ))}
             </div>
 
+            <div className="academy-cta-row scroll-reveal reveal-from-right reveal-delay-6">
+              <a
+                href="https://wa.me/971502348625?text=Hello%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-premium"
+              >
+                <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
+                Speak to Admissions
+              </a>
+              <Link href="/courses" className="editorial-link">View Courses <span aria-hidden="true">&#8594;</span></Link>
+            </div>
+
           </div>
         </div>
 
@@ -168,6 +181,7 @@ export default function AcademyApproach({ content }: { content?: any }) {
           .academy-glass-card h4 {
             font-size: 18px !important;
           }
+          .academy-cta-row { align-items: stretch; }
         }
       `}} />
     </section>

@@ -45,6 +45,8 @@ export default function ContactPage() {
           body: JSON.stringify({ source: 'Contact page form', ...formData }),
         });
         if (!res.ok) throw new Error('API unavailable');
+        const result = await res.json();
+        if (!result.delivered) window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
       } catch {
         // Open WhatsApp as primary action
         window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
@@ -81,7 +83,7 @@ export default function ContactPage() {
       <Navigation />
       
       {/* ── HEADER ─────────────────────────────── */}
-      <section style={{ paddingTop: '180px', paddingBottom: '60px', textAlign: 'center' }}>
+      <section style={{ paddingTop: '150px', paddingBottom: '44px', textAlign: 'center' }}>
         <div className="container">
           <span style={{ 
             display: 'inline-flex',
@@ -124,7 +126,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── CONTACT INFO CARDS ──────────────────── */}
-      <section style={{ paddingBottom: '80px' }}>
+      <section style={{ paddingBottom: '64px' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ 
             display: 'grid', 

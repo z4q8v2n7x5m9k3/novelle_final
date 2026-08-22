@@ -66,7 +66,7 @@ export default function BlogPage() {
             From The Academy
           </h1>
           <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '560px', margin: '0 auto' }}>
-            Expert-led insights on laser safety, aesthetic careers, international accreditation, and the future of beauty education in the UAE.
+            Thoughtful guidance on aesthetic learning, safer practice, professional growth, and the future of beauty education in the UAE.
           </p>
         </div>
       </section>
@@ -165,8 +165,6 @@ export default function BlogPage() {
                     {/* Content */}
                     <div style={{ padding: '28px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                       <div style={{ display: 'flex', gap: '12px', marginBottom: '14px', fontSize: '13px', color: '#c5a059', fontWeight: 600, fontFamily: '"General Sans", sans-serif' }}>
-                        <span>{blog.date}</span>
-                        <span>·</span>
                         <span>{blog.readTime}</span>
                       </div>
                       <h2 style={{ fontSize: '22px', fontWeight: 400, color: '#633b2c', marginBottom: '12px', lineHeight: 1.35, fontFamily: '"Hedvig Letters Serif", Georgia, serif' }}>

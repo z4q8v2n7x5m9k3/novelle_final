@@ -34,11 +34,14 @@ export default function BookConsultation() {
       );
       // Try API first, then fallback to WhatsApp
       try {
-        await fetch('/api/inquiries', {
+        const res = await fetch('/api/inquiries', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ source: 'Homepage admissions form', ...formData }),
         });
+        if (!res.ok) throw new Error('API unavailable');
+        const result = await res.json();
+        if (!result.delivered) window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
       } catch {
         // If API fails, open WhatsApp
         window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
