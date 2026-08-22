@@ -109,7 +109,7 @@ export default function AcademyApproach({ content }: { content?: any }) {
               marginBottom: '40px',
               fontWeight: '500'
             }}>
-              Al Novelle blends clinical knowledge, aesthetic artistry, and supervised practical training to help learners progress from interest to professional-level confidence in beauty therapy, laser technologies, and advanced aesthetics.
+              Novelle combines clear theory, supervised practice, and safety-led training to help learners build professional confidence.
             </p>
             
             {/* Features 2x2 Grid */}
@@ -163,13 +163,16 @@ export default function AcademyApproach({ content }: { content?: any }) {
 
       <style dangerouslySetInnerHTML={{__html: `
         @media (max-width: 900px) {
+          .academy-approach-section {
+            padding: 56px 14px !important;
+          }
           .academy-grid {
             display: flex !important;
             flex-direction: column-reverse;
-            gap: 40px !important;
+            gap: 28px !important;
           }
           .academy-image-col {
-            min-height: 440px !important;
+            min-height: 310px !important;
             width: 100%;
           }
           .academy-glass-card {
@@ -179,9 +182,11 @@ export default function AcademyApproach({ content }: { content?: any }) {
             bottom: 16px !important;
           }
           .academy-glass-card h4 {
-            font-size: 18px !important;
+            font-size: 16px !important;
           }
-          .academy-cta-row { align-items: stretch; }
+          .academy-content-col h2 { font-size: 2.25rem !important; margin-bottom: 16px !important; }
+          .academy-content-col > p { font-size: 14px !important; margin-bottom: 26px !important; }
+          .academy-cta-row { align-items: stretch; margin-top: 26px !important; }
         }
       `}} />
     </section>

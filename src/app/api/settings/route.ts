@@ -13,7 +13,7 @@ function readConfig() {
     return {
       brandName: 'Al Novelle',
       phone: '050 234 8625',
-      email: 'contact@novelle.ae',
+      email: 'hello@novelle.ae',
       address: 'Al Zahiyah, Abu Dhabi, UAE',
       homepage: {
         hero: {

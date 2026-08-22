@@ -41,7 +41,7 @@ export default function Footer() {
             <p>1001, LAVG Building,<br />Al Zahiyah (16), Abu Dhabi, UAE</p>
             <a href="tel:+971502348625">+971 50 234 8625</a>
             <a href="tel:+971507629543">+971 50 762 9543</a>
-            <a href="mailto:contact@novelle.ae">contact@novelle.ae</a>
+            <a href="mailto:hello@novelle.ae">hello@novelle.ae</a>
           </div>
           <div className="footer-hours">
             <h3>Academy hours</h3>

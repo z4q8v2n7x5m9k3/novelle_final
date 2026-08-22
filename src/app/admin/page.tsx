@@ -56,7 +56,7 @@ export default function AdminPanel() {
   const [settings, setSettings] = useState<Settings>({
     brandName: 'Al Novelle',
     phone: '050 234 8625',
-    email: 'contact@novelle.ae',
+    email: 'hello@novelle.ae',
     address: 'Al Zahiyah, Abu Dhabi, UAE',
   });
 
