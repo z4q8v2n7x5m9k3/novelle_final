@@ -22,12 +22,9 @@ export default function UAEIdentity() {
         </div>
 
         <div className="uae-brand-card scroll-reveal reveal-from-right reveal-delay-1">
-          <div className="uae-brand-lockup">
-            <img src="/brand/the-emirates-nation-brand.jpeg" alt="The Emirates nation brand" />
-            <div>
-              <span>OUR HOME</span>
-              <strong>Abu Dhabi, UAE</strong>
-            </div>
+          <div className="uae-card-heading">
+            <span>OUR HOME</span>
+            <strong>Abu Dhabi, UAE</strong>
           </div>
           <div className="uae-principles">
             {principles.map(([number, label]) => (
