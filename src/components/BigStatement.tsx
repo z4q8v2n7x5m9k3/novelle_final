@@ -39,7 +39,7 @@ const AestheticIcon = () => (
     padding: '7px', 
     color: '#c5a059', 
     transform: 'translateY(-2px)',
-    border: '1px solid rgba(197, 160, 89, 0.25)'
+    border: '1px solid rgba(197, 160, 89, 0.28)'
   }}>
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
       <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
@@ -59,7 +59,7 @@ const ClinicalIcon = () => (
     padding: '7px', 
     color: '#8C6A48', 
     transform: 'translateY(-2px)',
-    border: '1px solid rgba(140, 106, 72, 0.25)'
+    border: '1px solid rgba(140, 106, 72, 0.28)'
   }}>
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/>
@@ -88,8 +88,8 @@ export default function BigStatement({ content }: { content?: any }) {
   }, []);
 
   // Parallax glide calculations
-  const transY1 = distanceFromCenter * 0.11;  // Left image
-  const transY2 = distanceFromCenter * 0.08;  // Right image
+  const transY1 = distanceFromCenter * 0.13;  // Left image
+  const transY2 = distanceFromCenter * 0.09;  // Right image
 
   return (
     <section 
@@ -99,34 +99,47 @@ export default function BigStatement({ content }: { content?: any }) {
         background: '#FAF8F5', 
         position: 'relative', 
         overflow: 'hidden', 
-        padding: '140px 24px 120px 24px', 
+        padding: '160px 24px 140px 24px', 
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: '660px'
+        minHeight: '720px'
       }}
       id="academy-standards"
     >
+      {/* Subtle luxury ambient radial glow */}
+      <div style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '800px',
+        height: '480px',
+        background: 'radial-gradient(ellipse at 50% 50%, rgba(197, 160, 89, 0.07) 0%, transparent 70%)',
+        pointerEvents: 'none',
+        zIndex: 0
+      }} />
+
       {/* Decorative luxury hairline background details */}
       <div style={{
         position: 'absolute',
         top: 0,
-        left: '5%',
-        right: '5%',
+        left: '4%',
+        right: '4%',
         height: '1px',
-        background: 'linear-gradient(90deg, rgba(220,205,185,0) 0%, rgba(197,160,89,0.35) 50%, rgba(220,205,185,0) 100%)'
+        background: 'linear-gradient(90deg, rgba(220,205,185,0) 0%, rgba(197,160,89,0.38) 50%, rgba(220,205,185,0) 100%)'
       }} />
 
       {/* Floating Image 1 (Left) — Parallax Slide-up on Scroll */}
       <div className="floating-img-left" style={{
         position: 'absolute',
-        left: '3.5%',
+        left: '3%',
         bottom: '36px',
-        width: '260px',
-        height: '350px',
-        borderRadius: '30px',
+        width: '280px',
+        height: '380px',
+        borderRadius: '32px',
         overflow: 'hidden',
-        boxShadow: '0 20px 50px rgba(74, 55, 40, 0.1)',
+        boxShadow: '0 24px 60px rgba(74, 55, 40, 0.11)',
         border: '1px solid rgba(197, 160, 89, 0.35)',
         zIndex: 1,
         opacity: inView ? 1 : 0,
@@ -142,15 +155,16 @@ export default function BigStatement({ content }: { content?: any }) {
         />
         <div style={{
           position: 'absolute',
-          bottom: '14px',
-          left: '14px',
-          right: '14px',
-          background: 'rgba(255, 255, 255, 0.92)',
-          backdropFilter: 'blur(12px)',
-          borderRadius: '14px',
-          padding: '10px 14px',
-          border: '1px solid rgba(197, 160, 89, 0.3)',
-          textAlign: 'left'
+          bottom: '16px',
+          left: '16px',
+          right: '16px',
+          background: 'rgba(255, 255, 255, 0.94)',
+          backdropFilter: 'blur(14px)',
+          borderRadius: '16px',
+          padding: '12px 16px',
+          border: '1px solid rgba(197, 160, 89, 0.32)',
+          textAlign: 'left',
+          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)'
         }}>
           <span style={{ 
             fontSize: '9.5px', 
@@ -159,11 +173,12 @@ export default function BigStatement({ content }: { content?: any }) {
             color: '#986A3E', 
             fontWeight: 700,
             display: 'block',
-            fontFamily: '"General Sans", sans-serif'
+            fontFamily: '"General Sans", sans-serif',
+            marginBottom: '2px'
           }}>
             SUPERVISED WORKSTATIONS
           </span>
-          <strong style={{ fontSize: '13px', color: '#633b2c', fontFamily: '"Hedvig Letters Serif", Georgia, serif', fontWeight: 400 }}>
+          <strong style={{ fontSize: '13.5px', color: '#633b2c', fontFamily: '"Hedvig Letters Serif", Georgia, serif', fontWeight: 400 }}>
             Practical Demonstration Suites
           </strong>
         </div>
@@ -172,13 +187,13 @@ export default function BigStatement({ content }: { content?: any }) {
       {/* Floating Image 2 (Right) — Parallax Slide-up on Scroll */}
       <div className="floating-img-right" style={{
         position: 'absolute',
-        right: '3.5%',
+        right: '3%',
         bottom: '48px',
-        width: '250px',
-        height: '315px',
-        borderRadius: '30px',
+        width: '270px',
+        height: '350px',
+        borderRadius: '32px',
         overflow: 'hidden',
-        boxShadow: '0 20px 50px rgba(74, 55, 40, 0.1)',
+        boxShadow: '0 24px 60px rgba(74, 55, 40, 0.11)',
         border: '1px solid rgba(197, 160, 89, 0.35)',
         zIndex: 1,
         opacity: inView ? 1 : 0,
@@ -194,15 +209,16 @@ export default function BigStatement({ content }: { content?: any }) {
         />
         <div style={{
           position: 'absolute',
-          bottom: '14px',
-          left: '14px',
-          right: '14px',
-          background: 'rgba(255, 255, 255, 0.92)',
-          backdropFilter: 'blur(12px)',
-          borderRadius: '14px',
-          padding: '10px 14px',
-          border: '1px solid rgba(197, 160, 89, 0.3)',
-          textAlign: 'left'
+          bottom: '16px',
+          left: '16px',
+          right: '16px',
+          background: 'rgba(255, 255, 255, 0.94)',
+          backdropFilter: 'blur(14px)',
+          borderRadius: '16px',
+          padding: '12px 16px',
+          border: '1px solid rgba(197, 160, 89, 0.32)',
+          textAlign: 'left',
+          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)'
         }}>
           <span style={{ 
             fontSize: '9.5px', 
@@ -211,11 +227,12 @@ export default function BigStatement({ content }: { content?: any }) {
             color: '#986A3E', 
             fontWeight: 700,
             display: 'block',
-            fontFamily: '"General Sans", sans-serif'
+            fontFamily: '"General Sans", sans-serif',
+            marginBottom: '2px'
           }}>
             DEVICE &amp; LASER SUITE
           </span>
-          <strong style={{ fontSize: '13px', color: '#633b2c', fontFamily: '"Hedvig Letters Serif", Georgia, serif', fontWeight: 400 }}>
+          <strong style={{ fontSize: '13.5px', color: '#633b2c', fontFamily: '"Hedvig Letters Serif", Georgia, serif', fontWeight: 400 }}>
             Precision Clinical Protocols
           </strong>
         </div>
@@ -237,7 +254,7 @@ export default function BigStatement({ content }: { content?: any }) {
               alignItems: 'center',
               background: '#FFFFFF', 
               borderRadius: '100px',
-              padding: '8px 20px',
+              padding: '8px 22px',
               fontWeight: 700,
               fontSize: '11px',
               letterSpacing: '2px',
@@ -252,15 +269,15 @@ export default function BigStatement({ content }: { content?: any }) {
             </span>
           </div>
           
-          {/* Grand Headline with Embedded Icons - Sized Refined and Smaller */}
+          {/* Grand Headline with Embedded Icons */}
           <h2 style={{ 
             fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-            fontSize: 'clamp(1.4rem, 2.35vw, 2.05rem)', 
-            lineHeight: 1.38, 
+            fontSize: 'clamp(1.55rem, 2.6vw, 2.3rem)', 
+            lineHeight: 1.36, 
             color: '#4A3728',
-            marginBottom: '36px',
+            marginBottom: '32px',
             fontWeight: 400,
-            letterSpacing: '-0.015em',
+            letterSpacing: '-0.02em',
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateY(0)' : 'translateY(24px)',
             transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s'
@@ -268,17 +285,70 @@ export default function BigStatement({ content }: { content?: any }) {
             We combine scientific experience with advanced aesthetic <AestheticIcon /> education to build confident professionals in beauty therapy, laser technologies, and modern clinical <ClinicalIcon /> aesthetics.
           </h2>
 
-          {/* Action CTA */}
+          {/* 3 Creative Editorial Badges */}
           <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '12px',
+            flexWrap: 'wrap',
+            marginBottom: '38px',
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateY(0)' : 'translateY(24px)',
-            transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s'
+            transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.18s'
+          }}>
+            {[
+              'Evidence-Based Skin Science',
+              'Supervised Practical Workstations',
+              'Benchmarked to CIBTAC & NCLC'
+            ].map((badge, idx) => (
+              <span 
+                key={idx}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: '#FFFFFF',
+                  padding: '7px 16px',
+                  borderRadius: '100px',
+                  border: '1px solid rgba(197, 160, 89, 0.28)',
+                  fontSize: '12.5px',
+                  color: '#633b2c',
+                  fontWeight: 600,
+                  fontFamily: '"General Sans", sans-serif',
+                  boxShadow: '0 2px 8px rgba(99, 59, 44, 0.03)'
+                }}
+              >
+                <span style={{ color: '#c5a059', fontSize: '10px' }}>✦</span>
+                {badge}
+              </span>
+            ))}
+          </div>
+
+          {/* Actions */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '20px',
+            flexWrap: 'wrap',
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(24px)',
+            transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s'
           }}>
             <Link href="/courses" className="btn-premium">
               <div className="btn-icon-wrapper">
                 <img src="/logos/gold-logomark.png" alt="" />
               </div>
               Explore Curriculum &amp; Courses
+            </Link>
+
+            <Link 
+              href="/about" 
+              className="editorial-link"
+              style={{ fontSize: '14px', fontWeight: 600 }}
+            >
+              Discover Our Story &amp; Standards <span>→</span>
             </Link>
           </div>
 
@@ -289,10 +359,10 @@ export default function BigStatement({ content }: { content?: any }) {
       <div style={{
         position: 'absolute',
         bottom: 0,
-        left: '5%',
-        right: '5%',
+        left: '4%',
+        right: '4%',
         height: '1px',
-        background: 'linear-gradient(90deg, rgba(220,205,185,0) 0%, rgba(197,160,89,0.35) 50%, rgba(220,205,185,0) 100%)'
+        background: 'linear-gradient(90deg, rgba(220,205,185,0) 0%, rgba(197,160,89,0.38) 50%, rgba(220,205,185,0) 100%)'
       }} />
 
       <style dangerouslySetInnerHTML={{__html: `

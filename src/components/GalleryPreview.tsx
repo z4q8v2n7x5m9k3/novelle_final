@@ -162,11 +162,11 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
           </div>
         </div>
 
-        {/* View Gallery Button (Only visible if hideHeader is false) */}
+        {/* View Gallery Button (Only visible if hideHeader is false) - Left Aligned */}
         {!hideHeader && (
-          <div className="scroll-reveal reveal-from-right reveal-delay-4" style={{ 
-            textAlign: 'center', 
-            marginTop: '60px',
+          <div className="scroll-reveal reveal-from-left reveal-delay-4" style={{ 
+            textAlign: 'left', 
+            marginTop: '48px',
           }}>
             <Link href="/gallery" className="btn-premium">
               <div className="btn-icon-wrapper">

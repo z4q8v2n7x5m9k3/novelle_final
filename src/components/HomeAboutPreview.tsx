@@ -3,11 +3,18 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function HomeAboutPreview() {
+  const badges = [
+    "Evidence-Based Skin Science",
+    "Supervised Practical Hours",
+    "Strict Clinical Hygiene",
+    "CIBTAC & NCLC Pathway"
+  ];
+
   return (
     <section 
       style={{ 
         background: '#FAF6F0', 
-        padding: '100px 24px', 
+        padding: '96px 24px', 
         position: 'relative',
         overflow: 'hidden'
       }} 
@@ -15,7 +22,7 @@ export default function HomeAboutPreview() {
     >
       <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
-        {/* Split Grid Layout - Unified 1260px Width */}
+        {/* Split Grid Layout - Same as Practical Clinical Training */}
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', 
@@ -51,7 +58,7 @@ export default function HomeAboutPreview() {
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.2,
-              margin: '0 0 18px 0',
+              margin: '0 0 16px 0',
               letterSpacing: '-0.02em'
             }}>
               Why We Started Al Novelle
@@ -62,58 +69,48 @@ export default function HomeAboutPreview() {
               fontSize: '15.5px', 
               color: '#8c776e', 
               lineHeight: 1.75, 
-              margin: '0 0 16px 0',
+              margin: '0 0 28px 0',
               fontWeight: 500
             }}>
-              Aesthetic and beauty treatments are expanding rapidly across the UAE, yet training standards vary widely. Too often, learners enter the industry without essential grounding in skin anatomy, hygiene protocols, and clinical safety.
+              We established Al Novelle to elevate aesthetic training standards in the UAE — bridging the gap between theoretical knowledge and real clinical capability through rigorous skin science, patient safety, and supervised practice in Abu Dhabi.
             </p>
 
-            <p style={{ 
-              fontFamily: '"General Sans", sans-serif', 
-              fontSize: '15.5px', 
-              color: '#8c776e', 
-              lineHeight: 1.75, 
-              margin: '0 0 28px 0',
-              fontWeight: 400
+            {/* 4 Clean Pointers / Badges in a 2x2 Grid */}
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+              gap: '14px 18px',
+              marginBottom: '36px'
             }}>
-              We established Novelle to change that. As clinicians and educators, we built an academy where learners are taught rigorously, assessed fairly, and prepared for responsible real-world practice starting right here in Abu Dhabi.
-            </p>
-
-            {/* Clean Editorial Pointers */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '34px' }}>
-              {[
-                { title: 'Evidence-Based Skin Science', detail: 'Anatomy, cellular biology, and product science before needle or device touches skin.' },
-                { title: 'Supervised Clinical Workstations', detail: 'Hands-on practice under experienced clinical educators in Abu Dhabi.' },
-                { title: 'Recognised UAE & Global Benchmarks', detail: 'Curriculum structured around CIBTAC and NCLC standards.' }
-              ].map((p, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+              {badges.map((item, index) => (
+                <div key={index} style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                   <div style={{
-                    width: '20px',
-                    height: '20px',
+                    width: '22px',
+                    height: '22px',
                     borderRadius: '50%',
-                    background: 'rgba(197, 160, 89, 0.15)',
+                    border: '1px solid rgba(197, 160, 89, 0.4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    background: '#FFFFFF',
                     color: '#986A3E',
                     fontSize: '11px',
                     fontWeight: 700,
-                    flexShrink: 0,
-                    marginTop: '2px'
+                    flexShrink: 0
                   }}>✓</div>
-                  <div>
-                    <span style={{ fontSize: '14px', fontWeight: 600, color: '#633b2c', fontFamily: '"General Sans", sans-serif' }}>
-                      {p.title}:{' '}
-                    </span>
-                    <span style={{ fontSize: '14px', color: '#8c776e', fontFamily: '"General Sans", sans-serif', lineHeight: 1.5 }}>
-                      {p.detail}
-                    </span>
-                  </div>
+                  <span style={{ 
+                    fontFamily: '"General Sans", sans-serif', 
+                    fontSize: '13.5px', 
+                    fontWeight: 600, 
+                    color: '#633b2c' 
+                  }}>
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
 
-            {/* Clean Editorial Actions */}
+            {/* Editorial Actions */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
               <Link href="/about" className="btn-premium">
                 <div className="btn-icon-wrapper">
@@ -149,7 +146,7 @@ export default function HomeAboutPreview() {
               border: '1px solid rgba(197, 160, 89, 0.35)',
               position: 'relative',
               background: '#F5EFE6',
-              height: '460px'
+              height: '440px'
             }}>
               <img 
                 src="/academy-images/al-novelle-training-centre-interior.png" 
