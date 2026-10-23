@@ -51,6 +51,7 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
     <div
       id={course.id}
       ref={ref}
+      className="course-catalogue-card"
       style={{
         background: '#FFFFFF',
         borderRadius: '24px',
@@ -64,6 +65,7 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(24px)',
         transitionDelay: `${index * 0.04}s`,
+        scrollMarginTop: '140px'
       }}
       onMouseEnter={e => {
         const el = e.currentTarget as HTMLDivElement;
@@ -218,6 +220,23 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
 
 export default function CoursesPage() {
   const [activeCategory, setActiveCategory] = useState('All Programmes');
+
+  // Handle direct hash navigation from hero pills (e.g. /courses#facial-skin-care-treatments)
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const hash = window.location.hash.replace('#', '');
+      const found = COURSE_CATALOGUE.find(c => c.id === hash);
+      if (found) {
+        setActiveCategory('All Programmes');
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 250);
+      }
+    }
+  }, []);
 
   const filteredCourses = activeCategory === 'All Programmes'
     ? COURSE_CATALOGUE
@@ -411,9 +430,19 @@ export default function CoursesPage() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
 
       <style dangerouslySetInnerHTML={{__html: `
+        :target {
+          scroll-margin-top: 140px;
+          border-color: #c5a059 !important;
+          box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.4), 0 20px 60px rgba(99, 59, 44, 0.15) !important;
+          animation: target-pulse 1.8s ease;
+        }
+        @keyframes target-pulse {
+          0% { transform: scale(1); }
+          25% { transform: scale(1.02); }
+          100% { transform: scale(1); }
+        }
         @media (max-width: 768px) {
           .courses-desktop-pills {
             display: none !important;

@@ -4,8 +4,9 @@ import path from 'path';
 import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
-import AccreditationTrust from '@/components/AccreditationTrust';
 import BigStatement from '@/components/BigStatement';
+import HomeAboutPreview from '@/components/HomeAboutPreview';
+import HomeCoursesStrip from '@/components/HomeCoursesStrip';
 import FoundersSection from '@/components/FoundersSection';
 import GalleryPreview from '@/components/GalleryPreview';
 import FAQs from '@/components/FAQs';
@@ -50,19 +51,22 @@ export default function Home() {
     <main>
       <Navigation />
       
-      {/* Hero — 16 approved courses in orbital carousel with functional CTAs */}
+      {/* Hero — 16 approved courses in orbital carousel with direct hash links & functional CTAs */}
       <Hero content={homepageContent.hero} />
       
-      {/* Accreditation Trust Strip — CIBTAC Accredited Centre & NCLC Certified, USA */}
-      <AccreditationTrust />
-
-      {/* Big Statement — clean refined headline */}
+      {/* Big Statement — editorial serif statement with aesthetic icons */}
       <BigStatement content={homepageContent.bigStatement} />
+
+      {/* About Al Novelle Preview — story, clinical standards & link to About page */}
+      <HomeAboutPreview />
+
+      {/* Featured Courses Strip — flagship courses & View All 17 Courses CTA */}
+      <HomeCoursesStrip />
       
-      {/* Founders Introduction — Dr. Azaiba Salim Kara & Dr. Seeta Yadav */}
+      {/* Completely Redesigned Luxury Founders Section — Dr. Azaiba Salim Kara & Dr. Seeta Yadav */}
       <FoundersSection />
 
-      {/* UAE Identity — Born in Abu Dhabi */}
+      {/* UAE Identity — Born in Abu Dhabi, Built for Real Practice */}
       <UAEIdentity />
 
       {/* Gallery Preview — Authentic Al Novelle interior photography */}
