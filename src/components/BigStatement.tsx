@@ -4,10 +4,10 @@ import Link from 'next/link';
 
 export default function BigStatement({ content }: { content?: any }) {
   const stats = [
-    { value: '98%', label: 'Satisfaction rate' },
-    { value: '100%', label: 'Supervised practice' },
-    { value: '4.9', label: 'Graduate rating' },
-    { value: '10+', label: 'Years in practice' },
+    { value: '10+', label: 'Years clinical experience' },
+    { value: '16', label: 'Approved qualifications' },
+    { value: 'CIBTAC', label: 'Accredited training centre' },
+    { value: 'NCLC', label: 'Certified laser curriculum' },
   ];
 
   return (
@@ -104,19 +104,11 @@ export default function BigStatement({ content }: { content?: any }) {
 
             <Link 
               href="#specialists" 
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                fontSize: '13.5px',
-                color: '#633b2c',
-                fontWeight: 600,
-                textDecoration: 'none',
-                fontFamily: '"General Sans", sans-serif',
-                marginTop: '4px'
-              }}
+              className="btn-premium-light"
+              style={{ marginTop: '10px' }}
             >
-              Meet our specialists <span>&gt;</span>
+              <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
+              Meet Our Specialists
             </Link>
           </div>
 

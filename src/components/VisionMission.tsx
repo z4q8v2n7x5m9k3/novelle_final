@@ -118,42 +118,18 @@ export default function VisionMission() {
                 href={WA_URL} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: '#1D130C',
-                  color: '#FFFFFF',
-                  padding: '12px 24px',
-                  borderRadius: '100px',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  fontFamily: '"General Sans", sans-serif',
-                  boxShadow: '0 4px 14px rgba(29, 19, 12, 0.18)',
-                  transition: 'background 0.3s ease'
-                }}
-                onMouseEnter={e => (e.currentTarget.style.background = '#845E35')}
-                onMouseLeave={e => (e.currentTarget.style.background = '#1D130C')}
+                className="btn-premium"
               >
-                <span>Enquire About Training Suites</span>
-                <span>&gt;</span>
+                <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
+                Enquire About Training Suites
               </a>
 
               <Link 
                 href="/gallery" 
-                style={{
-                  fontSize: '13.5px',
-                  fontFamily: '"General Sans", sans-serif',
-                  fontWeight: 600,
-                  color: '#845E35',
-                  textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px'
-                }}
+                className="btn-premium-light"
               >
-                View Academy Spaces <span>&gt;</span>
+                <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
+                View Academy Spaces
               </Link>
             </div>
           </div>

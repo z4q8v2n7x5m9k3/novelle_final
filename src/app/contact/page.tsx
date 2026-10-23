@@ -384,26 +384,23 @@ export default function ContactPage() {
                     </label>
 
                     <div className="form-submit-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '8px', gap: '16px', flexWrap: 'wrap' }}>
-                      <button type="submit" disabled={isPending} style={{ 
-                        display: 'inline-flex', alignItems: 'center', gap: '10px',
-                        background: '#1D130C', color: '#FFFFFF', padding: '13px 30px',
-                        borderRadius: '100px', border: 'none', fontSize: '14px', fontWeight: 600,
-                        cursor: 'pointer', transition: 'all 0.3s ease', fontFamily: '"General Sans", sans-serif',
-                        boxShadow: '0 4px 14px rgba(29, 19, 12, 0.2)'
-                      }}
-                      onMouseEnter={e => (e.currentTarget.style.background = '#845E35')}
-                      onMouseLeave={e => (e.currentTarget.style.background = '#1D130C')}
+                      <button 
+                        type="submit" 
+                        disabled={isPending} 
+                        className="btn-premium-dark"
                       >
+                        <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
                         <span>{isPending ? 'Submitting...' : 'Send Enquiry'}</span>
-                        <span>&gt;</span>
                       </button>
 
-                      <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{ 
-                        display: 'inline-flex', alignItems: 'center', gap: '6px',
-                        color: '#633b2c', fontSize: '13px', fontWeight: 600, textDecoration: 'none', fontFamily: '"General Sans", sans-serif' 
-                      }}>
-                        <span>Chat directly on WhatsApp</span>
-                        <span>&gt;</span>
+                      <a 
+                        href={WA_URL} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="btn-premium-light"
+                      >
+                        <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
+                        <span>Chat on WhatsApp</span>
                       </a>
                     </div>
                   </form>

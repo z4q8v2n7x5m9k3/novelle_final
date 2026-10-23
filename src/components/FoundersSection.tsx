@@ -202,11 +202,10 @@ export default function FoundersSection() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '14px',
                   transition: 'all 0.2s ease'
                 }}
               >
-                &lt;
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
               </button>
               <button
                 onClick={toggleNext}
@@ -222,11 +221,10 @@ export default function FoundersSection() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '14px',
                   transition: 'background 0.2s ease'
                 }}
               >
-                &gt;
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
               </button>
             </div>
           </div>
@@ -409,56 +407,30 @@ export default function FoundersSection() {
                     <span style={{ fontSize: '12px', color: '#8c776e', fontFamily: '"General Sans", sans-serif' }}>
                       {lead.meta}
                     </span>
-                    <span style={{ color: '#986A3E', fontSize: '13px', fontWeight: 700 }}>&gt;</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#986A3E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
                   </div>
                 </Link>
               ))}
             </div>
 
-            {/* Actions: Consult Button & Know More Link */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', marginTop: '6px' }}>
+            {/* Actions: Signature Novelle Buttons with Spinning Icon */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', marginTop: '10px' }}>
               <a
                 href={active.consultUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: '#1D130C',
-                  color: '#FFFFFF',
-                  padding: '11px 22px',
-                  borderRadius: '100px',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  fontFamily: '"General Sans", sans-serif',
-                  boxShadow: '0 4px 14px rgba(29, 19, 12, 0.18)',
-                  transition: 'background 0.3s ease'
-                }}
-                onMouseEnter={e => (e.currentTarget.style.background = '#845E35')}
-                onMouseLeave={e => (e.currentTarget.style.background = '#1D130C')}
+                className="btn-premium"
               >
-                <WhatsAppIcon />
+                <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
                 <span>Consult with {active.shortName}</span>
-                <span>&gt;</span>
               </a>
 
               <Link
                 href={active.aboutHash}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  color: '#845E35',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  fontFamily: '"General Sans", sans-serif'
-                }}
+                className="btn-premium-light"
               >
-                <span>Know more on About page</span>
-                <span>&gt;</span>
+                <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
+                <span>Know More on About Page</span>
               </Link>
             </div>
 

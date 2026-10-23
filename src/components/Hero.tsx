@@ -497,12 +497,14 @@ export default function Hero({ content }: { content?: any }) {
             Abu Dhabi’s training academy for beauty therapy, clinical aesthetics, and laser technologies — delivering structured science, supervised practice, and professional confidence.
           </p>
 
-          {/* RETAINED COURSE & ADMISSIONS CTA BUTTONS */}
-          <div className="hero-btn-container">
-            <Link href="/courses" className="hero-btn-primary">
+          {/* SIGNATURE NOVELLE BUTTONS WITH ROTATING LOGOMARK */}
+          <div className="hero-btn-container" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '24px', zIndex: 10 }}>
+            <Link href="/courses" className="btn-premium">
+              <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
               Explore Courses
             </Link>
-            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="hero-btn-secondary">
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-premium-glass">
+              <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
               Speak to Admissions
             </a>
           </div>

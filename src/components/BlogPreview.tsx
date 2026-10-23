@@ -136,18 +136,10 @@ export default function BlogPreview() {
           <div>
             <Link 
               href="/blog"
-              style={{
-                fontSize: '13.5px',
-                fontFamily: '"General Sans", sans-serif',
-                fontWeight: 600,
-                color: '#845E35',
-                textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
+              className="btn-premium-light"
             >
-              Learn more <span>&gt;</span>
+              <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
+              Explore All Insights
             </Link>
           </div>
         </div>
@@ -254,7 +246,8 @@ export default function BlogPreview() {
                   fontWeight: 600,
                   marginTop: 'auto'
                 }}>
-                  Read note <span>&gt;</span>
+                  <span>Read Article</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
                 </div>
               </div>
             </Link>

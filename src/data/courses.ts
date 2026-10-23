@@ -9,7 +9,7 @@ export interface Course {
   description: string;
   image: string;
   pillLabel: string;
-  status: 'Open for Enquiry' | 'Coming Soon (Pending DOH)' | 'Enquiry / Pending Confirmation';
+  status: 'Open for Enquiry' | 'Coming Soon (Register Interest)' | 'Enquiry / Pending Confirmation';
   badge: string;
 }
 
@@ -137,7 +137,7 @@ export const COURSE_CATALOGUE: Course[] = [
     description: 'Advanced knowledge and practical skill in chemical peels and microneedling: microbiology, active ingredients, depth, wound healing, and safe delivery.',
     image: '/academy-images/polished-aesthetic-training-centre-interior.png',
     pillLabel: 'Peel & Needle',
-    status: 'Coming Soon (Pending DOH)',
+    status: 'Coming Soon (Register Interest)',
     badge: 'Advanced'
   },
   {

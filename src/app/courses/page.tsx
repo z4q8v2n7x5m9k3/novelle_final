@@ -40,10 +40,10 @@ const WhatsAppIcon = () => (
 function CourseCard({ course, index }: { course: Course; index: number }) {
   const { ref, visible } = useInView();
 
-  const isDohPending = course.status === 'Coming Soon (Pending DOH)';
+  const isPendingIntake = course.status === 'Coming Soon (Register Interest)';
   const isSpmu = course.id === 'semi-permanent-makeup';
 
-  const ctaLabel = isDohPending 
+  const ctaLabel = isPendingIntake 
     ? 'Register Your Interest' 
     : isSpmu 
     ? 'Enquire for Schedule' 
@@ -124,7 +124,7 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
           </span>
         </div>
 
-        {isDohPending && (
+        {isPendingIntake && (
           <div style={{ position: 'absolute', bottom: '12px', left: '16px', right: '16px' }}>
             <span style={{ 
               display: 'block',
@@ -138,7 +138,7 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
               padding: '4px 10px', 
               borderRadius: '6px' 
             }}>
-              Coming Soon · DOH Approval Pending
+              Coming Soon · Register Your Interest
             </span>
           </div>
         )}
