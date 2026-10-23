@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import BookConsultation from '@/components/BookConsultation';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
@@ -531,45 +532,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Your Next Step */}
-      <section style={{ background: '#FAF6F0', padding: '96px 24px' }}>
-        <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
-          <div style={{
-            background: 'linear-gradient(135deg, #FFFFFF 0%, #FAF6F0 100%)',
-            borderRadius: '28px',
-            padding: '56px 44px',
-            border: '1px solid rgba(197, 160, 89, 0.35)',
-            boxShadow: '0 12px 40px rgba(99, 59, 44, 0.05)',
-            textAlign: 'left',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '28px'
-          }}>
-            <div style={{ maxWidth: '640px' }}>
-              <span style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#986A3E', fontWeight: 700, display: 'block', marginBottom: '8px' }}>
-                YOUR NEXT STEP
-              </span>
-              <h2 style={{ fontFamily: '"Hedvig Letters Serif", Georgia, serif', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#633b2c', fontWeight: 400, margin: '0 0 10px 0' }}>
-                Find the Programme That Fits Your Goals
-              </h2>
-              <p style={{ color: '#8c776e', fontSize: '15px', lineHeight: 1.65, margin: 0 }}>
-                Explore our accredited course catalogue in beauty therapy, facial aesthetics, and laser technologies, or speak directly with our Abu Dhabi admissions team.
-              </p>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <Link href="/courses" className="btn-premium">
-                <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
-                Explore All 17 Courses
-              </Link>
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="editorial-link">
-                Speak to Admissions <span aria-hidden="true">&#8594;</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Book Your Visit Today — Embedded Interactive Booking Form & Campus Photo */}
+      <BookConsultation />
 
       <Footer />
       <WhatsAppButton />

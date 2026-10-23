@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
+import BookConsultation from '@/components/BookConsultation';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import SafeImage from '@/components/SafeImage';
@@ -212,6 +213,9 @@ export default function BlogPage() {
           )}
         </div>
       </section>
+
+      {/* Book Your Visit Today — Embedded Interactive Booking Form & Campus Photo */}
+      <BookConsultation />
 
       <Footer />
     </main>

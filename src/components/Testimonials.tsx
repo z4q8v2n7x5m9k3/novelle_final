@@ -1,51 +1,63 @@
 'use client';
 import React, { useState } from 'react';
 
-interface Testimonial {
-  id: number;
-  text: string;
+interface Review {
+  id: string;
+  index: string;
+  quote: string;
   author: string;
-  subtitle: string;
+  role: string;
   avatar: string;
 }
 
-const testimonials: Testimonial[] = [
+const reviews: Review[] = [
   {
-    id: 1,
-    text: "The hands-on laser training and workstation supervision at Al Novelle gave me the technical confidence and hygiene disciplines to practice safely in the UAE aesthetic sector. The educators explain every biological principle clearly before you touch a device.",
+    id: '1',
+    index: '01 / 04',
+    quote: "The hands-on laser training and workstation supervision at Al Novelle gave me the technical confidence to practice safely in the UAE aesthetic sector. They explained every biological principle clearly before we touched a device, and I never once felt rushed.",
     author: "Dr. Sarah Ahmed",
-    subtitle: "Aesthetic Doctor · Abu Dhabi",
+    role: "Aesthetic Doctor, Abu Dhabi · 2025",
     avatar: "/about/professional-learning-session.jpeg"
   },
   {
-    id: 2,
-    text: "Novelle gave me structure, clinical confidence, and real practical exposure. Training in an authentic clinical environment with live models completely changes how prepared you feel for UAE clinic accreditation.",
+    id: '2',
+    index: '02 / 04',
+    quote: "Novelle gave me clinical structure, manual confidence, and authentic practical exposure. Training in an equipped clinic environment with live demonstration models completely changes how prepared you feel for UAE clinic accreditation.",
     author: "Aisha Al Mansoori",
-    subtitle: "Advanced Beauty Therapy Graduate",
+    role: "Advanced Beauty Therapy Graduate · 2025",
     avatar: "/about/laser-and-skin-training.png"
   },
   {
-    id: 3,
-    text: "The facial electrotherapy and skin anatomy modules are taught with genuine medical rigor. As a practicing therapist, the depth of safety protocols and device management was exceptional.",
+    id: '3',
+    index: '03 / 04',
+    quote: "The facial electrotherapy and skin anatomy modules are taught with genuine medical rigor. As a practicing therapist, the depth of safety protocols, patch testing, and device management was exceptional.",
     author: "Mariam Al Zaabi",
-    subtitle: "Clinical Aesthetician · Dubai",
+    role: "Clinical Aesthetician, Dubai · 2025",
     avatar: "/academy-images/training-consultation.png"
+  },
+  {
+    id: '4',
+    index: '04 / 04',
+    quote: "The educators take time to guide your consultation protocols, hygiene disciplines, and patient interaction step-by-step. The quality of education and equipment here sets a real benchmark in Abu Dhabi.",
+    author: "Fatima Al Nuaimi",
+    role: "Skincare Specialist, Abu Dhabi · 2026",
+    avatar: "/academy-images/laser-device-training.png"
   }
 ];
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const prev = () => setCurrentIndex(i => (i - 1 + testimonials.length) % testimonials.length);
-  const next = () => setCurrentIndex(i => (i + 1) % testimonials.length);
+  const prev = () => setCurrentIndex(i => (i - 1 + reviews.length) % reviews.length);
+  const next = () => setCurrentIndex(i => (i + 1) % reviews.length);
 
-  const active = testimonials[currentIndex];
+  const current = reviews[currentIndex];
 
   return (
     <section 
       style={{ 
-        background: '#FAF6F0', 
-        padding: '96px 24px', 
+        background: '#FAF8F5', 
+        padding: '96px 24px 100px 24px', 
         position: 'relative',
         overflow: 'hidden' 
       }} 
@@ -53,40 +65,31 @@ export default function Testimonials() {
     >
       <div style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
-        {/* Split Grid matching Reference "What our patients say" */}
+        {/* Split Grid (Exact Image 4) */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'minmax(220px, 300px) 1fr',
+          gridTemplateColumns: 'minmax(220px, 280px) 1fr',
           gap: '64px',
           alignItems: 'flex-start',
           textAlign: 'left'
-        }} className="testimonials-split-grid">
+        }} className="reviews-split-grid">
           
-          {/* Left Column: Heading + 4.9 Rating */}
+          {/* Left Column: Eyebrow + Title + 4.9 Score Block (Exact Image 4) */}
           <div>
             <span style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              background: '#FFFFFF',
-              padding: '7px 16px',
-              borderRadius: '100px',
-              fontSize: '11px',
-              letterSpacing: '2px',
-              fontWeight: 700,
-              color: '#633b2c',
-              textTransform: 'uppercase',
+              display: 'block',
               fontFamily: '"General Sans", sans-serif',
-              marginBottom: '16px',
-              border: '1px solid rgba(197, 160, 89, 0.35)',
-              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
+              fontSize: '13px',
+              color: '#8c776e',
+              fontWeight: 500,
+              marginBottom: '8px'
             }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-              PRACTITIONER VOICES
+              Reviews /
             </span>
 
             <h2 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2rem, 3.2vw, 2.7rem)',
+              fontSize: 'clamp(2.1rem, 3.4vw, 2.9rem)',
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.2,
@@ -97,91 +100,104 @@ export default function Testimonials() {
             </h2>
 
             {/* 4.9 Score Block */}
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '14px' }}>
               <span style={{
-                fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-                fontSize: '44px',
-                color: '#633b2c',
-                fontWeight: 400,
-                lineHeight: 1
+                fontFamily: '"General Sans", sans-serif',
+                fontSize: '56px',
+                color: '#1D130C',
+                fontWeight: 600,
+                lineHeight: 1,
+                letterSpacing: '-0.03em'
               }}>
                 4.9
               </span>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', gap: '3px', color: '#c5a059', fontSize: '15px' }}>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div style={{ color: '#E5A93C', fontSize: '16px', letterSpacing: '2px' }}>
                   ★ ★ ★ ★ ★
                 </div>
                 <span style={{
-                  fontSize: '11px',
+                  fontSize: '12px',
                   fontFamily: '"General Sans", sans-serif',
                   color: '#8c776e',
-                  fontWeight: 600,
-                  marginTop: '2px'
+                  fontWeight: 500
                 }}>
-                  UAE Graduate Community
+                  1,240 Graduate reviews
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Quote + Author + Prev/Next Controls */}
+          {/* Right Column: Quote + Author + Divider + Index / Nav (Exact Image 4) */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+            
+            {/* Big Serif Quote */}
             <p style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(1.2rem, 2vw, 1.55rem)',
-              color: '#633b2c',
+              fontSize: 'clamp(1.25rem, 2.1vw, 1.65rem)',
+              color: '#1D130C',
               fontWeight: 400,
               lineHeight: 1.55,
               margin: 0,
               letterSpacing: '-0.01em',
-              minHeight: '120px'
+              minHeight: '110px'
             }}>
-              &ldquo;{active.text}&rdquo;
+              &ldquo;{current.quote}&rdquo;
             </p>
 
+            {/* Author Row (Exact Image 4) */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <div style={{
+                width: '46px',
+                height: '46px',
+                borderRadius: '50%',
+                overflow: 'hidden',
+                background: '#F5EFE6',
+                border: '1px solid rgba(197, 160, 89, 0.3)',
+                flexShrink: 0
+              }}>
+                <img src={current.avatar} alt={current.author} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div>
+                <strong style={{
+                  fontFamily: '"General Sans", sans-serif',
+                  fontSize: '14.5px',
+                  color: '#1D130C',
+                  display: 'block',
+                  fontWeight: 600
+                }}>
+                  {current.author}
+                </strong>
+                <span style={{
+                  fontFamily: '"General Sans", sans-serif',
+                  fontSize: '12.5px',
+                  color: '#8c776e'
+                }}>
+                  {current.role}
+                </span>
+              </div>
+            </div>
+
+            {/* Thin Horizontal Divider Line (Exact Image 4) */}
+            <div style={{ height: '1px', background: 'rgba(197, 160, 89, 0.22)', width: '100%' }} />
+
+            {/* Bottom Row: 01 / 04 on Left, Nav Arrows on Right (Exact Image 4) */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingTop: '20px',
-              borderTop: '1px solid rgba(197, 160, 89, 0.22)',
-              flexWrap: 'wrap',
-              gap: '16px'
+              justifyContent: 'space-between'
             }}>
-              {/* Author */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                <div style={{
-                  width: '46px',
-                  height: '46px',
-                  borderRadius: '50%',
-                  overflow: 'hidden',
-                  border: '1.5px solid #c5a059',
-                  background: '#F5EFE6',
-                  flexShrink: 0
-                }}>
-                  <img src={active.avatar} alt={active.author} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div>
-                  <strong style={{
-                    fontFamily: '"General Sans", sans-serif',
-                    fontSize: '15px',
-                    color: '#633b2c',
-                    display: 'block',
-                    fontWeight: 600
-                  }}>
-                    {active.author}
-                  </strong>
-                  <span style={{
-                    fontFamily: '"General Sans", sans-serif',
-                    fontSize: '12.5px',
-                    color: '#8c776e'
-                  }}>
-                    {active.subtitle}
-                  </span>
-                </div>
-              </div>
+              <span style={{
+                fontFamily: '"General Sans", sans-serif',
+                fontSize: '12.5px',
+                color: '#8c776e',
+                fontWeight: 600,
+                letterSpacing: '1px'
+              }}>
+                {current.index}
+              </span>
 
-              {/* Prev / Next Buttons matching Reference */}
+              {/* Prev / Next Round Black Buttons (Exact Image 4) */}
               <div style={{ display: 'flex', gap: '10px' }}>
                 <button
                   onClick={prev}
@@ -190,27 +206,22 @@ export default function Testimonials() {
                     width: '42px',
                     height: '42px',
                     borderRadius: '50%',
-                    border: '1px solid rgba(197, 160, 89, 0.35)',
-                    background: '#FFFFFF',
-                    color: '#633b2c',
+                    background: '#1D130C',
+                    color: '#FFFFFF',
+                    border: 'none',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     cursor: 'pointer',
-                    fontSize: '16px',
-                    transition: 'all 0.25s ease'
+                    fontSize: '15px',
+                    transition: 'background 0.25s ease'
                   }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = '#633b2c';
-                    e.currentTarget.style.color = '#FFFFFF';
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = '#FFFFFF';
-                    e.currentTarget.style.color = '#633b2c';
-                  }}
+                  onMouseEnter={e => (e.currentTarget.style.background = '#845E35')}
+                  onMouseLeave={e => (e.currentTarget.style.background = '#1D130C')}
                 >
-                  ←
+                  &lt;
                 </button>
+
                 <button
                   onClick={next}
                   aria-label="Next review"
@@ -218,27 +229,24 @@ export default function Testimonials() {
                     width: '42px',
                     height: '42px',
                     borderRadius: '50%',
-                    border: '1px solid rgba(197, 160, 89, 0.35)',
-                    background: '#633b2c',
+                    background: '#1D130C',
                     color: '#FFFFFF',
+                    border: 'none',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     cursor: 'pointer',
-                    fontSize: '16px',
-                    transition: 'all 0.25s ease'
+                    fontSize: '15px',
+                    transition: 'background 0.25s ease'
                   }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = '#845E35';
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = '#633b2c';
-                  }}
+                  onMouseEnter={e => (e.currentTarget.style.background = '#845E35')}
+                  onMouseLeave={e => (e.currentTarget.style.background = '#1D130C')}
                 >
-                  →
+                  &gt;
                 </button>
               </div>
             </div>
+
           </div>
 
         </div>
@@ -247,7 +255,7 @@ export default function Testimonials() {
 
       <style dangerouslySetInnerHTML={{__html: `
         @media (max-width: 900px) {
-          .testimonials-split-grid {
+          .reviews-split-grid {
             grid-template-columns: 1fr !important;
             gap: 36px !important;
           }

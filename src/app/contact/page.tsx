@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
+import BookConsultation from '@/components/BookConsultation';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { COURSE_CATALOGUE } from '@/data/courses';
@@ -335,37 +336,75 @@ export default function ContactPage() {
                       <textarea name="message" rows={3} placeholder="Ask about intake dates, prerequisites, or curriculum..." value={formData.message} onChange={handleChange} className="admissions-input" style={{ ...inputStyle, resize: 'none' }} />
                     </div>
 
-                    {/* Admissions Consent */}
-                    <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer' }}>
-                      <input type="checkbox" name="consent" required checked={formData.consent} onChange={handleChange} style={{ width: '18px', height: '18px', accentColor: '#845e35', cursor: 'pointer', marginTop: '2px' }} />
-                      <span style={{ fontSize: '13px', color: '#60554a', lineHeight: 1.4, fontFamily: '"General Sans", sans-serif' }}>
+                    {/* Admissions Consent Ticker */}
+                    <label style={{ 
+                      display: 'flex', 
+                      alignItems: 'flex-start', 
+                      gap: '12px', 
+                      cursor: 'pointer',
+                      padding: '8px 12px',
+                      background: 'rgba(255, 255, 255, 0.6)',
+                      borderRadius: '12px',
+                      border: '1px solid rgba(197, 160, 89, 0.25)'
+                    }}>
+                      <input 
+                        type="checkbox" 
+                        name="consent" 
+                        required 
+                        checked={formData.consent} 
+                        onChange={handleChange} 
+                        style={{ width: '18px', height: '18px', accentColor: '#633b2c', cursor: 'pointer', marginTop: '2px', flexShrink: 0 }} 
+                      />
+                      <span style={{ fontSize: '13px', color: '#633b2c', lineHeight: 1.45, fontFamily: '"General Sans", sans-serif', fontWeight: 500 }}>
                         I agree to allow Al Novelle to contact me regarding my course enquiry.*
                       </span>
                     </label>
 
-                    {/* Marketing Consent (Separate, Unchecked by default) */}
-                    <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer' }}>
-                      <input type="checkbox" name="marketing" checked={formData.marketing} onChange={handleChange} style={{ width: '18px', height: '18px', accentColor: '#845e35', cursor: 'pointer', marginTop: '2px' }} />
-                      <span style={{ fontSize: '13px', color: '#60554a', lineHeight: 1.4, fontFamily: '"General Sans", sans-serif' }}>
-                        Keep me informed about future workshops, new intakes, and academy news. (Optional)
+                    {/* Marketing Consent Ticker */}
+                    <label style={{ 
+                      display: 'flex', 
+                      alignItems: 'flex-start', 
+                      gap: '12px', 
+                      cursor: 'pointer',
+                      padding: '8px 12px',
+                      background: 'rgba(255, 255, 255, 0.4)',
+                      borderRadius: '12px',
+                      border: '1px solid rgba(197, 160, 89, 0.18)'
+                    }}>
+                      <input 
+                        type="checkbox" 
+                        name="marketing" 
+                        checked={formData.marketing} 
+                        onChange={handleChange} 
+                        style={{ width: '18px', height: '18px', accentColor: '#633b2c', cursor: 'pointer', marginTop: '2px', flexShrink: 0 }} 
+                      />
+                      <span style={{ fontSize: '12.5px', color: '#7a6b63', lineHeight: 1.45, fontFamily: '"General Sans", sans-serif' }}>
+                        Keep me informed about future workshops, intake dates, and academy announcements. (Optional)
                       </span>
                     </label>
 
                     <div className="form-submit-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '8px', gap: '16px', flexWrap: 'wrap' }}>
                       <button type="submit" disabled={isPending} style={{ 
-                        display: 'inline-flex', alignItems: 'center', gap: '12px',
-                        background: '#845e35', color: '#FFFFFF', padding: '12px 28px',
+                        display: 'inline-flex', alignItems: 'center', gap: '10px',
+                        background: '#1D130C', color: '#FFFFFF', padding: '13px 30px',
                         borderRadius: '100px', border: 'none', fontSize: '14px', fontWeight: 600,
-                        cursor: 'pointer', transition: 'all 0.3s ease', fontFamily: '"General Sans", sans-serif'
-                      }}>
-                        <span style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                          <img src="/logos/gold-logomark.png" alt="" style={{ width: '16px', height: '16px', objectFit: 'contain' }} />
-                        </span>
-                        {isPending ? 'Submitting...' : 'Send Enquiry'}
+                        cursor: 'pointer', transition: 'all 0.3s ease', fontFamily: '"General Sans", sans-serif',
+                        boxShadow: '0 4px 14px rgba(29, 19, 12, 0.2)'
+                      }}
+                      onMouseEnter={e => (e.currentTarget.style.background = '#845E35')}
+                      onMouseLeave={e => (e.currentTarget.style.background = '#1D130C')}
+                      >
+                        <span>{isPending ? 'Submitting...' : 'Send Enquiry'}</span>
+                        <span>&gt;</span>
                       </button>
-                      <span style={{ fontSize: '13px', color: '#60554a', fontWeight: 500, fontFamily: '"General Sans", sans-serif' }}>
-                        Or <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 600, textDecoration: 'none' }}>chat on WhatsApp</a>
-                      </span>
+
+                      <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{ 
+                        display: 'inline-flex', alignItems: 'center', gap: '6px',
+                        color: '#633b2c', fontSize: '13px', fontWeight: 600, textDecoration: 'none', fontFamily: '"General Sans", sans-serif' 
+                      }}>
+                        <span>Chat directly on WhatsApp</span>
+                        <span>&gt;</span>
+                      </a>
                     </div>
                   </form>
                 </>
@@ -387,41 +426,52 @@ export default function ContactPage() {
               )}
             </div>
 
-            {/* RIGHT: Authentic Training Centre Photo + Glass Details */}
-            <div className="appointment-image-side" style={{ width: '46%', position: 'relative', minHeight: '560px' }}>
+            {/* RIGHT: Authentic Training Centre Photo with Clean Floating Badge */}
+            <div className="appointment-image-side" style={{ width: '46%', position: 'relative', minHeight: '520px', background: '#E0D5C7' }}>
               <img 
                 src="/academy-images/elegant-al-novelle-training-centre-1.png" 
                 alt="Al Novelle training space in Abu Dhabi" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
-              <div className="glass-inquiries-card" style={{ 
-                position: 'absolute', bottom: '24px', left: '24px', right: '24px',
-                background: 'rgba(132, 94, 53, 0.45)',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                borderRadius: '24px', padding: '24px', color: '#FFFFFF', textAlign: 'center'
+
+              {/* Clean Floating Badge matching Inspiration */}
+              <div style={{
+                position: 'absolute',
+                bottom: '20px',
+                left: '20px',
+                right: '20px',
+                background: 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                borderRadius: '18px',
+                padding: '16px 20px',
+                border: '1px solid rgba(197, 160, 89, 0.3)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '4px'
               }}>
-                <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px auto' }}>
-                  <img src="/logos/gold-logomark.png" alt="Al Novelle" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
-                </div>
-                <h4 style={{ fontFamily: '"Hedvig Letters Serif", Georgia, serif', fontSize: '18px', color: '#FFFFFF', fontWeight: 400, margin: '0 0 12px 0' }}>
-                  Al Novelle Admissions Desk
-                </h4>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13.5px', fontWeight: 500, fontFamily: '"General Sans", sans-serif' }}>
-                  <a href="tel:+971502348625" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                    +971 50 234 8625
-                  </a>
-                  <a href="tel:+971507629543" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                    +971 50 762 9543
-                  </a>
-                  <a href="mailto:hello@novelle.ae" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                    hello@novelle.ae
-                  </a>
-                  <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontWeight: 700, marginTop: '6px' }}>
-                    Chat on WhatsApp
-                  </a>
-                </div>
+                <span style={{
+                  fontSize: '10px',
+                  fontFamily: '"General Sans", sans-serif',
+                  letterSpacing: '1.2px',
+                  textTransform: 'uppercase',
+                  color: '#986A3E',
+                  fontWeight: 700
+                }}>
+                  ADMISSIONS &amp; VISITS · ABU DHABI
+                </span>
+                <strong style={{
+                  fontSize: '13.5px',
+                  color: '#633b2c',
+                  fontFamily: '"General Sans", sans-serif',
+                  fontWeight: 600
+                }}>
+                  Monday – Saturday · 9:00 AM – 6:00 PM
+                </strong>
+                <span style={{ fontSize: '12px', color: '#7a6b63', fontFamily: '"General Sans", sans-serif' }}>
+                  Unit 1001, LAVG Building, Al Zahiyah (16)
+                </span>
               </div>
             </div>
 
@@ -468,6 +518,9 @@ export default function ContactPage() {
           </a>
         </div>
       </section>
+
+      {/* Book Your Visit Today — Embedded Interactive Booking Form & Campus Photo */}
+      <BookConsultation />
 
       <Footer />
       <WhatsAppButton />

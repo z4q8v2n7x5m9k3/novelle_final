@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import Navigation from '@/components/Navigation';
+import BookConsultation from '@/components/BookConsultation';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import AccreditationTrust from '@/components/AccreditationTrust';
@@ -391,112 +392,11 @@ export default function CoursesPage() {
               <CourseCard key={course.id} course={course} index={i} />
             ))}
           </div>
-
-          {/* Academic Consultation Desk below grid - Left-aligned luxury split banner */}
-          <div style={{ 
-            marginTop: '72px', 
-            padding: '48px 44px', 
-            background: 'linear-gradient(135deg, #FFFFFF 0%, #FAF6F0 100%)', 
-            borderRadius: '28px', 
-            border: '1px solid rgba(197, 160, 89, 0.35)',
-            boxShadow: '0 12px 40px rgba(99, 59, 44, 0.04)',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '28px',
-            textAlign: 'left'
-          }}>
-            <div style={{ maxWidth: '640px' }}>
-              <span style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                background: '#FAF6F0',
-                padding: '6px 14px',
-                borderRadius: '100px',
-                fontSize: '11px',
-                letterSpacing: '1.5px',
-                fontWeight: 700,
-                color: '#986A3E',
-                textTransform: 'uppercase',
-                fontFamily: '"General Sans", sans-serif',
-                marginBottom: '14px'
-              }}>
-                ACADEMIC ADVISORY DESK
-              </span>
-
-              <h3 style={{ 
-                fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-                fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)',
-                color: '#633b2c',
-                fontWeight: 400,
-                margin: '0 0 12px 0'
-              }}>
-                Need Guidance on Programme Selection?
-              </h3>
-
-              <p style={{ 
-                fontFamily: '"General Sans", sans-serif',
-                fontSize: '15px',
-                color: '#8c776e',
-                margin: 0,
-                lineHeight: 1.65
-              }}>
-                Our academic advisors are on hand to clarify prerequisites, certification pathways, upcoming cohort dates, and clinical workstation availability in Abu Dhabi.
-              </p>
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <a
-                href={`${WA_BASE_URL}?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20guidance%20on%20choosing%20the%20right%20course.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: '#845E35',
-                  color: '#FFFFFF',
-                  padding: '13px 26px',
-                  borderRadius: '100px',
-                  fontSize: '13.5px',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  fontFamily: '"General Sans", sans-serif',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 4px 14px rgba(132, 94, 53, 0.2)'
-                }}
-                onMouseEnter={e => (e.currentTarget.style.background = '#6E4D2B')}
-                onMouseLeave={e => (e.currentTarget.style.background = '#845E35')}
-              >
-                <WhatsAppIcon />
-                <span>Consult on WhatsApp</span>
-              </a>
-
-              <a
-                href="tel:+971502348625"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: '#FAF6F0',
-                  color: '#633b2c',
-                  border: '1px solid rgba(197, 160, 89, 0.3)',
-                  padding: '13px 24px',
-                  borderRadius: '100px',
-                  fontSize: '13.5px',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  fontFamily: '"General Sans", sans-serif',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                <span>Call +971 50 234 8625</span>
-              </a>
-            </div>
-          </div>
         </div>
       </section>
+
+      {/* Book Your Visit Today — Embedded Interactive Booking Form & Campus Photo */}
+      <BookConsultation />
 
       <Footer />
 

@@ -4,7 +4,6 @@ import path from 'path';
 import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
-import HomeKickerBar from '@/components/HomeKickerBar';
 import BigStatement from '@/components/BigStatement';
 import HomeCoursesStrip from '@/components/HomeCoursesStrip';
 import FoundersSection from '@/components/FoundersSection';
@@ -53,35 +52,32 @@ export default function Home() {
       
       {/* Hero — 16 approved courses in orbital carousel with direct hash links & functional CTAs */}
       <Hero content={homepageContent.hero} />
-      
-      {/* 4-Pillar Kicker Bar matching Inspiration under Hero */}
-      <HomeKickerBar />
 
-      {/* About Novelle, Philosophy & Institutional Numbers matching Inspiration */}
+      {/* About the Academy / We deliver... + Numbers + Media Card (Image 2 Inspiration) */}
       <BigStatement content={homepageContent.bigStatement} />
 
-      {/* Featured Training Programmes matching Inspiration's treatments strip */}
+      {/* Discover Our Signature Aesthetic Tracks (Image 3 Inspiration) */}
       <HomeCoursesStrip />
 
-      {/* Clinical Leadership Behind Al Novelle — Dr. Azaiba Salim Kara & Dr. Seeta Yadav */}
+      {/* Clinical Leadership, One Academy — Specialists Switcher (Image 5 Inspiration) */}
       <FoundersSection />
 
       {/* Supervised Clinical Practice — Concise 1-line title & authentic workstation photography */}
       <VisionMission />
 
-      {/* What Our Learners Say — 4.9 rating and graduate practitioner feedback */}
+      {/* What Our Learners Say — 4.9 rating and graduate practitioner feedback (Image 4 Inspiration) */}
       <Testimonials />
 
       {/* Gallery Preview — Authentic Al Novelle interior photography */}
       <GalleryPreview />
 
-      {/* Academy Insights — 3-card grid matching Inspiration's notes section */}
+      {/* Academy Insights — 3-card grid matching Inspiration notes */}
       <BlogPreview />
 
       {/* FAQs — Questions, answered accordion */}
       <FAQs />
 
-      {/* Book Your Visit Today — Split luxury card with reception photo right above footer */}
+      {/* Book Your Visit Today — Embedded Interactive Booking Form & Campus Photo */}
       <BookConsultation />
 
       <Footer />

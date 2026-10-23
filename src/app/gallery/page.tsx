@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import React from 'react';
 import Navigation from '@/components/Navigation';
+import BookConsultation from '@/components/BookConsultation';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
@@ -175,6 +176,9 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
+
+      {/* Book Your Visit Today — Embedded Interactive Booking Form & Campus Photo */}
+      <BookConsultation />
 
       <Footer />
       <WhatsAppButton />
