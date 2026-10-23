@@ -278,57 +278,79 @@ export default function FoundersSection() {
 
         </div>
 
-        {/* REFINED COMPACT EXECUTIVE STATEMENT BAR */}
+        {/* EXECUTIVE LUXURY STATEMENT BAR WITH BACKGROUND IMAGE */}
         <div style={{ 
-          background: 'linear-gradient(135deg, #24160f 0%, #3a2217 100%)', 
-          borderRadius: '24px', 
-          padding: '36px 36px', 
+          position: 'relative',
+          borderRadius: '28px', 
+          overflow: 'hidden',
+          padding: '48px 36px', 
           textAlign: 'center',
-          border: '1px solid rgba(197, 160, 89, 0.35)',
-          boxShadow: '0 12px 36px rgba(30, 20, 15, 0.1)',
-          marginTop: '36px'
+          border: '1px solid rgba(197, 160, 89, 0.38)',
+          boxShadow: '0 20px 50px rgba(30, 20, 15, 0.12)',
+          marginTop: '40px'
         }}>
+          {/* Subtle Authentic Interior Photography Background */}
           <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '32px',
-            height: '32px',
-            borderRadius: '50%',
-            background: 'rgba(197, 160, 89, 0.16)',
-            border: '1px solid rgba(197, 160, 89, 0.3)',
-            marginBottom: '14px'
-          }}>
-            <img src="/logos/gold-logomark.png" alt="" style={{ width: '15px', height: '15px', objectFit: 'contain' }} />
-          </div>
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url("/academy-images/polished-al-novelle-training-centre-interior.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 0
+          }} />
+          {/* Warm Dark Luxury Bronze Gradient Overlay */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(135deg, rgba(28, 17, 11, 0.92) 0%, rgba(42, 24, 16, 0.94) 100%)',
+            backdropFilter: 'blur(2px)',
+            zIndex: 1
+          }} />
 
-          <p style={{ 
-            fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
-            fontSize: 'clamp(1rem, 1.6vw, 1.25rem)', 
-            color: '#FFFFFF', 
-            fontWeight: 400, 
-            lineHeight: 1.65, 
-            margin: '0 auto 14px auto', 
-            maxWidth: '680px',
-            fontStyle: 'italic',
-            opacity: 0.95
-          }}>
-            &ldquo;To make Novelle a trusted destination for advanced aesthetic education — where knowledge meets hands-on experience, safety meets innovation, and professionals gain the confidence to grow in their careers.&rdquo;
-          </p>
-
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
-            <span style={{ width: '32px', height: '1px', background: 'rgba(197, 160, 89, 0.4)' }}></span>
-            <span style={{ 
-              fontFamily: '"General Sans", sans-serif', 
-              fontSize: '11px', 
-              color: '#c5a059', 
-              fontWeight: 700, 
-              letterSpacing: '1.5px', 
-              textTransform: 'uppercase'
+          {/* Clean Editorial Content Over Background */}
+          <div style={{ position: 'relative', zIndex: 2 }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '36px',
+              height: '36px',
+              borderRadius: '50%',
+              background: 'rgba(197, 160, 89, 0.18)',
+              border: '1px solid rgba(197, 160, 89, 0.4)',
+              marginBottom: '16px'
             }}>
-              Elevating Skills · Empowering Futures
-            </span>
-            <span style={{ width: '32px', height: '1px', background: 'rgba(197, 160, 89, 0.4)' }}></span>
+              <img src="/logos/gold-logomark.png" alt="" style={{ width: '16px', height: '16px', objectFit: 'contain' }} />
+            </div>
+
+            <p style={{ 
+              fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
+              fontSize: 'clamp(1.05rem, 1.7vw, 1.3rem)', 
+              color: '#FFFFFF', 
+              fontWeight: 400, 
+              lineHeight: 1.68, 
+              margin: '0 auto 16px auto', 
+              maxWidth: '680px',
+              fontStyle: 'italic',
+              opacity: 0.96
+            }}>
+              &ldquo;To make Novelle a trusted destination for advanced aesthetic education — where knowledge meets hands-on experience, safety meets innovation, and professionals gain the confidence to grow in their careers.&rdquo;
+            </p>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px' }}>
+              <span style={{ width: '36px', height: '1px', background: 'rgba(197, 160, 89, 0.45)' }}></span>
+              <span style={{ 
+                fontFamily: '"General Sans", sans-serif', 
+                fontSize: '11px', 
+                color: '#c5a059', 
+                fontWeight: 700, 
+                letterSpacing: '1.6px', 
+                textTransform: 'uppercase'
+              }}>
+                Elevating Skills · Empowering Futures
+              </span>
+              <span style={{ width: '36px', height: '1px', background: 'rgba(197, 160, 89, 0.45)' }}></span>
+            </div>
           </div>
         </div>
 

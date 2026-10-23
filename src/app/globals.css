@@ -117,30 +117,34 @@ body.loaded main {
 
 .scroll-reveal {
   opacity: 0;
-  transform: translate3d(var(--reveal-x, 0), 42px, 0) scale(0.985);
-  filter: blur(8px);
-  will-change: opacity, transform, filter;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
-.scroll-reveal.reveal-from-left {
-  --reveal-x: -38px;
-}
-
+.scroll-reveal.reveal-from-left,
 .scroll-reveal.reveal-from-right {
-  --reveal-x: 38px;
+  transform: translateY(20px);
 }
 
 .scroll-reveal.is-visible {
-  animation: reveal-card-in 1.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: var(--reveal-delay, 0s);
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: var(--reveal-delay, 0s);
 }
 
-.reveal-delay-1 { --reveal-delay: 0.12s; }
-.reveal-delay-2 { --reveal-delay: 0.22s; }
-.reveal-delay-3 { --reveal-delay: 0.32s; }
-.reveal-delay-4 { --reveal-delay: 0.42s; }
-.reveal-delay-5 { --reveal-delay: 0.52s; }
-.reveal-delay-6 { --reveal-delay: 0.62s; }
+.reveal-delay-1 { --reveal-delay: 0.08s; }
+.reveal-delay-2 { --reveal-delay: 0.16s; }
+.reveal-delay-3 { --reveal-delay: 0.24s; }
+.reveal-delay-4 { --reveal-delay: 0.32s; }
+.reveal-delay-5 { --reveal-delay: 0.40s; }
+.reveal-delay-6 { --reveal-delay: 0.48s; }
+
+.luxury-pattern-bg {
+  background-color: #FAF8F5;
+  background-image: radial-gradient(rgba(197, 160, 89, 0.1) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

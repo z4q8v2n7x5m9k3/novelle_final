@@ -14,17 +14,6 @@ export default function ClientProviders({ children }: { children: React.ReactNod
       return;
     }
 
-    const revealElements = () => {
-      document.querySelectorAll<HTMLElement>('.scroll-reveal').forEach((element, index) => {
-        if (element.dataset.revealReady === 'true') return;
-        element.dataset.revealReady = 'true';
-        if (!element.classList.contains('reveal-from-left') && !element.classList.contains('reveal-from-right')) {
-          element.classList.add(index % 2 === 0 ? 'reveal-from-left' : 'reveal-from-right');
-        }
-      });
-    };
-
-    revealElements();
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -32,11 +21,10 @@ export default function ClientProviders({ children }: { children: React.ReactNod
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll<HTMLElement>('.scroll-reveal').forEach((element) => observer.observe(element));
     const mutation = new MutationObserver(() => {
-      revealElements();
       document.querySelectorAll<HTMLElement>('.scroll-reveal:not(.is-visible)').forEach((element) => observer.observe(element));
     });
     mutation.observe(document.body, { childList: true, subtree: true });

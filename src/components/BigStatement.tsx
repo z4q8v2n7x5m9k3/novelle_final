@@ -274,9 +274,9 @@ export default function BigStatement({ content }: { content?: any }) {
           <h2 style={{ 
             fontFamily: '"Hedvig Letters Serif", Georgia, serif',
             fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)', 
-            lineHeight: 1.36, 
+            lineHeight: 1.38, 
             color: '#4A3728',
-            marginBottom: '32px',
+            marginBottom: '40px',
             fontWeight: 400,
             letterSpacing: '-0.02em',
             opacity: inView ? 1 : 0,
@@ -286,70 +286,17 @@ export default function BigStatement({ content }: { content?: any }) {
             We combine scientific experience with advanced aesthetic <AestheticIcon /> education to build confident professionals in beauty therapy, laser technologies, and modern clinical <ClinicalIcon /> aesthetics.
           </h2>
 
-          {/* 3 Creative Editorial Badges */}
+          {/* Clean Focused Primary Action */}
           <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '12px',
-            flexWrap: 'wrap',
-            marginBottom: '38px',
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateY(0)' : 'translateY(24px)',
-            transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.18s'
-          }}>
-            {[
-              'Evidence-Based Skin Science',
-              'Supervised Practical Workstations',
-              'Benchmarked to CIBTAC & NCLC'
-            ].map((badge, idx) => (
-              <span 
-                key={idx}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: '#FFFFFF',
-                  padding: '7px 16px',
-                  borderRadius: '100px',
-                  border: '1px solid rgba(197, 160, 89, 0.28)',
-                  fontSize: '12.5px',
-                  color: '#633b2c',
-                  fontWeight: 600,
-                  fontFamily: '"General Sans", sans-serif',
-                  boxShadow: '0 2px 8px rgba(99, 59, 44, 0.03)'
-                }}
-              >
-                <span style={{ color: '#c5a059', fontSize: '10px' }}>✦</span>
-                {badge}
-              </span>
-            ))}
-          </div>
-
-          {/* Actions */}
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '20px',
-            flexWrap: 'wrap',
-            opacity: inView ? 1 : 0,
-            transform: inView ? 'translateY(0)' : 'translateY(24px)',
-            transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s'
+            transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s'
           }}>
             <Link href="/courses" className="btn-premium">
               <div className="btn-icon-wrapper">
                 <img src="/logos/gold-logomark.png" alt="" />
               </div>
               Explore Curriculum &amp; Courses
-            </Link>
-
-            <Link 
-              href="/about" 
-              className="editorial-link"
-              style={{ fontSize: '14px', fontWeight: 600 }}
-            >
-              Discover Our Story &amp; Standards <span>→</span>
             </Link>
           </div>
 
