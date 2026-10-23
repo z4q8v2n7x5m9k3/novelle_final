@@ -88,8 +88,8 @@ export default function BigStatement({ content }: { content?: any }) {
   }, []);
 
   // Parallax glide calculations
-  const transY1 = distanceFromCenter * 0.13;  // Left image
-  const transY2 = distanceFromCenter * 0.09;  // Right image
+  const transY1 = distanceFromCenter * 0.12;  // Left image
+  const transY2 = distanceFromCenter * 0.08;  // Right image
 
   return (
     <section 
@@ -101,9 +101,10 @@ export default function BigStatement({ content }: { content?: any }) {
         overflow: 'hidden', 
         padding: '160px 24px 140px 24px', 
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: '720px'
+        minHeight: '740px'
       }}
       id="academy-standards"
     >
@@ -113,9 +114,9 @@ export default function BigStatement({ content }: { content?: any }) {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: '800px',
-        height: '480px',
-        background: 'radial-gradient(ellipse at 50% 50%, rgba(197, 160, 89, 0.07) 0%, transparent 70%)',
+        width: '850px',
+        height: '520px',
+        background: 'radial-gradient(ellipse at 50% 50%, rgba(197, 160, 89, 0.08) 0%, transparent 68%)',
         pointerEvents: 'none',
         zIndex: 0
       }} />
@@ -133,10 +134,10 @@ export default function BigStatement({ content }: { content?: any }) {
       {/* Floating Image 1 (Left) — Parallax Slide-up on Scroll */}
       <div className="floating-img-left" style={{
         position: 'absolute',
-        left: '3%',
+        left: 'max(20px, calc(50% - 660px))',
         bottom: '36px',
-        width: '280px',
-        height: '380px',
+        width: '270px',
+        height: '370px',
         borderRadius: '32px',
         overflow: 'hidden',
         boxShadow: '0 24px 60px rgba(74, 55, 40, 0.11)',
@@ -187,10 +188,10 @@ export default function BigStatement({ content }: { content?: any }) {
       {/* Floating Image 2 (Right) — Parallax Slide-up on Scroll */}
       <div className="floating-img-right" style={{
         position: 'absolute',
-        right: '3%',
+        right: 'max(20px, calc(50% - 660px))',
         bottom: '48px',
-        width: '270px',
-        height: '350px',
+        width: '260px',
+        height: '345px',
         borderRadius: '32px',
         overflow: 'hidden',
         boxShadow: '0 24px 60px rgba(74, 55, 40, 0.11)',
@@ -240,7 +241,7 @@ export default function BigStatement({ content }: { content?: any }) {
 
       {/* Main Center Editorial Content */}
       <div className="container" ref={ref} style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: '1260px' }}>
-        <div style={{ maxWidth: '920px', margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
           
           {/* Top Pill Badge */}
           <div style={{ 
@@ -272,7 +273,7 @@ export default function BigStatement({ content }: { content?: any }) {
           {/* Grand Headline with Embedded Icons */}
           <h2 style={{ 
             fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-            fontSize: 'clamp(1.55rem, 2.6vw, 2.3rem)', 
+            fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)', 
             lineHeight: 1.36, 
             color: '#4A3728',
             marginBottom: '32px',
@@ -354,6 +355,38 @@ export default function BigStatement({ content }: { content?: any }) {
 
         </div>
       </div>
+
+      {/* Responsive Inline Image Row for Tablets / Smaller Laptops (< 960px) so images never disappear */}
+      <div className="big-statement-mobile-images" style={{ display: 'none', marginTop: '48px', width: '100%', maxWidth: '720px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+          <div style={{
+            borderRadius: '20px',
+            overflow: 'hidden',
+            height: '240px',
+            border: '1px solid rgba(197, 160, 89, 0.35)',
+            boxShadow: '0 12px 30px rgba(74, 55, 40, 0.08)'
+          }}>
+            <img 
+              src={content?.image1 || "/academy-images/training-consultation.png"} 
+              alt="Practical Workstations" 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            />
+          </div>
+          <div style={{
+            borderRadius: '20px',
+            overflow: 'hidden',
+            height: '240px',
+            border: '1px solid rgba(197, 160, 89, 0.35)',
+            boxShadow: '0 12px 30px rgba(74, 55, 40, 0.08)'
+          }}>
+            <img 
+              src={content?.image2 || "/academy-images/laser-device-training.png"} 
+              alt="Laser Device Suite" 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            />
+          </div>
+        </div>
+      </div>
       
       {/* Decorative luxury hairline background details */}
       <div style={{
@@ -366,14 +399,29 @@ export default function BigStatement({ content }: { content?: any }) {
       }} />
 
       <style dangerouslySetInnerHTML={{__html: `
-        @media (max-width: 1200px) {
+        @media (max-width: 960px) {
           .floating-img-left, 
           .floating-img-right {
             display: none !important;
           }
+          .big-statement-mobile-images {
+            display: block !important;
+          }
           .big-statement-section {
-            padding: 100px 24px !important;
+            padding: 96px 20px 80px 20px !important;
             min-height: auto !important;
+          }
+        }
+        @media (min-width: 961px) and (max-width: 1200px) {
+          .floating-img-left {
+            width: 210px !important;
+            height: 290px !important;
+            left: 14px !important;
+          }
+          .floating-img-right {
+            width: 200px !important;
+            height: 275px !important;
+            right: 14px !important;
           }
         }
       `}} />

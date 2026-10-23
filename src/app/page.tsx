@@ -5,8 +5,8 @@ import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import BigStatement from '@/components/BigStatement';
-import HomeCoursesStrip from '@/components/HomeCoursesStrip';
 import HomeAboutPreview from '@/components/HomeAboutPreview';
+import HomeCoursesStrip from '@/components/HomeCoursesStrip';
 import FoundersSection from '@/components/FoundersSection';
 import VisionMission from '@/components/VisionMission';
 import GalleryPreview from '@/components/GalleryPreview';
@@ -51,37 +51,37 @@ export default function Home() {
     <main>
       <Navigation />
       
-      {/* 1. Hero — 16 approved courses in orbital carousel with direct hash links */}
+      {/* Hero — 16 approved courses in orbital carousel with direct hash links & functional CTAs */}
       <Hero content={homepageContent.hero} />
       
-      {/* 2. Big Statement — Grand, commanding editorial serif statement with creative highlights */}
+      {/* Big Statement — editorial serif statement with aesthetic icons */}
       <BigStatement content={homepageContent.bigStatement} />
 
-      {/* 3. Featured Courses Strip — Placed UP FIRST per user request */}
+      {/* Featured Courses Strip — flagship courses immediately visible after intro */}
       <HomeCoursesStrip />
 
-      {/* 4. Why We Started Al Novelle — Clean, reduced text with 3 institutional badges */}
+      {/* Why We Started Novelle — concise, badge-driven, clean editorial layout */}
       <HomeAboutPreview />
       
-      {/* 5. Founders Section — Dr. Azaiba & Dr. Seeta + Background Image Executive Quote Banner */}
+      {/* Completely Redesigned Luxury Founders Section — Dr. Azaiba Salim Kara & Dr. Seeta Yadav */}
       <FoundersSection />
 
-      {/* 6. Vision & Mission — Authentic 2-column layout with student support card */}
+      {/* Vision & Mission — Authentic 2-column layout with student support card */}
       <VisionMission />
 
-      {/* 7. UAE Identity — Born in Abu Dhabi, Built for Real Practice */}
+      {/* UAE Identity — Born in Abu Dhabi, Built for Real Practice */}
       <UAEIdentity />
 
-      {/* 8. Gallery Preview — A Glimpse Inside Al Novelle (Authentic interior photography) */}
+      {/* Gallery Preview — Authentic Al Novelle interior photography */}
       <GalleryPreview />
 
-      {/* 9. Academy Insights — Blog preview */}
+      {/* Academy Insights — Retained blog preview */}
       <BlogPreview />
 
-      {/* 10. FAQs — Verified contact & academy details */}
+      {/* FAQs — Accurate location and verified contact details */}
       <FAQs />
 
-      {/* 11. Contact & Enquiry Form */}
+      {/* Contact & Enquiry Form — hello@novelle.ae and approved course list */}
       <BookConsultation />
 
       <Footer />

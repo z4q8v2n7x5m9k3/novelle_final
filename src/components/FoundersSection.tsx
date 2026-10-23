@@ -7,7 +7,7 @@ export default function FoundersSection() {
     <section style={{ background: '#FAF6F0', padding: '100px 24px', position: 'relative' }} id="founders">
       <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
-        {/* Header - Strictly Left Aligned */}
+        {/* Header - Left Aligned */}
         <div style={{ textAlign: 'left', marginBottom: '48px', maxWidth: '820px' }}>
           <span style={{
             display: 'inline-flex',
@@ -278,141 +278,57 @@ export default function FoundersSection() {
 
         </div>
 
-        {/* ULTRA-PREMIUM ARCHITECTURAL STATEMENT BANNER WITH BACKGROUND IMAGE */}
+        {/* REFINED COMPACT EXECUTIVE STATEMENT BAR */}
         <div style={{ 
-          position: 'relative',
-          borderRadius: '28px', 
-          overflow: 'hidden',
-          marginTop: '40px',
-          border: '1px solid rgba(197, 160, 89, 0.4)',
-          boxShadow: '0 24px 60px rgba(30, 20, 15, 0.16)',
-          textAlign: 'left'
+          background: 'linear-gradient(135deg, #24160f 0%, #3a2217 100%)', 
+          borderRadius: '24px', 
+          padding: '36px 36px', 
+          textAlign: 'center',
+          border: '1px solid rgba(197, 160, 89, 0.35)',
+          boxShadow: '0 12px 36px rgba(30, 20, 15, 0.1)',
+          marginTop: '36px'
         }}>
-          {/* Authentic Academy Background Image */}
-          <img 
-            src="/academy-images/refined-al-novelle-training-centre-interior-1.png" 
-            alt="Al Novelle Academy Interior" 
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center 40%'
-            }}
-          />
-
-          {/* Deep Luxury Gradient Overlay */}
           <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(135deg, rgba(29, 17, 11, 0.94) 0%, rgba(45, 26, 17, 0.88) 55%, rgba(20, 12, 8, 0.96) 100%)',
-            backdropFilter: 'blur(3px)',
-            WebkitBackdropFilter: 'blur(3px)'
-          }} />
-
-          {/* Content Over Background — Left Aligned */}
-          <div style={{
-            position: 'relative',
-            zIndex: 2,
-            padding: '48px 44px'
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '32px',
+            height: '32px',
+            borderRadius: '50%',
+            background: 'rgba(197, 160, 89, 0.16)',
+            border: '1px solid rgba(197, 160, 89, 0.3)',
+            marginBottom: '14px'
           }}>
-            
-            {/* Top Pill Badge */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '30px',
-                height: '30px',
-                borderRadius: '50%',
-                background: 'rgba(197, 160, 89, 0.22)',
-                border: '1px solid rgba(197, 160, 89, 0.4)',
-                flexShrink: 0
-              }}>
-                <img src="/logos/gold-logomark.png" alt="" style={{ width: '14px', height: '14px', objectFit: 'contain' }} />
-              </div>
-              <span style={{ 
-                fontFamily: '"General Sans", sans-serif', 
-                fontSize: '11px', 
-                color: '#c5a059', 
-                fontWeight: 700, 
-                letterSpacing: '1.8px', 
-                textTransform: 'uppercase'
-              }}>
-                WHY OUR FOUNDERS STARTED NOVELLE · CLINICAL EXCELLENCE
-              </span>
-            </div>
+            <img src="/logos/gold-logomark.png" alt="" style={{ width: '15px', height: '15px', objectFit: 'contain' }} />
+          </div>
 
-            {/* Quote Heading */}
-            <h3 style={{ 
-              fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
-              fontSize: 'clamp(1.1rem, 1.85vw, 1.45rem)', 
-              color: '#FFFFFF', 
-              fontWeight: 400, 
-              lineHeight: 1.55, 
-              margin: '0 0 16px 0', 
-              maxWidth: '860px',
-              letterSpacing: '-0.01em',
-              fontStyle: 'italic'
+          <p style={{ 
+            fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
+            fontSize: 'clamp(1rem, 1.6vw, 1.25rem)', 
+            color: '#FFFFFF', 
+            fontWeight: 400, 
+            lineHeight: 1.65, 
+            margin: '0 auto 14px auto', 
+            maxWidth: '680px',
+            fontStyle: 'italic',
+            opacity: 0.95
+          }}>
+            &ldquo;To make Novelle a trusted destination for advanced aesthetic education — where knowledge meets hands-on experience, safety meets innovation, and professionals gain the confidence to grow in their careers.&rdquo;
+          </p>
+
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
+            <span style={{ width: '32px', height: '1px', background: 'rgba(197, 160, 89, 0.4)' }}></span>
+            <span style={{ 
+              fontFamily: '"General Sans", sans-serif', 
+              fontSize: '11px', 
+              color: '#c5a059', 
+              fontWeight: 700, 
+              letterSpacing: '1.5px', 
+              textTransform: 'uppercase'
             }}>
-              &ldquo;To make Novelle a trusted destination for advanced aesthetic education — where knowledge meets hands-on experience, safety meets innovation, and professionals gain the confidence to grow in their careers.&rdquo;
-            </h3>
-
-            {/* Author Credential & Tagline */}
-            <div style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '12px',
-              marginBottom: '20px'
-            }}>
-              <span style={{ width: '28px', height: '1px', background: 'rgba(197, 160, 89, 0.5)' }}></span>
-              <p style={{
-                fontFamily: '"General Sans", sans-serif',
-                fontSize: '13px',
-                color: '#c5a059',
-                fontWeight: 700,
-                letterSpacing: '1.5px',
-                textTransform: 'uppercase',
-                margin: 0
-              }}>
-                Elevating Skills · Empowering Futures
-              </p>
-            </div>
-
-            {/* 3 Micro Feature Badges */}
-            <div style={{
-              display: 'flex',
-              gap: '10px',
-              flexWrap: 'wrap',
-              borderTop: '1px solid rgba(197, 160, 89, 0.25)',
-              paddingTop: '20px'
-            }}>
-              {[
-                '100% Practical Demonstration',
-                'Real Clinical Safety Protocols',
-                'Evidence-Based Skin Science'
-              ].map((badge, idx) => (
-                <span 
-                  key={idx}
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.08)',
-                    border: '1px solid rgba(197, 160, 89, 0.3)',
-                    color: '#FAF6F0',
-                    fontSize: '11px',
-                    fontWeight: 600,
-                    padding: '5px 14px',
-                    borderRadius: '100px',
-                    fontFamily: '"General Sans", sans-serif',
-                    letterSpacing: '0.4px'
-                  }}
-                >
-                  ✓ {badge}
-                </span>
-              ))}
-            </div>
-
+              Elevating Skills · Empowering Futures
+            </span>
+            <span style={{ width: '32px', height: '1px', background: 'rgba(197, 160, 89, 0.4)' }}></span>
           </div>
         </div>
 
@@ -423,11 +339,6 @@ export default function FoundersSection() {
           transform: translateY(-4px);
           box-shadow: 0 20px 48px rgba(99, 59, 44, 0.08) !important;
           border-color: rgba(197, 160, 89, 0.55) !important;
-        }
-        @media (max-width: 768px) {
-          #founders .container > div:last-child {
-            padding: 32px 24px !important;
-          }
         }
       `}} />
     </section>
