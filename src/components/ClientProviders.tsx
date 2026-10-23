@@ -21,11 +21,24 @@ export default function ClientProviders({ children }: { children: React.ReactNod
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll<HTMLElement>('.scroll-reveal').forEach((element) => observer.observe(element));
+    // Observe both explicit .scroll-reveal elements and full section blocks
+    const elementsToObserve = document.querySelectorAll<HTMLElement>('.scroll-reveal, section');
+    elementsToObserve.forEach((el) => {
+      if (!el.classList.contains('scroll-reveal')) {
+        el.classList.add('scroll-reveal');
+      }
+      observer.observe(el);
+    });
+
     const mutation = new MutationObserver(() => {
-      document.querySelectorAll<HTMLElement>('.scroll-reveal:not(.is-visible)').forEach((element) => observer.observe(element));
+      document.querySelectorAll<HTMLElement>('.scroll-reveal:not(.is-visible), section:not(.is-visible)').forEach((el) => {
+        if (!el.classList.contains('scroll-reveal')) {
+          el.classList.add('scroll-reveal');
+        }
+        observer.observe(el);
+      });
     });
     mutation.observe(document.body, { childList: true, subtree: true });
 

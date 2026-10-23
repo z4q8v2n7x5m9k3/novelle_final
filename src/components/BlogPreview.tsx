@@ -65,9 +65,10 @@ export default function BlogPreview() {
 
   return (
     <section 
+      className="scroll-reveal"
       style={{ 
         background: '#FAF8F5', 
-        padding: '96px 24px',
+        padding: '110px 24px',
         position: 'relative',
         overflow: 'hidden'
       }} 
@@ -75,7 +76,29 @@ export default function BlogPreview() {
     >
       <div style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
-        {/* Header matching Reference "Notes on keeping your smile healthy" */}
+        {/* Unified Eyebrow Badge */}
+        <div style={{ textAlign: 'left', marginBottom: '18px' }}>
+          <span style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            background: '#FFFFFF',
+            padding: '7px 16px',
+            borderRadius: '100px',
+            fontSize: '11px',
+            letterSpacing: '2px',
+            fontWeight: 700,
+            color: '#633b2c',
+            textTransform: 'uppercase',
+            fontFamily: '"General Sans", sans-serif',
+            border: '1px solid rgba(197, 160, 89, 0.35)',
+            boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
+          }}>
+            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
+            ACADEMY INSIGHTS
+          </span>
+        </div>
+
+        {/* Header Block */}
         <div style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -86,29 +109,9 @@ export default function BlogPreview() {
           textAlign: 'left'
         }}>
           <div>
-            <span style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              background: '#FFFFFF',
-              padding: '7px 16px',
-              borderRadius: '100px',
-              fontSize: '11px',
-              letterSpacing: '2px',
-              fontWeight: 700,
-              color: '#633b2c',
-              textTransform: 'uppercase',
-              fontFamily: '"General Sans", sans-serif',
-              marginBottom: '16px',
-              border: '1px solid rgba(197, 160, 89, 0.35)',
-              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
-            }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-              ACADEMY INSIGHTS
-            </span>
-
             <h2 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2rem, 3.4vw, 2.9rem)',
+              fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.2,
@@ -120,11 +123,11 @@ export default function BlogPreview() {
 
             <p style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '15.5px',
-              color: '#8c776e',
+              fontSize: '15px',
+              color: '#7a6b63',
               lineHeight: 1.65,
               margin: 0,
-              fontWeight: 500
+              fontWeight: 450
             }}>
               Guidance on skin science, laser safety standards, and aesthetic careers in Abu Dhabi.
             </p>
@@ -134,7 +137,7 @@ export default function BlogPreview() {
             <Link 
               href="/blog"
               style={{
-                fontSize: '14px',
+                fontSize: '13.5px',
                 fontFamily: '"General Sans", sans-serif',
                 fontWeight: 600,
                 color: '#845E35',
@@ -144,12 +147,12 @@ export default function BlogPreview() {
                 gap: '6px'
               }}
             >
-              Learn more <span>→</span>
+              Learn more <span>&gt;</span>
             </Link>
           </div>
         </div>
 
-        {/* 3-Card Grid matching Reference */}
+        {/* 3-Card Grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
@@ -219,7 +222,7 @@ export default function BlogPreview() {
 
                 <h3 style={{
                   fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-                  fontSize: '19px',
+                  fontSize: '18px',
                   color: '#633b2c',
                   fontWeight: 400,
                   lineHeight: 1.35,
@@ -251,7 +254,7 @@ export default function BlogPreview() {
                   fontWeight: 600,
                   marginTop: 'auto'
                 }}>
-                  Read note <span>→</span>
+                  Read note <span>&gt;</span>
                 </div>
               </div>
             </Link>

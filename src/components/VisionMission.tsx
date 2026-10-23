@@ -7,66 +7,67 @@ const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20wo
 export default function VisionMission() {
   return (
     <section 
-      className="section-padding vision-mission-section" 
+      className="scroll-reveal"
       style={{ 
         background: '#FAF8F5', 
-        padding: '96px 24px',
+        padding: '110px 24px',
         position: 'relative',
         overflow: 'hidden'
       }} 
       id="clinical-training"
     >
-      <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
+      <div style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
+        
+        {/* Unified Eyebrow Badge */}
+        <div style={{ textAlign: 'left', marginBottom: '18px' }}>
+          <span style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            background: '#FFFFFF',
+            padding: '7px 16px',
+            borderRadius: '100px',
+            fontSize: '11px',
+            letterSpacing: '2px',
+            fontWeight: 700,
+            color: '#633b2c',
+            textTransform: 'uppercase',
+            fontFamily: '"General Sans", sans-serif',
+            border: '1px solid rgba(197, 160, 89, 0.35)',
+            boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
+          }}>
+            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
+            PRACTICAL WORKSTATIONS
+          </span>
+        </div>
+
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', 
           gap: '56px', 
           alignItems: 'center' 
         }}>
-          {/* Left Column: Text & Features (Strictly Left Aligned) */}
+          {/* Left Column: Text & Features */}
           <div style={{ textAlign: 'left' }}>
-            <span style={{ 
-              display: 'inline-flex',
-              alignItems: 'center',
-              background: '#FFFFFF', 
-              padding: '7px 16px', 
-              borderRadius: '100px',
-              fontSize: '11px', 
-              letterSpacing: '2px',
-              fontWeight: 700,
-              color: '#633b2c',
-              textTransform: 'uppercase',
-              fontFamily: '"General Sans", sans-serif',
-              marginBottom: '16px',
-              border: '1px solid rgba(197, 160, 89, 0.35)',
-              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
-            }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-              PRACTICAL CLINICAL TRAINING
-            </span>
-
-            {/* Concise Title on a Single Line on Desktop */}
             <h2 className="supervised-single-line-title" style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(1.85rem, 2.7vw, 2.45rem)',
+              fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.25,
               marginBottom: '18px',
               marginTop: 0,
-              letterSpacing: '-0.02em',
-              whiteSpace: 'normal'
+              letterSpacing: '-0.02em'
             }}>
               Supervised Clinical Practice
             </h2>
 
             <p style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '15.5px',
-              color: '#8c776e',
-              lineHeight: 1.75,
+              fontSize: '15px',
+              color: '#7a6b63',
+              lineHeight: 1.7,
               marginBottom: '28px',
-              fontWeight: 500
+              fontWeight: 450
             }}>
               At Al Novelle, skin science translates directly into real clinical capability. Every learner trains on professional workstations with guided consultation protocols, hygiene disciplines, and supervised demonstration models in Abu Dhabi.
             </p>
@@ -111,25 +112,38 @@ export default function VisionMission() {
               ))}
             </div>
 
-            {/* Action CTA */}
+            {/* Action CTAs */}
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
               <a 
                 href={WA_URL} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="btn-premium"
-                style={{ display: 'inline-flex' }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: '#1D130C',
+                  color: '#FFFFFF',
+                  padding: '12px 24px',
+                  borderRadius: '100px',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  fontFamily: '"General Sans", sans-serif',
+                  boxShadow: '0 4px 14px rgba(29, 19, 12, 0.18)',
+                  transition: 'background 0.3s ease'
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = '#845E35')}
+                onMouseLeave={e => (e.currentTarget.style.background = '#1D130C')}
               >
-                <div className="btn-icon-wrapper">
-                  <img src="/logos/gold-logomark.png" alt="" />
-                </div>
-                Enquire About Training Suites
+                <span>Enquire About Training Suites</span>
+                <span>&gt;</span>
               </a>
 
               <Link 
                 href="/gallery" 
                 style={{
-                  fontSize: '14px',
+                  fontSize: '13.5px',
                   fontFamily: '"General Sans", sans-serif',
                   fontWeight: 600,
                   color: '#845E35',
@@ -139,12 +153,12 @@ export default function VisionMission() {
                   gap: '6px'
                 }}
               >
-                View Academy Spaces <span>→</span>
+                View Academy Spaces <span>&gt;</span>
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Authentic Workstation Photography with Stats Overlay */}
+          {/* Right Column: Workstation Photography with Stats Overlay */}
           <div style={{ position: 'relative' }}>
             <div style={{
               borderRadius: '28px',
@@ -167,10 +181,10 @@ export default function VisionMission() {
               <div style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(to top, rgba(29, 19, 12, 0.7) 0%, transparent 60%)'
+                background: 'linear-gradient(to top, rgba(29, 19, 12, 0.72) 0%, transparent 60%)'
               }} />
 
-              {/* Floating Bottom Card matching Inspiration "Inside the studio" */}
+              {/* Floating Bottom Card */}
               <div style={{
                 position: 'absolute',
                 bottom: '18px',
@@ -178,6 +192,7 @@ export default function VisionMission() {
                 right: '18px',
                 background: 'rgba(255, 255, 255, 0.95)',
                 backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
                 borderRadius: '18px',
                 padding: '16px 20px',
                 border: '1px solid rgba(197, 160, 89, 0.32)',

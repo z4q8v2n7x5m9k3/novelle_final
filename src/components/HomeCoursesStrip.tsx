@@ -30,7 +30,7 @@ const tracks: CourseTrack[] = [
     badge: 'Clinical Science · Abu Dhabi',
     title: 'Chemical Peels & Barrier Repair',
     meta: 'Dermatological Protocols',
-    image: '/about/laser-and-skin-training.png'
+    image: '/academy-images/academy-approach-session.png'
   },
   {
     id: 'beauty-therapy',
@@ -58,9 +58,10 @@ export default function HomeCoursesStrip() {
 
   return (
     <section 
+      className="scroll-reveal"
       style={{ 
         background: '#FAF8F5', 
-        padding: '96px 24px 100px 24px', 
+        padding: '110px 24px', 
         position: 'relative',
         overflow: 'hidden'
       }} 
@@ -68,7 +69,29 @@ export default function HomeCoursesStrip() {
     >
       <div style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
-        {/* Header Block (Exact Image 3) */}
+        {/* Unified Starting Eyebrow Badge */}
+        <div style={{ textAlign: 'left', marginBottom: '20px' }}>
+          <span style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            background: '#FFFFFF',
+            padding: '7px 16px',
+            borderRadius: '100px',
+            fontSize: '11px',
+            letterSpacing: '2px',
+            fontWeight: 700,
+            color: '#633b2c',
+            textTransform: 'uppercase',
+            fontFamily: '"General Sans", sans-serif',
+            border: '1px solid rgba(197, 160, 89, 0.35)',
+            boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
+          }}>
+            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
+            CURRICULUM TRACKS
+          </span>
+        </div>
+
+        {/* Header Block */}
         <div style={{ 
           display: 'grid',
           gridTemplateColumns: '1.2fr 1fr',
@@ -78,19 +101,9 @@ export default function HomeCoursesStrip() {
           textAlign: 'left'
         }} className="tracks-header-grid">
           <div>
-            <span style={{
-              display: 'block',
-              fontFamily: '"General Sans", sans-serif',
-              fontSize: '13px',
-              color: '#8c776e',
-              fontWeight: 500,
-              marginBottom: '8px'
-            }}>
-              Programmes /
-            </span>
             <h2 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2.1rem, 3.4vw, 2.9rem)',
+              fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.2,
@@ -115,7 +128,7 @@ export default function HomeCoursesStrip() {
           </div>
         </div>
 
-        {/* Content Row: Sidebar on Left, Horizontal Cards Track on Right (Exact Image 3) */}
+        {/* Content Row: Sidebar on Left, Horizontal Cards Track on Right */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'minmax(200px, 260px) 1fr',
@@ -124,21 +137,30 @@ export default function HomeCoursesStrip() {
           textAlign: 'left'
         }} className="tracks-body-grid">
           
-          {/* Left Sidebar: Social Proof & Nav Buttons (Exact Image 3) */}
+          {/* Left Sidebar: Social Proof with Verified Images & Nav Buttons */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <div style={{ display: 'flex' }}>
-                {['/about/professional-learning-session.jpeg', '/about/laser-and-skin-training.png', '/academy-images/training-consultation.png'].map((img, i) => (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{ display: 'flex', position: 'relative' }}>
+                {[
+                  '/about/professional-learning-session.jpeg',
+                  '/founders/dr-seeta-yadav.jpeg',
+                  '/academy-images/training-consultation.png'
+                ].map((img, i) => (
                   <div key={i} style={{
-                    width: '32px',
-                    height: '32px',
+                    width: '36px',
+                    height: '36px',
                     borderRadius: '50%',
                     overflow: 'hidden',
                     border: '2px solid #FAF8F5',
                     marginLeft: i > 0 ? '-10px' : 0,
-                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+                    background: '#F5EFE6'
                   }}>
-                    <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img 
+                      src={img} 
+                      alt="Al Novelle Learner" 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                    />
                   </div>
                 ))}
               </div>
@@ -162,7 +184,7 @@ export default function HomeCoursesStrip() {
               Practitioners describe their training as rigorous and clearly explained. Explore what we teach most often.
             </p>
 
-            {/* Nav Arrows (Exact Image 3) */}
+            {/* Nav Arrows */}
             <div style={{ display: 'flex', gap: '10px', marginTop: '6px' }}>
               <button 
                 onClick={scrollLeft}
@@ -172,7 +194,7 @@ export default function HomeCoursesStrip() {
                   height: '42px',
                   borderRadius: '50%',
                   border: '1px solid rgba(197, 160, 89, 0.35)',
-                  background: 'rgba(255, 255, 255, 0.8)',
+                  background: 'rgba(255, 255, 255, 0.9)',
                   color: '#633b2c',
                   display: 'flex',
                   alignItems: 'center',
@@ -186,7 +208,7 @@ export default function HomeCoursesStrip() {
                   e.currentTarget.style.color = '#FFFFFF';
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.8)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.9)';
                   e.currentTarget.style.color = '#633b2c';
                 }}
               >
@@ -218,7 +240,7 @@ export default function HomeCoursesStrip() {
             </div>
           </div>
 
-          {/* Right Cards Track (Exact Image 3) */}
+          {/* Right Cards Track */}
           <div 
             ref={scrollContainerRef}
             style={{
@@ -270,7 +292,7 @@ export default function HomeCoursesStrip() {
                 <div style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(to top, rgba(20, 12, 8, 0.85) 0%, rgba(20, 12, 8, 0.2) 55%, transparent 100%)',
+                  background: 'linear-gradient(to top, rgba(20, 12, 8, 0.88) 0%, rgba(20, 12, 8, 0.25) 55%, transparent 100%)',
                   zIndex: 1
                 }} />
 
@@ -280,7 +302,7 @@ export default function HomeCoursesStrip() {
                   top: '16px',
                   left: '16px',
                   zIndex: 2,
-                  background: 'rgba(255, 255, 255, 0.92)',
+                  background: 'rgba(255, 255, 255, 0.94)',
                   backdropFilter: 'blur(8px)',
                   padding: '4px 10px',
                   borderRadius: '100px',
@@ -298,7 +320,7 @@ export default function HomeCoursesStrip() {
                   </span>
                 </div>
 
-                {/* Bottom Content with ↗ Button (Exact Image 3) */}
+                {/* Bottom Content with ↗ Button */}
                 <div style={{
                   position: 'relative',
                   zIndex: 2,
@@ -329,7 +351,6 @@ export default function HomeCoursesStrip() {
                     </h3>
                   </div>
 
-                  {/* Round ↗ Action Button (Exact Image 3) */}
                   <div style={{
                     width: '36px',
                     height: '36px',

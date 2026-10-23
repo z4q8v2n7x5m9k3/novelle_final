@@ -35,10 +35,10 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
   return (
     <section 
       ref={ref}
-      className="gallery-preview-section" 
+      className="gallery-preview-section scroll-reveal" 
       style={{ 
         background: '#FAF8F5', 
-        padding: hideHeader ? '20px 24px 100px 24px' : '100px 24px', 
+        padding: hideHeader ? '20px 24px 100px 24px' : '110px 24px', 
         color: '#4A3728',
         position: 'relative',
         overflow: 'hidden'
@@ -48,7 +48,7 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
         
         {/* Header Block (Only visible if hideHeader is false) - Left Aligned */}
         {!hideHeader && (
-          <div className="scroll-reveal reveal-from-left" style={{ 
+          <div style={{ 
             textAlign: 'left', 
             marginBottom: '48px',
             maxWidth: '780px'
@@ -70,12 +70,12 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
               boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
             }}>
               <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-              THE VISUAL SUITE
+              VISUAL ACADEMY SUITE
             </span>
             
             <h2 className="gallery-title" style={{ 
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2rem, 3.4vw, 2.9rem)',
+              fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.2,

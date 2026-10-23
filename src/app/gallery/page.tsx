@@ -69,8 +69,8 @@ export default function GalleryPage() {
       {/* Inner Page Hero - Left Aligned, Faded Interior Background, Unified 1260px */}
       <section style={{ 
         position: 'relative',
-        paddingTop: '160px', 
-        paddingBottom: '80px',
+        paddingTop: '140px', 
+        paddingBottom: '60px',
         background: 'linear-gradient(180deg, rgba(250, 248, 245, 0.88) 0%, rgba(250, 248, 245, 0.98) 100%), url("/academy-images/polished-al-novelle-training-centre-interior.png") center/cover no-repeat',
         borderBottom: '1px solid rgba(197, 160, 89, 0.2)' 
       }}>
@@ -98,11 +98,11 @@ export default function GalleryPage() {
 
             <h1 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2.1rem, 3.5vw, 3rem)',
+              fontSize: 'clamp(1.9rem, 3.1vw, 2.65rem)',
               color: '#633b2c',
               fontWeight: 400,
+              lineHeight: 1.2,
               margin: '0 0 16px 0',
-              lineHeight: 1.18,
               letterSpacing: '-0.02em'
             }}>
               Inside Al Novelle Academy

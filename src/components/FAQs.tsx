@@ -37,7 +37,7 @@ export default function FAQs() {
   };
 
   return (
-    <section className="faq-section" style={{ background: '#FAF6F0', padding: '100px 24px 110px 24px', overflow: 'hidden' }}>
+    <section className="faq-section scroll-reveal" style={{ background: '#FAF6F0', padding: '110px 24px', overflow: 'hidden' }} id="faqs">
       <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
         {/* Main 2-Column Responsive Layout */}
@@ -49,41 +49,51 @@ export default function FAQs() {
         }}>
           
           {/* LEFT SIDE: Header & Image Card */}
-          <div className="faq-left-col" style={{ display: 'flex', flexDirection: 'column', gap: '36px' }}>
+          <div className="faq-left-col" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             
             {/* Header */}
             <div>
-              <div className="scroll-reveal reveal-from-left" style={{ marginBottom: '16px' }}>
+              <div style={{ marginBottom: '16px' }}>
                 <span style={{ 
                   display: 'inline-flex',
                   alignItems: 'center',
                   background: '#FFFFFF', 
-                  padding: '8px 16px', 
+                  padding: '7px 16px', 
                   borderRadius: '100px',
                   fontSize: '11px', 
                   letterSpacing: '2px',
-                  fontWeight: 600,
+                  fontWeight: 700,
                   color: '#633b2c',
                   textTransform: 'uppercase',
                   fontFamily: '"General Sans", sans-serif',
-                  marginBottom: '20px',
-                  border: '1px solid rgba(197, 160, 89, 0.3)',
-                  boxShadow: '0 4px 12px rgba(99, 59, 44, 0.04)'
+                  marginBottom: '18px',
+                  border: '1px solid rgba(197, 160, 89, 0.35)',
+                  boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
                 }}>
                   <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-                  FREQUENT QUESTIONS
+                  FREQUENTLY ASKED QUESTIONS
                 </span>
               </div>
-              <h2 className="scroll-reveal reveal-from-left reveal-delay-1" style={{ 
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: 'clamp(2.2rem, 3.5vw, 3rem)', 
-                color: '#4A3728', 
+              <h2 style={{ 
+                fontFamily: '"Hedvig Letters Serif", Georgia, serif',
+                fontSize: 'clamp(2rem, 3.2vw, 2.75rem)', 
+                color: '#633b2c', 
                 fontWeight: 400,
-                margin: 0,
-                lineHeight: 1.2
+                margin: '0 0 12px 0',
+                lineHeight: 1.2,
+                letterSpacing: '-0.02em'
               }}>
-                Frequently asked questions
+                Questions, answered
               </h2>
+              <p style={{
+                fontFamily: '"General Sans", sans-serif',
+                fontSize: '15px',
+                color: '#7a6b63',
+                lineHeight: 1.65,
+                margin: 0
+              }}>
+                Find clear answers on admissions, clinical workstation practice, qualifications, and UAE study schedules.
+              </p>
             </div>
 
             {/* "Still Have Questions?" Image Card */}

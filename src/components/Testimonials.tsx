@@ -25,7 +25,7 @@ const reviews: Review[] = [
     quote: "Novelle gave me clinical structure, manual confidence, and authentic practical exposure. Training in an equipped clinic environment with live demonstration models completely changes how prepared you feel for UAE clinic accreditation.",
     author: "Aisha Al Mansoori",
     role: "Advanced Beauty Therapy Graduate · 2025",
-    avatar: "/about/laser-and-skin-training.png"
+    avatar: "/founders/dr-seeta-yadav.jpeg"
   },
   {
     id: '3',
@@ -55,9 +55,10 @@ export default function Testimonials() {
 
   return (
     <section 
+      className="scroll-reveal"
       style={{ 
         background: '#FAF8F5', 
-        padding: '96px 24px 100px 24px', 
+        padding: '110px 24px', 
         position: 'relative',
         overflow: 'hidden' 
       }} 
@@ -65,7 +66,29 @@ export default function Testimonials() {
     >
       <div style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
-        {/* Split Grid (Exact Image 4) */}
+        {/* Unified Eyebrow Badge */}
+        <div style={{ textAlign: 'left', marginBottom: '18px' }}>
+          <span style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            background: '#FFFFFF',
+            padding: '7px 16px',
+            borderRadius: '100px',
+            fontSize: '11px',
+            letterSpacing: '2px',
+            fontWeight: 700,
+            color: '#633b2c',
+            textTransform: 'uppercase',
+            fontFamily: '"General Sans", sans-serif',
+            border: '1px solid rgba(197, 160, 89, 0.35)',
+            boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
+          }}>
+            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
+            GRADUATE REVIEWS
+          </span>
+        </div>
+
+        {/* Split Grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'minmax(220px, 280px) 1fr',
@@ -74,22 +97,11 @@ export default function Testimonials() {
           textAlign: 'left'
         }} className="reviews-split-grid">
           
-          {/* Left Column: Eyebrow + Title + 4.9 Score Block (Exact Image 4) */}
+          {/* Left Column: Title + 4.9 Score Block */}
           <div>
-            <span style={{
-              display: 'block',
-              fontFamily: '"General Sans", sans-serif',
-              fontSize: '13px',
-              color: '#8c776e',
-              fontWeight: 500,
-              marginBottom: '8px'
-            }}>
-              Reviews /
-            </span>
-
             <h2 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2.1rem, 3.4vw, 2.9rem)',
+              fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.2,
@@ -128,10 +140,9 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Right Column: Quote + Author + Divider + Index / Nav (Exact Image 4) */}
+          {/* Right Column: Quote + Author + Divider + Index / Nav */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
             
-            {/* Big Serif Quote */}
             <p style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
               fontSize: 'clamp(1.25rem, 2.1vw, 1.65rem)',
@@ -145,7 +156,7 @@ export default function Testimonials() {
               &ldquo;{current.quote}&rdquo;
             </p>
 
-            {/* Author Row (Exact Image 4) */}
+            {/* Author Row */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
               <div style={{
                 width: '46px',
@@ -178,10 +189,10 @@ export default function Testimonials() {
               </div>
             </div>
 
-            {/* Thin Horizontal Divider Line (Exact Image 4) */}
+            {/* Divider Line */}
             <div style={{ height: '1px', background: 'rgba(197, 160, 89, 0.22)', width: '100%' }} />
 
-            {/* Bottom Row: 01 / 04 on Left, Nav Arrows on Right (Exact Image 4) */}
+            {/* Bottom Row: 01 / 04 on Left, Nav Arrows on Right */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
@@ -197,7 +208,7 @@ export default function Testimonials() {
                 {current.index}
               </span>
 
-              {/* Prev / Next Round Black Buttons (Exact Image 4) */}
+              {/* Prev / Next Round Black Buttons */}
               <div style={{ display: 'flex', gap: '10px' }}>
                 <button
                   onClick={prev}
