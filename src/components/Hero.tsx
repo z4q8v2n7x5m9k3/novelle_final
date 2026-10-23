@@ -133,9 +133,9 @@ export default function Hero({ content }: { content?: any }) {
         }
         .hero-title {
           font-family: var(--font-heading), Georgia, serif;
-          font-size: clamp(2.2rem, 5vw, 4rem);
+          font-size: clamp(2rem, 3.8vw, 3.2rem);
           color: #ffffff !important;
-          line-height: 1.15;
+          line-height: 1.18;
           font-weight: 400;
           letter-spacing: -0.02em;
         }
@@ -236,19 +236,20 @@ export default function Hero({ content }: { content?: any }) {
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           border-radius: 9999px;
-          padding: 5px 5px 14px 5px;
+          padding: 6px 4px 14px 4px;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: flex-start;
           gap: 10px;
-          width: 46px;
-          height: 180px;
+          width: 48px;
+          height: 184px;
           margin-top: 15px;
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
           pointer-events: auto;
           cursor: pointer;
           text-decoration: none;
+          overflow: hidden;
         }
         .hero-treatment-pill:hover {
           background: rgba(255, 255, 255, 0.22);
@@ -262,16 +263,22 @@ export default function Hero({ content }: { content?: any }) {
           border-radius: 50%;
           object-fit: cover;
           border: 1px solid rgba(255, 255, 255, 0.35);
+          flex-shrink: 0;
+          display: block;
         }
         .hero-pill-text {
           writing-mode: vertical-rl;
           text-orientation: mixed;
           transform: rotate(180deg);
-          font-size: 12px;
+          font-size: 11.5px;
           font-weight: 500;
           color: #ffffff;
           white-space: nowrap;
           letter-spacing: 0.3px;
+          flex-shrink: 0;
+          max-height: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         .hero-center-curve-svg {
           position: absolute;
@@ -349,23 +356,29 @@ export default function Hero({ content }: { content?: any }) {
             left: calc(50% - 25px);
           }
           .hero-treatment-pill {
-            width: 50px;
+            width: 48px;
             height: 186px;
-            padding: 5px 5px 14px 5px;
+            padding: 6px 4px 14px 4px;
             margin-top: 25px;
             transform: none;
             transform-origin: center center;
-            gap: 14px;
+            gap: 10px;
+            overflow: hidden;
           }
           .hero-treatment-pill:hover {
             transform: scale(1.08) !important;
           }
           .hero-pill-img {
-            width: 42px;
-            height: 42px;
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
           }
           .hero-pill-text {
-            font-size: 12px;
+            font-size: 11.5px;
+            flex-shrink: 0;
+            max-height: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           .hero-center-curve-svg {
             width: 380px;
@@ -420,21 +433,27 @@ export default function Hero({ content }: { content?: any }) {
           .hero-treatment-pill {
             width: 36px;
             height: 140px;
-            padding: 4px 4px 12px 4px;
+            padding: 4px 3px 10px 3px;
             margin-top: 10px;
             transform: none;
             transform-origin: center center;
-            gap: 10px;
+            gap: 8px;
+            overflow: hidden;
           }
           .hero-treatment-pill:hover {
             transform: scale(1.08) !important;
           }
           .hero-pill-img {
-            width: 30px;
-            height: 30px;
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
           }
           .hero-pill-text {
-            font-size: 9.5px;
+            font-size: 9px;
+            flex-shrink: 0;
+            max-height: 90px;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           .hero-center-curve-svg {
             width: 260px;

@@ -178,8 +178,8 @@ export default function BigStatement({ content }: { content?: any }) {
           {/* Huge Serif Headline with Embedded Icons */}
           <h2 className="big-statement-heading" style={{ 
             fontFamily: "'Playfair Display', Georgia, serif",
-            fontSize: 'clamp(1.65rem, 2.95vw, 2.45rem)', 
-            lineHeight: 1.34, 
+            fontSize: 'clamp(1.65rem, 2.8vw, 2.4rem)', 
+            lineHeight: 1.35, 
             color: '#4A3728', // Dark elegant brown
             marginBottom: '44px',
             fontWeight: 400,
@@ -188,10 +188,10 @@ export default function BigStatement({ content }: { content?: any }) {
             transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s'
           }}>
             <span className="desktop-statement">
-              We combine scientific experience with advanced aesthetic <AestheticIcon /> education to build confident professionals in beauty therapy, laser technologies, and modern clinical <ClinicalIcon /> aesthetics.
+              Raising the benchmark of aesthetic education in Abu Dhabi — uniting evidence-based skin science <AestheticIcon /> with supervised clinical workstations, patient safety discipline, and recognised qualifications <ClinicalIcon /> for responsible real-world practice.
             </span>
             <span className="mobile-statement">
-              We combine skin science with advanced aesthetic <AestheticIcon /> training so learners build confident, practical and industry-ready skills.
+              Raising aesthetic training standards in Abu Dhabi through rigorous skin science <AestheticIcon /> and supervised workstation practice.
             </span>
           </h2>
 

@@ -22,7 +22,7 @@ export default function Footer() {
             <Link href="/about">About Us</Link>
             <Link href="/courses">Course Catalogue</Link>
             <Link href="/gallery">Gallery</Link>
-            <Link href="/blog">Academy Insights</Link>
+            <Link href="/blog">Blogs</Link>
             <Link href="/contact">Contact &amp; Admissions</Link>
           </nav>
 
@@ -31,14 +31,13 @@ export default function Footer() {
             <p>Unit 1001, LAVG Building,<br />Al Zahiyah (16), Abu Dhabi, UAE</p>
             <a href="tel:+971502348625">+971 50 234 8625</a>
             <a href="tel:+971507629543">+971 50 762 9543</a>
-            <a href="mailto:hello@novelle.ae">hello@novelle.ae</a>
+            <a href="mailto:hello@novelle.ae" style={{ color: '#845E35', fontWeight: 600 }}>hello@novelle.ae</a>
           </div>
 
           <div className="footer-hours">
             <h3>Academy Hours</h3>
             <p>Monday – Saturday<br /><strong>9:00 AM – 6:00 PM</strong></p>
             <p>Sunday<br /><strong>Closed</strong></p>
-            <span style={{ fontSize: '11.5px', color: '#8c776e', marginTop: '4px', display: 'block' }}>*Schedule to be confirmed</span>
           </div>
         </div>
 

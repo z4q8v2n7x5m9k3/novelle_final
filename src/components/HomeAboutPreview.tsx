@@ -7,19 +7,19 @@ export default function HomeAboutPreview() {
     <section 
       style={{ 
         background: '#FAF8F5', 
-        padding: '80px 24px 88px 24px', 
+        padding: '76px 24px 84px 24px', 
         position: 'relative',
         overflow: 'hidden'
       }} 
       id="about-preview"
     >
-      <div className="container" style={{ maxWidth: '1240px', margin: '0 auto' }}>
+      <div className="container" style={{ maxWidth: '1260px', margin: '0 auto' }}>
         
-        {/* Split Grid Layout - Compact */}
+        {/* Split Grid Layout */}
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', 
-          gap: '48px',
+          gap: '52px',
           alignItems: 'center'
         }}>
           
@@ -45,14 +45,16 @@ export default function HomeAboutPreview() {
               THE NOVELLE PHILOSOPHY
             </span>
 
+            {/* Single Line Title */}
             <h2 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2.1rem, 3.5vw, 3rem)',
+              fontSize: 'clamp(1.85rem, 2.7vw, 2.6rem)',
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.2,
-              margin: '0 0 16px 0',
-              letterSpacing: '-0.02em'
+              margin: '0 0 18px 0',
+              letterSpacing: '-0.02em',
+              whiteSpace: 'nowrap'
             }}>
               Why We Started Al Novelle
             </h2>
@@ -61,7 +63,7 @@ export default function HomeAboutPreview() {
               fontFamily: '"General Sans", sans-serif', 
               fontSize: '15.5px', 
               color: '#8c776e', 
-              lineHeight: 1.7, 
+              lineHeight: 1.75, 
               margin: '0 0 16px 0',
               fontWeight: 500
             }}>
@@ -72,30 +74,14 @@ export default function HomeAboutPreview() {
               fontFamily: '"General Sans", sans-serif', 
               fontSize: '15.5px', 
               color: '#8c776e', 
-              lineHeight: 1.7, 
+              lineHeight: 1.75, 
               margin: '0 0 28px 0',
               fontWeight: 500
             }}>
-              We established Novelle to change that. As clinicians and educators, we built an academy where learners are taught rigorously, assessed fairly, and prepared for responsible real-world practice starting in Abu Dhabi.
+              We established Novelle to change that. As clinicians and educators, we built an academy where learners are taught rigorously, assessed fairly, and prepared for responsible real-world practice starting right here in Abu Dhabi.
             </p>
 
-            {/* 3 Compact Pillars */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '14px', marginBottom: '32px' }}>
-              <div style={{ background: '#FFFFFF', padding: '14px 18px', borderRadius: '16px', border: '1px solid rgba(197, 160, 89, 0.2)' }}>
-                <span style={{ color: '#c5a059', fontWeight: 700, fontSize: '13px', display: 'block', marginBottom: '4px' }}>01 · Science</span>
-                <strong style={{ fontSize: '13.5px', color: '#633b2c', fontFamily: '"General Sans", sans-serif' }}>Evidence-Based Anatomy</strong>
-              </div>
-              <div style={{ background: '#FFFFFF', padding: '14px 18px', borderRadius: '16px', border: '1px solid rgba(197, 160, 89, 0.2)' }}>
-                <span style={{ color: '#c5a059', fontWeight: 700, fontSize: '13px', display: 'block', marginBottom: '4px' }}>02 · Safety</span>
-                <strong style={{ fontSize: '13.5px', color: '#633b2c', fontFamily: '"General Sans", sans-serif' }}>Supervised Workstations</strong>
-              </div>
-              <div style={{ background: '#FFFFFF', padding: '14px 18px', borderRadius: '16px', border: '1px solid rgba(197, 160, 89, 0.2)' }}>
-                <span style={{ color: '#c5a059', fontWeight: 700, fontSize: '13px', display: 'block', marginBottom: '4px' }}>03 · Rigour</span>
-                <strong style={{ fontSize: '13.5px', color: '#633b2c', fontFamily: '"General Sans", sans-serif' }}>Accredited Standards</strong>
-              </div>
-            </div>
-
-            {/* Action Buttons */}
+            {/* Clean Editorial Actions */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
               <Link href="/about" className="btn-premium">
                 <div className="btn-icon-wrapper">
@@ -122,13 +108,13 @@ export default function HomeAboutPreview() {
             </div>
           </div>
 
-          {/* Right Column: Compact Editorial Photo */}
+          {/* Right Column: Editorial Photo with Warm Accent Border */}
           <div style={{ position: 'relative' }}>
             <div style={{
               borderRadius: '28px',
               overflow: 'hidden',
               boxShadow: '0 16px 50px rgba(99, 59, 44, 0.1)',
-              border: '1px solid rgba(197, 160, 89, 0.25)',
+              border: '1px solid rgba(197, 160, 89, 0.3)',
               position: 'relative',
               background: '#F5EFE6',
               height: '420px'

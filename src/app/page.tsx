@@ -8,6 +8,7 @@ import BigStatement from '@/components/BigStatement';
 import HomeAboutPreview from '@/components/HomeAboutPreview';
 import HomeCoursesStrip from '@/components/HomeCoursesStrip';
 import FoundersSection from '@/components/FoundersSection';
+import VisionMission from '@/components/VisionMission';
 import GalleryPreview from '@/components/GalleryPreview';
 import FAQs from '@/components/FAQs';
 import BookConsultation from '@/components/BookConsultation';
@@ -65,6 +66,9 @@ export default function Home() {
       
       {/* Completely Redesigned Luxury Founders Section — Dr. Azaiba Salim Kara & Dr. Seeta Yadav */}
       <FoundersSection />
+
+      {/* Vision & Mission — Authentic 2-column layout with student support card */}
+      <VisionMission />
 
       {/* UAE Identity — Born in Abu Dhabi, Built for Real Practice */}
       <UAEIdentity />

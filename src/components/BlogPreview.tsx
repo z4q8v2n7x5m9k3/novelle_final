@@ -30,8 +30,8 @@ export default function BlogPreview() {
     return (
       <section className="blog-preview-section section-padding">
         <div className="container blog-preview-empty">
-          <span className="badge blog-preview-badge">Academy Insights</span>
-          <h2>Insights coming soon</h2>
+          <span className="badge blog-preview-badge">Academy Blogs</span>
+          <h2>Blogs coming soon</h2>
           <p>Thoughtful guidance on aesthetic education, safe practice, and professional development is being prepared by the Novelle team.</p>
           <Link href="/courses" className="editorial-link">Explore Courses <span aria-hidden="true">&#8594;</span></Link>
         </div>
@@ -44,8 +44,8 @@ export default function BlogPreview() {
     <section className="blog-preview-section section-padding">
       <div className="container blog-preview-container">
         <div className="blog-preview-header scroll-reveal reveal-from-left">
-          <span className="badge blog-preview-badge">Academy Insights</span>
-          <h2>Ideas for Better Practice</h2>
+          <span className="badge blog-preview-badge">Academy Blogs</span>
+          <h2>Latest Academy Blogs</h2>
           <p>Explore thoughtful guidance on aesthetic education, safety-led learning, and professional development from the Novelle academy.</p>
         </div>
 
@@ -74,7 +74,7 @@ export default function BlogPreview() {
                 </article>
               </Link>
             ))}
-            <Link href="/blog" className="editorial-link blog-preview-all-link scroll-reveal reveal-from-right reveal-delay-5">Explore Academy Insights <span aria-hidden="true">&#8594;</span></Link>
+            <Link href="/blog" className="editorial-link blog-preview-all-link scroll-reveal reveal-from-right reveal-delay-5">Read All Blogs <span aria-hidden="true">&#8594;</span></Link>
           </div>
         </div>
       </div>

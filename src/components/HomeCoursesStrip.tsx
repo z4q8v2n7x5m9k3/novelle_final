@@ -32,7 +32,7 @@ export default function HomeCoursesStrip() {
           gap: '24px',
           marginBottom: '48px' 
         }}>
-          <div style={{ maxWidth: '640px' }}>
+          <div style={{ maxWidth: '820px' }}>
             <span style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -55,12 +55,13 @@ export default function HomeCoursesStrip() {
 
             <h2 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2.1rem, 3.6vw, 3rem)',
+              fontSize: 'clamp(1.85rem, 2.8vw, 2.6rem)',
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.2,
               margin: '0 0 10px 0',
-              letterSpacing: '-0.02em'
+              letterSpacing: '-0.02em',
+              whiteSpace: 'nowrap'
             }}>
               Featured Training Programmes
             </h2>
