@@ -160,7 +160,7 @@ export default function FAQs() {
                     transition: 'all 0.3s ease'
                   }}
                 >
-                  Ask Admissions →
+                  WhatsApp Inquiries →
                 </a>
               </div>
             </div>

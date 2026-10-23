@@ -377,54 +377,102 @@ export default function CoursesPage() {
             ))}
           </div>
 
-          {/* WhatsApp CTA below grid */}
-          <div style={{ textAlign: 'center', marginTop: '64px', padding: '48px', background: '#FFFFFF', borderRadius: '32px', border: '1px solid rgba(197, 160, 89, 0.18)' }}>
-            <p style={{ 
+          {/* Academic Consultation Desk below grid */}
+          <div style={{ 
+            marginTop: '72px', 
+            padding: '52px 40px', 
+            background: '#FFFFFF', 
+            borderRadius: '28px', 
+            border: '1px solid rgba(197, 160, 89, 0.22)',
+            boxShadow: '0 10px 36px rgba(99, 59, 44, 0.04)',
+            textAlign: 'center'
+          }}>
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              background: '#FAF6F0',
+              padding: '6px 14px',
+              borderRadius: '100px',
+              fontSize: '11px',
+              letterSpacing: '1.5px',
+              fontWeight: 700,
+              color: '#986A3E',
+              textTransform: 'uppercase',
+              fontFamily: '"General Sans", sans-serif',
+              marginBottom: '14px'
+            }}>
+              ACADEMIC ADVISORY DESK
+            </span>
+
+            <h3 style={{ 
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(1.4rem, 2.5vw, 1.8rem)',
+              fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)',
               color: '#633b2c',
               fontWeight: 400,
               margin: '0 0 12px 0'
             }}>
-              Need Guidance on Programme Selection?
-            </p>
+              Need Guidance on Programme Selection or Entry Requirements?
+            </h3>
+
             <p style={{ 
               fontFamily: '"General Sans", sans-serif',
               fontSize: '15px',
               color: '#8c776e',
-              margin: '0 0 28px 0',
-              lineHeight: 1.6,
-              maxWidth: '600px',
-              marginLeft: 'auto',
-              marginRight: 'auto'
+              margin: '0 auto 32px auto',
+              lineHeight: 1.65,
+              maxWidth: '640px'
             }}>
-              Our admissions team is available to assist you with entry prerequisites, course duration, upcoming schedules, and training outlines.
+              Our academic advisors are on hand to clarify prerequisites, certification pathways, upcoming cohort dates, and clinical workstation availability in Abu Dhabi.
             </p>
-            <a
-              href={`${WA_BASE_URL}?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20guidance%20on%20choosing%20the%20right%20course.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
-                background: '#25D366',
-                color: '#FFFFFF',
-                padding: '14px 36px',
-                borderRadius: '100px',
-                fontSize: '14px',
-                fontWeight: 600,
-                textDecoration: 'none',
-                fontFamily: '"General Sans", sans-serif',
-                boxShadow: '0 4px 16px rgba(37, 211, 102, 0.3)',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-              </svg>
-              Enquire on WhatsApp
-            </a>
+
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+              <a
+                href={`${WA_BASE_URL}?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20guidance%20on%20choosing%20the%20right%20course.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: '#845E35',
+                  color: '#FFFFFF',
+                  padding: '13px 30px',
+                  borderRadius: '100px',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  fontFamily: '"General Sans", sans-serif',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 14px rgba(132, 94, 53, 0.2)'
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = '#6E4D2B')}
+                onMouseLeave={e => (e.currentTarget.style.background = '#845E35')}
+              >
+                <span>Consult on WhatsApp</span>
+                <span>→</span>
+              </a>
+
+              <a
+                href="tel:+971502348625"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: '#FAF6F0',
+                  color: '#633b2c',
+                  border: '1px solid rgba(197, 160, 89, 0.3)',
+                  padding: '13px 26px',
+                  borderRadius: '100px',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  fontFamily: '"General Sans", sans-serif',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <span>Call +971 50 234 8625</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

@@ -1,31 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
-
 export default function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" style={{ borderTop: '1px solid rgba(197, 160, 89, 0.2)' }}>
       <div className="container">
-        {/* Pre-footer Journey CTA */}
-        <section className="footer-journey-cta">
-          <div className="footer-journey-copy">
-            <span className="section-eyebrow">YOUR NEXT STEP</span>
-            <h2>Begin Your Learning Journey</h2>
-            <p>Talk with our admissions team about the course pathway that best matches your professional goals in aesthetic education.</p>
-            <div className="footer-journey-actions">
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-premium">
-                <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
-                Speak to Admissions
-              </a>
-              <Link href="/courses" className="editorial-link">View Courses <span aria-hidden="true">&#8594;</span></Link>
-            </div>
-          </div>
-          <div className="footer-journey-image">
-            <img src="/academy-images/polished-al-novelle-training-centre-interior.png" alt="Al Novelle practical learning and student guidance" />
-          </div>
-        </section>
-
         {/* Main Footer Grid */}
         <div className="footer-grid">
           <div className="footer-brand">

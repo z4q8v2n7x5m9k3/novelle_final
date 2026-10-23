@@ -33,7 +33,7 @@ export default function BlogPreview() {
           <span className="badge blog-preview-badge">Academy Insights</span>
           <h2>Insights coming soon</h2>
           <p>Thoughtful guidance on aesthetic education, safe practice, and professional development is being prepared by the Novelle team.</p>
-          <Link href="/contact" className="editorial-link">Speak to Admissions <span aria-hidden="true">&#8594;</span></Link>
+          <Link href="/courses" className="editorial-link">Explore Courses <span aria-hidden="true">&#8594;</span></Link>
         </div>
       </section>
     );
