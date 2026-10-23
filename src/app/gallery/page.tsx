@@ -3,7 +3,6 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import AccreditationTrust from '@/components/AccreditationTrust';
 
 export const metadata: Metadata = {
   title: 'Gallery | Al Novelle Aesthetic Training Academy Abu Dhabi',
@@ -66,59 +65,65 @@ export default function GalleryPage() {
     <main style={{ background: '#FAF6F0' }}>
       <Navigation />
       
-      {/* Inner Page Hero */}
-      <section style={{ background: '#FAF6F0', paddingTop: '150px', paddingBottom: '40px' }}>
-        <div className="container" style={{ maxWidth: '900px', textAlign: 'center', margin: '0 auto', padding: '0 24px' }}>
-          <span style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            background: '#FFFFFF',
-            padding: '8px 18px',
-            borderRadius: '100px',
-            fontSize: '11px',
-            letterSpacing: '2px',
-            fontWeight: 600,
-            color: '#633b2c',
-            textTransform: 'uppercase',
-            fontFamily: '"General Sans", sans-serif',
-            marginBottom: '20px',
-            border: '1px solid rgba(197, 160, 89, 0.3)',
-            boxShadow: '0 4px 12px rgba(99, 59, 44, 0.04)'
-          }}>
-            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-            THE VISUAL SUITE
-          </span>
+      {/* Inner Page Hero - Left Aligned, Faded Interior Background, Unified 1260px */}
+      <section style={{ 
+        position: 'relative',
+        paddingTop: '160px', 
+        paddingBottom: '80px',
+        background: 'linear-gradient(180deg, rgba(250, 248, 245, 0.88) 0%, rgba(250, 248, 245, 0.98) 100%), url("/academy-images/polished-al-novelle-training-centre-interior.png") center/cover no-repeat',
+        borderBottom: '1px solid rgba(197, 160, 89, 0.2)' 
+      }}>
+        <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ maxWidth: '780px', textAlign: 'left' }}>
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              background: '#FFFFFF',
+              padding: '7px 16px',
+              borderRadius: '100px',
+              fontSize: '11px',
+              letterSpacing: '2px',
+              fontWeight: 700,
+              color: '#633b2c',
+              textTransform: 'uppercase',
+              fontFamily: '"General Sans", sans-serif',
+              marginBottom: '16px',
+              border: '1px solid rgba(197, 160, 89, 0.35)',
+              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
+            }}>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
+              THE VISUAL SUITE
+            </span>
 
-          <h1 style={{
-            fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-            fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
-            color: '#633b2c',
-            fontWeight: 400,
-            margin: '0 0 16px 0',
-            lineHeight: 1.15
-          }}>
-            Inside Al Novelle Academy
-          </h1>
+            <h1 style={{
+              fontFamily: '"Hedvig Letters Serif", Georgia, serif',
+              fontSize: 'clamp(2.1rem, 3.5vw, 3rem)',
+              color: '#633b2c',
+              fontWeight: 400,
+              margin: '0 0 16px 0',
+              lineHeight: 1.18,
+              letterSpacing: '-0.02em'
+            }}>
+              Inside Al Novelle Academy
+            </h1>
 
-          <p style={{
-            fontFamily: '"General Sans", sans-serif',
-            fontSize: '16px',
-            color: '#8c776e',
-            lineHeight: 1.65,
-            maxWidth: '680px',
-            margin: '0 auto'
-          }}>
-            Explore our training rooms, reception, and practical demonstration spaces located at Unit 1001, LAVG Building, Al Zahiyah, Abu Dhabi.
-          </p>
+            <p style={{
+              fontFamily: '"General Sans", sans-serif',
+              fontSize: '15.5px',
+              color: '#8c776e',
+              lineHeight: 1.65,
+              margin: 0,
+              fontWeight: 500
+            }}>
+              Explore our training rooms, practical clinical workstations, consultation suites, and educational facilities located at Unit 1001, LAVG Building, Al Zahiyah, Abu Dhabi.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <AccreditationTrust />
-
-      {/* Gallery Grid */}
-      <section style={{ padding: '60px 24px 120px 24px' }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto' }}>
+      {/* Gallery Grid - Unified 1260px Container */}
+      <section style={{ padding: '64px 24px 120px 24px', background: '#FAF6F0' }}>
+        <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
@@ -131,7 +136,7 @@ export default function GalleryPage() {
                   background: '#FFFFFF',
                   borderRadius: '24px',
                   overflow: 'hidden',
-                  border: '1px solid rgba(197, 160, 89, 0.18)',
+                  border: '1px solid rgba(197, 160, 89, 0.22)',
                   boxShadow: '0 4px 20px rgba(99, 59, 44, 0.04)',
                   transition: 'transform 0.4s ease, box-shadow 0.4s ease'
                 }}
@@ -145,7 +150,7 @@ export default function GalleryPage() {
                     className="gallery-card-img"
                   />
                 </div>
-                <div style={{ padding: '24px' }}>
+                <div style={{ padding: '24px', textAlign: 'left' }}>
                   <h3 style={{ 
                     fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
                     fontSize: '19px', 

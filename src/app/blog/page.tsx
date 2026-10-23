@@ -40,39 +40,64 @@ export default function BlogPage() {
     <main style={{ background: '#FAF8F5' }}>
       <Navigation />
 
-      {/* ── HERO ─────────────────────────────── */}
-      <section style={{ paddingTop: '160px', paddingBottom: '72px', textAlign: 'center', background: '#FFFFFF', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
-        <div className="container" style={{ maxWidth: '760px' }}>
-          <span style={{
-            background: '#FFFFFF', 
-            border: '1px solid #FAF6F0', 
-            color: '#c5a059', 
-            padding: '8px 20px', 
-            borderRadius: '100px', 
-            boxShadow: '0 4px 15px rgba(99, 59, 44, 0.05)',
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            gap: '8px',
-            fontWeight: 600,
-            letterSpacing: '0.1em',
-            fontSize: '11px',
-            textTransform: 'uppercase',
-            marginBottom: '24px'
-          }}>
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#c5a059' }}></span>
-            KNOWLEDGE &amp; INSIGHTS
-          </span>
-          <h1 className="title-massive" style={{ marginBottom: '20px', fontSize: 'clamp(2.2rem, 4vw, 3rem)' }}>
-            From The Academy
-          </h1>
-          <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '560px', margin: '0 auto' }}>
-            Thoughtful guidance on aesthetic learning, safer practice, professional growth, and the future of beauty education in the UAE.
-          </p>
+      {/* ── HERO — Left Aligned, Faded Interior Background, Unified 1260px ─────── */}
+      <section style={{ 
+        position: 'relative',
+        paddingTop: '160px', 
+        paddingBottom: '80px', 
+        background: 'linear-gradient(180deg, rgba(250, 248, 245, 0.88) 0%, rgba(250, 248, 245, 0.98) 100%), url("/academy-images/al-novelle-training-centre-interior.png") center/cover no-repeat', 
+        borderBottom: '1px solid rgba(197, 160, 89, 0.2)' 
+      }}>
+        <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ maxWidth: '780px', textAlign: 'left' }}>
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              background: '#FFFFFF',
+              padding: '7px 16px',
+              borderRadius: '100px',
+              fontSize: '11px',
+              letterSpacing: '2px',
+              fontWeight: 700,
+              color: '#633b2c',
+              textTransform: 'uppercase',
+              fontFamily: '"General Sans", sans-serif',
+              marginBottom: '16px',
+              border: '1px solid rgba(197, 160, 89, 0.35)',
+              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
+            }}>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
+              ACADEMY BLOGS &amp; INSIGHTS
+            </span>
+
+            <h1 style={{
+              fontFamily: '"Hedvig Letters Serif", Georgia, serif',
+              fontSize: 'clamp(2.1rem, 3.5vw, 3rem)',
+              color: '#633b2c',
+              fontWeight: 400,
+              margin: '0 0 16px 0',
+              lineHeight: 1.18,
+              letterSpacing: '-0.02em'
+            }}>
+              Insights from Al Novelle Academy
+            </h1>
+
+            <p style={{
+              fontFamily: '"General Sans", sans-serif',
+              fontSize: '15.5px',
+              color: '#8c776e',
+              lineHeight: 1.65,
+              margin: 0,
+              fontWeight: 500
+            }}>
+              Thoughtful guidance on aesthetic learning, clinical safety, professional growth, and the future of aesthetic education in the UAE.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* ── FILTER TABS ──────────────────────── */}
-      <section style={{ background: '#FFFFFF', paddingBottom: '0', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+      <section style={{ background: '#FAF8F5', paddingBottom: '0', borderBottom: '1px solid rgba(197, 160, 89, 0.15)' }}>
         <div className="container">
           <div style={{ display: 'flex', gap: '12px', overflowX: 'auto', paddingBottom: '16px', paddingTop: '16px', whiteSpace: 'nowrap', WebkitOverflowScrolling: 'touch', justifyContent: 'center' }}>
             {CATEGORIES.map(cat => (

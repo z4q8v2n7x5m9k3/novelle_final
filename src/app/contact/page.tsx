@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import AccreditationTrust from '@/components/AccreditationTrust';
 import { COURSE_CATALOGUE } from '@/data/courses';
 
 const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
@@ -81,57 +80,63 @@ export default function ContactPage() {
     <main style={{ background: '#FAF6F0' }}>
       <Navigation />
       
-      {/* ── HEADER ─────────────────────────────── */}
-      <section style={{ paddingTop: '150px', paddingBottom: '36px', textAlign: 'center' }}>
-        <div className="container" style={{ padding: '0 24px' }}>
-          <span style={{ 
-            display: 'inline-flex',
-            alignItems: 'center',
-            background: '#FFFFFF', 
-            padding: '8px 18px', 
-            borderRadius: '100px',
-            fontSize: '11px', 
-            letterSpacing: '2px',
-            fontWeight: 600,
-            color: '#633b2c',
-            textTransform: 'uppercase',
-            fontFamily: '"General Sans", sans-serif',
-            marginBottom: '20px',
-            border: '1px solid rgba(197, 160, 89, 0.3)',
-            boxShadow: '0 4px 12px rgba(99, 59, 44, 0.04)'
-          }}>
-            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-            ADMISSIONS &amp; ENQUIRIES
-          </span>
-          <h1 style={{ 
-            fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
-            fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)', 
-            color: '#633b2c',
-            fontWeight: 400,
-            margin: '0 0 16px 0',
-            lineHeight: 1.15
-          }}>
-            Get in Touch with Al Novelle
-          </h1>
-          <p style={{ 
-            fontFamily: '"General Sans", sans-serif',
-            fontSize: '16px',
-            color: '#8c776e',
-            lineHeight: 1.65,
-            maxWidth: '620px',
-            margin: '0 auto'
-          }}>
-            Contact our admissions team for course advice, entry requirements, facility visits, and enrolment support in Abu Dhabi.
-          </p>
+      {/* ── HEADER — Left Aligned, Faded Interior Background, Sized Properly ─────── */}
+      <section style={{ 
+        position: 'relative',
+        paddingTop: '160px', 
+        paddingBottom: '80px',
+        background: 'linear-gradient(180deg, rgba(250, 248, 245, 0.88) 0%, rgba(250, 248, 245, 0.98) 100%), url("/academy-images/al-novelle-training-centre-interior.png") center/cover no-repeat',
+        borderBottom: '1px solid rgba(197, 160, 89, 0.2)'
+      }}>
+        <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ maxWidth: '780px', textAlign: 'left' }}>
+            <span style={{ 
+              display: 'inline-flex',
+              alignItems: 'center',
+              background: '#FFFFFF', 
+              padding: '7px 16px', 
+              borderRadius: '100px',
+              fontSize: '11px', 
+              letterSpacing: '2px',
+              fontWeight: 700,
+              color: '#633b2c',
+              textTransform: 'uppercase',
+              fontFamily: '"General Sans", sans-serif',
+              marginBottom: '16px',
+              border: '1px solid rgba(197, 160, 89, 0.35)',
+              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
+            }}>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
+              ADMISSIONS &amp; ENQUIRIES
+            </span>
+            <h1 style={{ 
+              fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
+              fontSize: 'clamp(2.1rem, 3.5vw, 3rem)', 
+              color: '#633b2c',
+              fontWeight: 400,
+              margin: '0 0 16px 0',
+              lineHeight: 1.18,
+              letterSpacing: '-0.02em'
+            }}>
+              Get in Touch with Al Novelle
+            </h1>
+            <p style={{ 
+              fontFamily: '"General Sans", sans-serif',
+              fontSize: '15.5px',
+              color: '#8c776e',
+              lineHeight: 1.65,
+              margin: 0,
+              fontWeight: 500
+            }}>
+              Contact our admissions team for course advice, entry requirements, facility visits, and enrolment support in Abu Dhabi.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <AccreditationTrust />
-
       {/* ── CONTACT INFO CARDS ──────────────────── */}
-      <section style={{ padding: '60px 24px 32px 24px' }}>
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <section style={{ padding: '64px 24px 32px 24px' }}>
+        <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
           <div style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
@@ -211,42 +216,45 @@ export default function ContactPage() {
       {/* ── ENQUIRY FORM ────────────────────────── */}
       <section style={{ background: '#FAF6F0', padding: '40px 24px 100px 24px' }} id="enquiry">
         <div id="admissions" />
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+        <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ textAlign: 'left', marginBottom: '44px', maxWidth: '780px' }}>
             <span style={{ 
               display: 'inline-flex',
               alignItems: 'center',
               background: '#FFFFFF', 
-              padding: '8px 16px', 
+              padding: '7px 16px', 
               borderRadius: '100px',
               fontSize: '11px', 
               letterSpacing: '2px',
-              fontWeight: 600,
+              fontWeight: 700,
               color: '#633b2c',
               textTransform: 'uppercase',
               fontFamily: '"General Sans", sans-serif',
-              marginBottom: '20px',
-              border: '1px solid rgba(197, 160, 89, 0.3)'
+              marginBottom: '16px',
+              border: '1px solid rgba(197, 160, 89, 0.35)',
+              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
             }}>
               <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
               APPLICATION &amp; ENQUIRY FORM
             </span>
             <h2 style={{ 
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', 
+              fontSize: 'clamp(2rem, 3.4vw, 2.9rem)', 
               color: '#633b2c', 
               fontWeight: 400,
-              margin: '0 0 14px 0'
+              margin: '0 0 12px 0',
+              lineHeight: 1.2,
+              letterSpacing: '-0.02em'
             }}>
               Send an Enquiry
             </h2>
             <p style={{ 
               fontFamily: '"General Sans", sans-serif', 
-              fontSize: '16px', 
+              fontSize: '15.5px', 
               color: '#8c776e', 
-              maxWidth: '600px', 
-              margin: '0 auto', 
-              lineHeight: 1.6 
+              margin: 0, 
+              lineHeight: 1.65,
+              fontWeight: 500
             }}>
               Submit your enquiry below and our admissions team will contact you — or message us directly on WhatsApp.
             </p>
@@ -258,7 +266,7 @@ export default function ContactPage() {
             borderRadius: '32px',
             overflow: 'hidden',
             display: 'flex',
-            maxWidth: '1200px',
+            maxWidth: '1260px',
             margin: '0 auto',
             boxShadow: '0 10px 40px rgba(74, 55, 40, 0.03)',
             border: '1px solid rgba(197, 160, 89, 0.2)'

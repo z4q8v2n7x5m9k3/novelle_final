@@ -490,7 +490,8 @@ export default function Hero({ content }: { content?: any }) {
         <div className="hero-content-top">
           <span className="hero-tagline">ABU DHABI · UAE · EST. 2026</span>
           <h1 className="hero-title">
-            Build Your Future in Aesthetic Education
+            Build Your Future<br />
+            <span style={{ display: 'block', fontSize: '0.94em', opacity: 0.96 }}>in Aesthetic Education</span>
           </h1>
           <p className="hero-description">
             Abu Dhabi’s training academy for beauty therapy, clinical aesthetics, and laser technologies — delivering structured science, supervised practice, and professional confidence.

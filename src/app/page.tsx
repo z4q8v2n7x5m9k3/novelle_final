@@ -15,7 +15,6 @@ import BookConsultation from '@/components/BookConsultation';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import UAEIdentity from '@/components/UAEIdentity';
-import FacilityRental from '@/components/FacilityRental';
 import BlogPreview from '@/components/BlogPreview';
 
 export const metadata: Metadata = {
@@ -81,9 +80,6 @@ export default function Home() {
 
       {/* FAQs — Accurate location and verified contact details */}
       <FAQs />
-
-      {/* Facility Rental / Training Space Enquiries */}
-      <FacilityRental />
 
       {/* Contact & Enquiry Form — hello@novelle.ae and approved course list */}
       <BookConsultation />

@@ -30,6 +30,12 @@ const CATEGORIES = [
   'Beauty, Nails & Grooming',
 ];
 
+const WhatsAppIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" style={{ flexShrink: 0 }}>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+);
+
 function CourseCard({ course, index }: { course: Course; index: number }) {
   const { ref, visible } = useInView();
 
@@ -180,7 +186,7 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
           </div>
         </div>
 
-        {/* Action Button with WhatsApp sign */}
+        {/* Action Button: Brown button with Green WhatsApp Icon */}
         <a
           href={waUrl}
           target="_blank"
@@ -190,28 +196,28 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '8px',
-            background: '#25D366',
+            background: '#845E35',
             color: '#FFFFFF',
-            padding: '11px 18px',
+            padding: '12px 20px',
             borderRadius: '100px',
             fontSize: '13px',
             fontWeight: 600,
             textDecoration: 'none',
             fontFamily: '"General Sans", sans-serif',
             transition: 'all 0.3s ease',
-            boxShadow: '0 4px 14px rgba(37, 211, 102, 0.22)',
+            boxShadow: '0 4px 14px rgba(132, 94, 53, 0.2)',
             textAlign: 'center'
           }}
           onMouseEnter={e => {
-            (e.currentTarget as HTMLElement).style.background = '#20BA5A';
+            (e.currentTarget as HTMLElement).style.background = '#6E4D2B';
             (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)';
           }}
           onMouseLeave={e => {
-            (e.currentTarget as HTMLElement).style.background = '#25D366';
+            (e.currentTarget as HTMLElement).style.background = '#845E35';
             (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
           }}
         >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
           </svg>
           <span>{ctaLabel}</span>
@@ -249,59 +255,65 @@ export default function CoursesPage() {
     <main style={{ background: '#FAF6F0' }}>
       <Navigation />
 
-      {/* ── HERO ─────────────────────────────── */}
-      <section style={{ paddingTop: '150px', paddingBottom: '36px', textAlign: 'center' }}>
-        <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px' }}>
-          <span style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            background: '#FFFFFF',
-            padding: '8px 18px',
-            borderRadius: '100px',
-            fontSize: '11px',
-            letterSpacing: '2px',
-            fontWeight: 600,
-            color: '#633b2c',
-            textTransform: 'uppercase',
-            fontFamily: '"General Sans", sans-serif',
-            marginBottom: '20px',
-            border: '1px solid rgba(197, 160, 89, 0.3)',
-            boxShadow: '0 4px 12px rgba(99, 59, 44, 0.04)'
-          }}>
-            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-            COURSE CATALOGUE · ABU DHABI
-          </span>
+      {/* ── HERO — Left Aligned, Faded Interior Background, Sized Properly ─────── */}
+      <section style={{ 
+        position: 'relative',
+        paddingTop: '160px', 
+        paddingBottom: '80px', 
+        background: 'linear-gradient(180deg, rgba(250, 248, 245, 0.88) 0%, rgba(250, 248, 245, 0.98) 100%), url("/academy-images/al-novelle-training-centre-interior.png") center/cover no-repeat', 
+        borderBottom: '1px solid rgba(197, 160, 89, 0.2)' 
+      }}>
+        <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ maxWidth: '780px', textAlign: 'left' }}>
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              background: '#FFFFFF',
+              padding: '7px 16px',
+              borderRadius: '100px',
+              fontSize: '11px',
+              letterSpacing: '2px',
+              fontWeight: 700,
+              color: '#633b2c',
+              textTransform: 'uppercase',
+              fontFamily: '"General Sans", sans-serif',
+              marginBottom: '16px',
+              border: '1px solid rgba(197, 160, 89, 0.35)',
+              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
+            }}>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
+              COURSE CATALOGUE · ABU DHABI
+            </span>
 
-          <h1 style={{
-            fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-            fontSize: 'clamp(2rem, 3.2vw, 2.7rem)',
-            color: '#633b2c',
-            fontWeight: 400,
-            margin: '0 0 14px 0',
-            lineHeight: 1.2
-          }}>
-            Aesthetic &amp; Beauty Training Programmes
-          </h1>
+            <h1 style={{
+              fontFamily: '"Hedvig Letters Serif", Georgia, serif',
+              fontSize: 'clamp(2.1rem, 3.5vw, 3rem)',
+              color: '#633b2c',
+              fontWeight: 400,
+              margin: '0 0 16px 0',
+              lineHeight: 1.18,
+              letterSpacing: '-0.02em'
+            }}>
+              Aesthetic &amp; Beauty Training Programmes
+            </h1>
 
-          <p style={{
-            fontFamily: '"General Sans", sans-serif',
-            fontSize: '16px',
-            color: '#8c776e',
-            lineHeight: 1.65,
-            maxWidth: '680px',
-            margin: '0 auto 28px auto'
-          }}>
-            Explore Al Novelle&apos;s structured training catalogue in skin aesthetics, facial technologies, body treatments, and clinical safety in Abu Dhabi.
-          </p>
+            <p style={{
+              fontFamily: '"General Sans", sans-serif',
+              fontSize: '15.5px',
+              color: '#8c776e',
+              lineHeight: 1.65,
+              margin: 0,
+              fontWeight: 500
+            }}>
+              Explore Al Novelle&apos;s structured training catalogue in skin aesthetics, facial technologies, body treatments, and clinical safety in Abu Dhabi.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <AccreditationTrust />
-
       {/* ── CATEGORY FILTER TABS ─────────────── */}
       <section style={{ padding: '40px 24px 32px 24px' }}>
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
           {/* Desktop Filter Pills */}
           <div className="courses-desktop-pills" style={{ 
             display: 'flex', 
@@ -369,7 +381,7 @@ export default function CoursesPage() {
 
       {/* ── COURSES GRID ─────────────────────── */}
       <section style={{ background: '#FAF6F0', padding: '0 24px 100px 24px' }}>
-        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto' }}>
+        <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
           <div style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', 
@@ -380,55 +392,61 @@ export default function CoursesPage() {
             ))}
           </div>
 
-          {/* Academic Consultation Desk below grid */}
+          {/* Academic Consultation Desk below grid - Left-aligned luxury split banner */}
           <div style={{ 
             marginTop: '72px', 
-            padding: '52px 40px', 
-            background: '#FFFFFF', 
+            padding: '48px 44px', 
+            background: 'linear-gradient(135deg, #FFFFFF 0%, #FAF6F0 100%)', 
             borderRadius: '28px', 
-            border: '1px solid rgba(197, 160, 89, 0.22)',
-            boxShadow: '0 10px 36px rgba(99, 59, 44, 0.04)',
-            textAlign: 'center'
+            border: '1px solid rgba(197, 160, 89, 0.35)',
+            boxShadow: '0 12px 40px rgba(99, 59, 44, 0.04)',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '28px',
+            textAlign: 'left'
           }}>
-            <span style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              background: '#FAF6F0',
-              padding: '6px 14px',
-              borderRadius: '100px',
-              fontSize: '11px',
-              letterSpacing: '1.5px',
-              fontWeight: 700,
-              color: '#986A3E',
-              textTransform: 'uppercase',
-              fontFamily: '"General Sans", sans-serif',
-              marginBottom: '14px'
-            }}>
-              ACADEMIC ADVISORY DESK
-            </span>
+            <div style={{ maxWidth: '640px' }}>
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                background: '#FAF6F0',
+                padding: '6px 14px',
+                borderRadius: '100px',
+                fontSize: '11px',
+                letterSpacing: '1.5px',
+                fontWeight: 700,
+                color: '#986A3E',
+                textTransform: 'uppercase',
+                fontFamily: '"General Sans", sans-serif',
+                marginBottom: '14px'
+              }}>
+                ACADEMIC ADVISORY DESK
+              </span>
 
-            <h3 style={{ 
-              fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)',
-              color: '#633b2c',
-              fontWeight: 400,
-              margin: '0 0 12px 0'
-            }}>
-              Need Guidance on Programme Selection or Entry Requirements?
-            </h3>
+              <h3 style={{ 
+                fontFamily: '"Hedvig Letters Serif", Georgia, serif',
+                fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)',
+                color: '#633b2c',
+                fontWeight: 400,
+                margin: '0 0 12px 0'
+              }}>
+                Need Guidance on Programme Selection?
+              </h3>
 
-            <p style={{ 
-              fontFamily: '"General Sans", sans-serif',
-              fontSize: '15px',
-              color: '#8c776e',
-              margin: '0 auto 32px auto',
-              lineHeight: 1.65,
-              maxWidth: '640px'
-            }}>
-              Our academic advisors are on hand to clarify prerequisites, certification pathways, upcoming cohort dates, and clinical workstation availability in Abu Dhabi.
-            </p>
+              <p style={{ 
+                fontFamily: '"General Sans", sans-serif',
+                fontSize: '15px',
+                color: '#8c776e',
+                margin: 0,
+                lineHeight: 1.65
+              }}>
+                Our academic advisors are on hand to clarify prerequisites, certification pathways, upcoming cohort dates, and clinical workstation availability in Abu Dhabi.
+              </p>
+            </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
               <a
                 href={`${WA_BASE_URL}?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20guidance%20on%20choosing%20the%20right%20course.`}
                 target="_blank"
@@ -439,7 +457,7 @@ export default function CoursesPage() {
                   gap: '8px',
                   background: '#845E35',
                   color: '#FFFFFF',
-                  padding: '13px 30px',
+                  padding: '13px 26px',
                   borderRadius: '100px',
                   fontSize: '13.5px',
                   fontWeight: 600,
@@ -451,8 +469,8 @@ export default function CoursesPage() {
                 onMouseEnter={e => (e.currentTarget.style.background = '#6E4D2B')}
                 onMouseLeave={e => (e.currentTarget.style.background = '#845E35')}
               >
+                <WhatsAppIcon />
                 <span>Consult on WhatsApp</span>
-                <span>→</span>
               </a>
 
               <a
@@ -464,7 +482,7 @@ export default function CoursesPage() {
                   background: '#FAF6F0',
                   color: '#633b2c',
                   border: '1px solid rgba(197, 160, 89, 0.3)',
-                  padding: '13px 26px',
+                  padding: '13px 24px',
                   borderRadius: '100px',
                   fontSize: '13.5px',
                   fontWeight: 600,

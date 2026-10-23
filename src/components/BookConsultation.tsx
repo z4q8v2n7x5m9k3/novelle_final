@@ -55,7 +55,7 @@ export default function BookConsultation() {
 
   return (
     <section className="section-padding" style={{ background: '#FAF6F0', padding: '100px 24px 120px 24px' }} id="book-consultation">
-      <div className="container" style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
         {/* Grand 2-Column Appointment Card */}
         <div className="appointment-grand-card" style={{ 

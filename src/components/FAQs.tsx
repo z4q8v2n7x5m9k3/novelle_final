@@ -38,7 +38,7 @@ export default function FAQs() {
 
   return (
     <section className="faq-section" style={{ background: '#FAF6F0', padding: '100px 24px 110px 24px', overflow: 'hidden' }}>
-      <div className="container" style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
         {/* Main 2-Column Responsive Layout */}
         <div className="faq-split-grid" style={{ 

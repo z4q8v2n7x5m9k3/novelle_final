@@ -6,25 +6,25 @@ export default function HomeAboutPreview() {
   return (
     <section 
       style={{ 
-        background: '#FAF8F5', 
-        padding: '76px 24px 84px 24px', 
+        background: '#FAF6F0', 
+        padding: '100px 24px', 
         position: 'relative',
         overflow: 'hidden'
       }} 
       id="about-preview"
     >
-      <div className="container" style={{ maxWidth: '1260px', margin: '0 auto' }}>
+      <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
-        {/* Split Grid Layout */}
+        {/* Split Grid Layout - Unified 1260px Width */}
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', 
-          gap: '52px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', 
+          gap: '56px',
           alignItems: 'center'
         }}>
           
-          {/* Left Column: Story & Vision Copy */}
-          <div>
+          {/* Left Column: Story & Vision Copy (Strictly Left Aligned) */}
+          <div style={{ textAlign: 'left' }}>
             <span style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -38,23 +38,21 @@ export default function HomeAboutPreview() {
               textTransform: 'uppercase',
               fontFamily: '"General Sans", sans-serif',
               marginBottom: '16px',
-              border: '1px solid rgba(197, 160, 89, 0.3)',
-              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.04)'
+              border: '1px solid rgba(197, 160, 89, 0.35)',
+              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
             }}>
               <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
               THE NOVELLE PHILOSOPHY
             </span>
 
-            {/* Single Line Title */}
             <h2 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(1.85rem, 2.7vw, 2.6rem)',
+              fontSize: 'clamp(2rem, 3.4vw, 2.9rem)',
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.2,
               margin: '0 0 18px 0',
-              letterSpacing: '-0.02em',
-              whiteSpace: 'nowrap'
+              letterSpacing: '-0.02em'
             }}>
               Why We Started Al Novelle
             </h2>
@@ -76,10 +74,44 @@ export default function HomeAboutPreview() {
               color: '#8c776e', 
               lineHeight: 1.75, 
               margin: '0 0 28px 0',
-              fontWeight: 500
+              fontWeight: 400
             }}>
               We established Novelle to change that. As clinicians and educators, we built an academy where learners are taught rigorously, assessed fairly, and prepared for responsible real-world practice starting right here in Abu Dhabi.
             </p>
+
+            {/* Clean Editorial Pointers */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '34px' }}>
+              {[
+                { title: 'Evidence-Based Skin Science', detail: 'Anatomy, cellular biology, and product science before needle or device touches skin.' },
+                { title: 'Supervised Clinical Workstations', detail: 'Hands-on practice under experienced clinical educators in Abu Dhabi.' },
+                { title: 'Recognised UAE & Global Benchmarks', detail: 'Curriculum structured around CIBTAC and NCLC standards.' }
+              ].map((p, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <div style={{
+                    width: '20px',
+                    height: '20px',
+                    borderRadius: '50%',
+                    background: 'rgba(197, 160, 89, 0.15)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#986A3E',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    flexShrink: 0,
+                    marginTop: '2px'
+                  }}>✓</div>
+                  <div>
+                    <span style={{ fontSize: '14px', fontWeight: 600, color: '#633b2c', fontFamily: '"General Sans", sans-serif' }}>
+                      {p.title}:{' '}
+                    </span>
+                    <span style={{ fontSize: '14px', color: '#8c776e', fontFamily: '"General Sans", sans-serif', lineHeight: 1.5 }}>
+                      {p.detail}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
 
             {/* Clean Editorial Actions */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
@@ -113,11 +145,11 @@ export default function HomeAboutPreview() {
             <div style={{
               borderRadius: '28px',
               overflow: 'hidden',
-              boxShadow: '0 16px 50px rgba(99, 59, 44, 0.1)',
-              border: '1px solid rgba(197, 160, 89, 0.3)',
+              boxShadow: '0 20px 50px rgba(99, 59, 44, 0.1)',
+              border: '1px solid rgba(197, 160, 89, 0.35)',
               position: 'relative',
               background: '#F5EFE6',
-              height: '420px'
+              height: '460px'
             }}>
               <img 
                 src="/academy-images/al-novelle-training-centre-interior.png" 
@@ -138,13 +170,14 @@ export default function HomeAboutPreview() {
                 right: '22px',
                 background: 'rgba(255, 255, 255, 0.94)',
                 backdropFilter: 'blur(10px)',
-                borderRadius: '16px',
+                borderRadius: '18px',
                 padding: '16px 20px',
                 border: '1px solid rgba(197, 160, 89, 0.3)',
-                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)'
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
+                textAlign: 'left'
               }}>
                 <span style={{ 
-                  fontSize: '10.5px', 
+                  fontSize: '10px', 
                   fontFamily: '"General Sans", sans-serif', 
                   letterSpacing: '1.5px', 
                   textTransform: 'uppercase', 

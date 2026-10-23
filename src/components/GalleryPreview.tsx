@@ -44,54 +44,55 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
         overflow: 'hidden'
       }}
     >
-      <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
-        {/* Header Block (Only visible if hideHeader is false) */}
+        {/* Header Block (Only visible if hideHeader is false) - Left Aligned */}
         {!hideHeader && (
           <div className="scroll-reveal reveal-from-left" style={{ 
-            textAlign: 'center', 
-            marginBottom: '60px',
+            textAlign: 'left', 
+            marginBottom: '48px',
+            maxWidth: '780px'
           }}>
             <span style={{ 
               display: 'inline-flex',
               alignItems: 'center',
               background: '#FFFFFF', 
-              padding: '6px 14px', 
+              padding: '7px 16px', 
               borderRadius: '100px',
               fontSize: '11px', 
-              letterSpacing: '1px',
+              letterSpacing: '2px',
               fontWeight: 700,
-              color: '#845E35',
+              color: '#633b2c',
               textTransform: 'uppercase',
               fontFamily: '"General Sans", sans-serif',
-              marginBottom: '20px',
-              border: '1px solid rgba(197, 160, 89, 0.2)'
+              marginBottom: '16px',
+              border: '1px solid rgba(197, 160, 89, 0.35)',
+              boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
             }}>
-              <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#845E35', marginRight: '6px' }}></span>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
               THE VISUAL SUITE
             </span>
             
             <h2 className="gallery-title" style={{ 
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2.2rem, 3.5vw, 3rem)',
+              fontSize: 'clamp(2rem, 3.4vw, 2.9rem)',
               color: '#633b2c',
               fontWeight: 400,
-              lineHeight: 1.15,
-              marginBottom: '20px',
-              marginTop: '12px',
-              letterSpacing: '-0.01em'
+              lineHeight: 1.2,
+              marginBottom: '14px',
+              marginTop: 0,
+              letterSpacing: '-0.02em'
             }}>
               A Glimpse Inside Al Novelle
             </h2>
             
             <p style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '15px',
-              color: '#7A6B63',
+              fontSize: '15.5px',
+              color: '#8c776e',
               lineHeight: 1.65,
-              fontWeight: '500',
-              maxWidth: '680px',
-              margin: '0 auto'
+              fontWeight: 500,
+              margin: 0
             }}>
               Explore Al Novelle&apos;s training spaces, practical clinical suites, equipment stations, and educational atmosphere in Abu Dhabi.
             </p>
