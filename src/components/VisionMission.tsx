@@ -6,17 +6,26 @@ const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20wo
 
 export default function VisionMission() {
   return (
-    <section className="section-padding vision-mission-section" style={{ background: '#FAF8F5', padding: '96px 24px' }} id="clinical-training">
+    <section 
+      className="section-padding vision-mission-section" 
+      style={{ 
+        background: '#FAF8F5', 
+        padding: '96px 24px',
+        position: 'relative',
+        overflow: 'hidden'
+      }} 
+      id="clinical-training"
+    >
       <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
-        <div className="vision-grid" style={{ 
+        <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', 
           gap: '56px', 
           alignItems: 'center' 
         }}>
           {/* Left Column: Text & Features (Strictly Left Aligned) */}
-          <div className="vision-content" style={{ textAlign: 'left' }}>
-            <span className="scroll-reveal reveal-from-left" style={{ 
+          <div style={{ textAlign: 'left' }}>
+            <span style={{ 
               display: 'inline-flex',
               alignItems: 'center',
               background: '#FFFFFF', 
@@ -36,20 +45,22 @@ export default function VisionMission() {
               PRACTICAL CLINICAL TRAINING
             </span>
 
-            <h2 className="scroll-reveal reveal-from-left reveal-delay-1" style={{
+            {/* Concise Title on a Single Line on Desktop */}
+            <h2 className="supervised-single-line-title" style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-              fontSize: 'clamp(2rem, 3.4vw, 2.9rem)',
+              fontSize: 'clamp(1.85rem, 2.7vw, 2.45rem)',
               color: '#633b2c',
               fontWeight: 400,
-              lineHeight: 1.2,
+              lineHeight: 1.25,
               marginBottom: '18px',
               marginTop: 0,
-              letterSpacing: '-0.02em'
+              letterSpacing: '-0.02em',
+              whiteSpace: 'normal'
             }}>
-              Supervised Practice on Equipped Clinical Workstations
+              Supervised Clinical Practice
             </h2>
 
-            <p className="scroll-reveal reveal-from-left reveal-delay-2" style={{
+            <p style={{
               fontFamily: '"General Sans", sans-serif',
               fontSize: '15.5px',
               color: '#8c776e',
@@ -73,7 +84,7 @@ export default function VisionMission() {
                 "Strict Hygiene & Sterilisation",
                 "Pathway to UAE Accreditation"
               ].map((item, index) => (
-                <div key={index} className={`scroll-reveal reveal-from-left reveal-delay-${Math.min(index + 3, 6)}`} style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                <div key={index} style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                   <div style={{
                     width: '22px',
                     height: '22px',
@@ -100,89 +111,144 @@ export default function VisionMission() {
               ))}
             </div>
 
-            <div className="vision-cta-row scroll-reveal reveal-from-left reveal-delay-6" style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              <Link href="/courses" className="btn-premium">
-                <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
-                Explore Our Courses
-              </Link>
-              <a
-                href={WA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="editorial-link"
+            {/* Action CTA */}
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <a 
+                href={WA_URL} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-premium"
+                style={{ display: 'inline-flex' }}
               >
-                Inquire on WhatsApp <span aria-hidden="true">&#8594;</span>
+                <div className="btn-icon-wrapper">
+                  <img src="/logos/gold-logomark.png" alt="" />
+                </div>
+                Enquire About Training Suites
               </a>
+
+              <Link 
+                href="/gallery" 
+                style={{
+                  fontSize: '14px',
+                  fontFamily: '"General Sans", sans-serif',
+                  fontWeight: 600,
+                  color: '#845E35',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                View Academy Spaces <span>→</span>
+              </Link>
             </div>
           </div>
 
-          {/* Right Column: Visual side with Floating Frosted Glass Card */}
-          <div className="vision-image-col scroll-reveal reveal-from-right reveal-delay-1" style={{ 
-            position: 'relative', 
-            borderRadius: '28px', 
-            overflow: 'hidden',
-            height: '460px',
-            border: '1px solid rgba(197, 160, 89, 0.3)',
-            boxShadow: '0 16px 48px rgba(99, 59, 44, 0.08)',
-            background: '#F5EFE6'
-          }}>
-            <img 
-              src="/academy-images/student-support-admissions.png" 
-              alt="Al Novelle practical training and student guidance in Abu Dhabi" 
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover'
-              }}
-            />
-            
-            {/* Floating Frosted Glass Card */}
-            <div className="vision-glass-card scroll-reveal reveal-from-right reveal-delay-3" style={{
-              position: 'absolute',
-              bottom: '24px',
-              left: '24px',
-              right: '24px',
-              background: 'rgba(255, 255, 255, 0.92)',
-              backdropFilter: 'blur(16px)',
-              WebkitBackdropFilter: 'blur(16px)',
-              padding: '20px 24px',
-              borderRadius: '18px',
-              border: '1px solid rgba(197, 160, 89, 0.3)',
-              boxShadow: '0 10px 30px rgba(99, 59, 44, 0.08)'
+          {/* Right Column: Authentic Workstation Photography with Stats Overlay */}
+          <div style={{ position: 'relative' }}>
+            <div style={{
+              borderRadius: '28px',
+              overflow: 'hidden',
+              boxShadow: '0 20px 50px rgba(99, 59, 44, 0.1)',
+              border: '1px solid rgba(197, 160, 89, 0.35)',
+              position: 'relative',
+              background: '#F5EFE6',
+              height: '420px'
             }}>
-              <span style={{ 
-                fontSize: '10.5px', 
-                letterSpacing: '1.5px', 
-                textTransform: 'uppercase', 
-                color: '#986A3E', 
-                fontWeight: 700, 
-                display: 'block', 
-                marginBottom: '2px',
-                fontFamily: '"General Sans", sans-serif'
+              <img 
+                src="/academy-images/al-novelle-training-centre-interior.png" 
+                alt="Al Novelle practical training facility in Abu Dhabi"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to top, rgba(29, 19, 12, 0.7) 0%, transparent 60%)'
+              }} />
+
+              {/* Floating Bottom Card matching Inspiration "Inside the studio" */}
+              <div style={{
+                position: 'absolute',
+                bottom: '18px',
+                left: '18px',
+                right: '18px',
+                background: 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(12px)',
+                borderRadius: '18px',
+                padding: '16px 20px',
+                border: '1px solid rgba(197, 160, 89, 0.32)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '12px'
               }}>
-                ACADEMY TRAINING SUITES
-              </span>
-              <h4 style={{ 
-                fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
-                fontSize: '17px', 
-                color: '#633b2c', 
-                fontWeight: 400, 
-                margin: '0 0 2px 0'
-              }}>
-                Unit 1001, LAVG Building, Abu Dhabi
-              </h4>
-              <p style={{ 
-                fontFamily: '"General Sans", sans-serif', 
-                fontSize: '12.5px', 
-                color: '#8c776e', 
-                margin: 0
-              }}>
-                Equipped clinical stations for facial aesthetics, massage, and laser demos.
-              </p>
+                <div>
+                  <span style={{ 
+                    fontSize: '9.5px', 
+                    letterSpacing: '1.4px', 
+                    textTransform: 'uppercase', 
+                    color: '#986A3E', 
+                    fontWeight: 700,
+                    display: 'block',
+                    fontFamily: '"General Sans", sans-serif',
+                    marginBottom: '2px'
+                  }}>
+                    ABU DHABI CAMPUS
+                  </span>
+                  <strong style={{ 
+                    fontSize: '14px', 
+                    color: '#633b2c', 
+                    fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
+                    fontWeight: 400 
+                  }}>
+                    Equipped Clinical Workstations
+                  </strong>
+                </div>
+
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <span style={{
+                    fontSize: '11px',
+                    fontFamily: '"General Sans", sans-serif',
+                    fontWeight: 600,
+                    background: '#FAF6F0',
+                    color: '#633b2c',
+                    padding: '4px 10px',
+                    borderRadius: '100px',
+                    border: '1px solid rgba(197, 160, 89, 0.25)'
+                  }}>
+                    1:1 Supervision
+                  </span>
+                  <span style={{
+                    fontSize: '11px',
+                    fontFamily: '"General Sans", sans-serif',
+                    fontWeight: 600,
+                    background: 'rgba(197, 160, 89, 0.15)',
+                    color: '#845E35',
+                    padding: '4px 10px',
+                    borderRadius: '100px'
+                  }}>
+                    Live Models
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{__html: `
+        @media (min-width: 900px) {
+          .supervised-single-line-title {
+            white-space: nowrap !important;
+          }
+        }
+      `}} />
     </section>
   );
 }

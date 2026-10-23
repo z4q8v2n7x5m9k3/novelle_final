@@ -1,504 +1,179 @@
 'use client';
-import React, { useState } from 'react';
-import { COURSE_CATALOGUE } from '@/data/courses';
+import React from 'react';
+import Link from 'next/link';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
+const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20book%20a%20campus%20visit%20and%20enquire%20about%20admissions.';
+
+const WhatsAppIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" style={{ flexShrink: 0 }}>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+);
 
 export default function BookConsultation() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    therapy: '',
-    message: '',
-    agree: false,
-    marketing: false
-  });
-  
-  const [isPending, setIsPending] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    if (type === 'checkbox') {
-      const checked = (e.target as HTMLInputElement).checked;
-      setFormData(prev => ({ ...prev, [name]: checked }));
-    } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsPending(true);
-    try {
-      const waMessage = encodeURIComponent(
-        `Hello Al Novelle, I would like to enquire about your courses.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nProgramme of Interest: ${formData.therapy}\nMessage: ${formData.message}`
-      );
-      try {
-        const res = await fetch('/api/inquiries', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ source: 'Homepage admissions form', ...formData }),
-        });
-        if (!res.ok) throw new Error('API unavailable');
-        const result = await res.json();
-        if (!result.delivered) window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
-      } catch {
-        window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
-      }
-    } finally {
-      setIsPending(false);
-      setIsSubmitted(true);
-    }
-  };
-
   return (
-    <section className="section-padding" style={{ background: '#FAF6F0', padding: '100px 24px 120px 24px' }} id="book-consultation">
-      <div className="container" style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
+    <section 
+      style={{ 
+        background: '#FAF6F0', 
+        padding: '96px 24px 110px 24px',
+        position: 'relative',
+        overflow: 'hidden'
+      }} 
+      id="book-consultation"
+    >
+      <div style={{ maxWidth: '1260px', margin: '0 auto', padding: '0 24px' }}>
         
-        {/* Grand 2-Column Appointment Card */}
-        <div className="appointment-grand-card" style={{ 
-          background: '#eae0d5',
+        {/* Split Card matching Reference "Book your visit today" */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1.1fr 1fr',
           borderRadius: '32px',
           overflow: 'hidden',
-          display: 'flex',
-          boxShadow: '0 10px 40px rgba(74, 55, 40, 0.02)',
-          border: '1px solid rgba(197, 160, 89, 0.2)',
-          transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
-        }}>
+          background: '#EAE1D5',
+          border: '1px solid rgba(197, 160, 89, 0.35)',
+          boxShadow: '0 16px 45px rgba(99, 59, 44, 0.06)'
+        }} className="visit-split-card">
           
-          {/* LEFT SIDE: The Request Form or Success State */}
-          <div className="appointment-form-side scroll-reveal reveal-from-left" style={{ 
-            width: '54%', 
+          {/* Left: Text & Actions */}
+          <div style={{
             padding: '56px 48px',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            textAlign: 'left'
           }}>
-            
-            {!isSubmitted ? (
-              <>
-                {/* Header */}
-                <div style={{ marginBottom: '28px' }}>
-                  <h2 style={{ 
-                    fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-                    fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', 
-                    color: '#633b2c',
-                    fontWeight: 400,
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.2,
-                    letterSpacing: '-0.02em'
-                  }}>
-                    Speak With Our Admissions Team
-                  </h2>
-                  <p style={{ 
-                    fontFamily: '"General Sans", "Inter", sans-serif',
-                    fontSize: '15px', 
-                    color: '#60554a',
-                    margin: 0,
-                    lineHeight: 1.5
-                  }}>
-                    Connect with Al Novelle educators to discuss entry requirements, course curriculums, and upcoming intakes in Abu Dhabi.
-                  </p>
-                </div>
-
-                {/* The Actual Form */}
-                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                  
-                  {/* Row 1: Name and Email */}
-                  <div className="form-double-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>Full Name*</label>
-                      <input 
-                        type="text" 
-                        name="name"
-                        required
-                        placeholder="Your name" 
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="admissions-input"
-                        style={{ 
-                          padding: '14px 20px', 
-                          borderRadius: '12px', 
-                          border: '1px solid rgba(132, 94, 53, 0.1)', 
-                          background: '#f3ebe0',
-                          fontSize: '14px',
-                          color: '#2a2118',
-                          outline: 'none',
-                          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                          fontFamily: '"General Sans", sans-serif'
-                        }} 
-                      />
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>Email Address*</label>
-                      <input 
-                        type="email" 
-                        name="email"
-                        required
-                        placeholder="Email address" 
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="admissions-input"
-                        style={{ 
-                          padding: '14px 20px', 
-                          borderRadius: '12px', 
-                          border: '1px solid rgba(132, 94, 53, 0.1)', 
-                          background: '#f3ebe0',
-                          fontSize: '14px',
-                          color: '#2a2118',
-                          outline: 'none',
-                          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                          fontFamily: '"General Sans", sans-serif'
-                        }} 
-                      />
-                    </div>
-                  </div>
-
-                  {/* Row 2: Phone and Programme selection */}
-                  <div className="form-double-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>Phone Number*</label>
-                      <input 
-                        type="tel" 
-                        name="phone"
-                        required
-                        placeholder="e.g. +971 50 000 0000" 
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="admissions-input"
-                        style={{ 
-                          padding: '14px 20px', 
-                          borderRadius: '12px', 
-                          border: '1px solid rgba(132, 94, 53, 0.1)', 
-                          background: '#f3ebe0',
-                          fontSize: '14px',
-                          color: '#2a2118',
-                          outline: 'none',
-                          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                          fontFamily: '"General Sans", sans-serif'
-                        }} 
-                      />
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>Programme of Interest*</label>
-                      <div style={{ position: 'relative', width: '100%' }}>
-                        <select 
-                          name="therapy"
-                          required
-                          value={formData.therapy}
-                          onChange={handleChange}
-                          className="admissions-input select-arrow"
-                          style={{ 
-                            width: '100%',
-                            padding: '14px 20px', 
-                            borderRadius: '12px', 
-                            border: '1px solid rgba(132, 94, 53, 0.1)', 
-                            background: '#f3ebe0',
-                            fontSize: '14px',
-                            color: '#2a2118',
-                            outline: 'none',
-                            transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                            appearance: 'none',
-                            cursor: 'pointer',
-                            fontFamily: '"General Sans", sans-serif'
-                          }}
-                        >
-                          <option value="" disabled>Select a course</option>
-                          {COURSE_CATALOGUE.map(c => (
-                            <option key={c.id} value={c.title}>{c.title}</option>
-                          ))}
-                          <option value="General Admissions Enquiry">General Admissions Enquiry</option>
-                        </select>
-                        <div style={{ 
-                          position: 'absolute', 
-                          right: '18px', 
-                          top: '50%', 
-                          transform: 'translateY(-50%)', 
-                          color: '#60554a', 
-                          fontSize: '10px', 
-                          pointerEvents: 'none',
-                          opacity: 0.8
-                        }}>
-                          ▼
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Textarea */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>How can we help?</label>
-                    <textarea 
-                      name="message"
-                      rows={3}
-                      placeholder="Ask about schedule, syllabus, or entry requirements..." 
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="admissions-input"
-                      style={{ 
-                        padding: '14px 20px', 
-                        borderRadius: '12px', 
-                        border: '1px solid rgba(132, 94, 53, 0.1)', 
-                        background: '#f3ebe0',
-                        fontSize: '14px',
-                        color: '#2a2118',
-                        outline: 'none',
-                        resize: 'none',
-                        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                        fontFamily: '"General Sans", sans-serif'
-                      }}
-                    />
-                  </div>
-
-                  {/* Admissions Consent */}
-                  <label className="checkbox-container" style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer', marginTop: '4px' }}>
-                    <input 
-                      type="checkbox" 
-                      name="agree"
-                      required
-                      checked={formData.agree}
-                      onChange={handleChange}
-                      style={{ 
-                        width: '18px', 
-                        height: '18px', 
-                        accentColor: '#845e35', 
-                        cursor: 'pointer',
-                        borderRadius: '4px',
-                        border: '1px solid rgba(132, 94, 53, 0.3)',
-                        marginTop: '2px'
-                      }} 
-                    />
-                    <span style={{ fontSize: '13px', color: '#60554a', userSelect: 'none', lineHeight: 1.4, fontFamily: '"General Sans", sans-serif' }}>
-                      I agree to allow Al Novelle to contact me regarding course admissions.*
-                    </span>
-                  </label>
-
-                  {/* Marketing Consent (Separate, Unchecked by default) */}
-                  <label className="checkbox-container" style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer' }}>
-                    <input 
-                      type="checkbox" 
-                      name="marketing"
-                      checked={formData.marketing}
-                      onChange={handleChange}
-                      style={{ 
-                        width: '18px', 
-                        height: '18px', 
-                        accentColor: '#845e35', 
-                        cursor: 'pointer',
-                        borderRadius: '4px',
-                        border: '1px solid rgba(132, 94, 53, 0.3)',
-                        marginTop: '2px'
-                      }} 
-                    />
-                    <span style={{ fontSize: '13px', color: '#60554a', userSelect: 'none', lineHeight: 1.4, fontFamily: '"General Sans", sans-serif' }}>
-                      Keep me informed about future workshops and academy updates. (Optional)
-                    </span>
-                  </label>
-
-                  {/* Form Button & Reply Time */}
-                  <div className="form-submit-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '12px', gap: '16px', flexWrap: 'wrap' }}>
-                    <button 
-                      type="submit" 
-                      disabled={isPending}
-                      className="btn-book-appointment" 
-                      style={{ 
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        background: '#845e35',
-                        color: '#FFFFFF', 
-                        padding: '6px 32px 6px 6px', 
-                        borderRadius: '100px', 
-                        border: 'none',
-                        fontSize: '14px', 
-                        fontWeight: 600,
-                        cursor: 'pointer',
-                        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                        fontFamily: '"General Sans", sans-serif',
-                        boxShadow: '0 4px 12px rgba(132, 94, 53, 0.15)'
-                      }}
-                    >
-                      <span style={{ 
-                        width: '32px', 
-                        height: '32px', 
-                        borderRadius: '50%', 
-                        background: '#FFFFFF', 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center',
-                        marginRight: '16px',
-                        fontSize: '14px',
-                        boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
-                      }}>
-                        <img 
-                          src="/logos/gold-logomark.png" 
-                          alt="Al Novelle Logo Badge" 
-                          style={{ width: '18px', height: '18px', objectFit: 'contain' }}
-                        />
-                      </span>
-                      {isPending ? 'Submitting...' : 'Send Enquiry'}
-                    </button>
-                    
-                    <span style={{ fontSize: '13px', color: '#60554a', fontWeight: 500, fontFamily: '"General Sans", sans-serif' }}>
-                      We’ll reply within 24–48h.
-                    </span>
-                  </div>
-
-                </form>
-              </>
-            ) : (
-              /* SUCCESS STATE */
-              <div style={{ textAlign: 'center', padding: '40px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
-                <div style={{ 
-                  width: '80px', 
-                  height: '80px', 
-                  borderRadius: '50%', 
-                  background: '#FFFFFF', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  boxShadow: '0 10px 30px rgba(132, 94, 53, 0.1)'
-                }}>
-                  <img 
-                    src="/logos/gold-logomark.png" 
-                    alt="Success Logo Badge" 
-                    style={{ width: '42px', height: '42px', objectFit: 'contain' }}
-                  />
-                </div>
-                
-                <div>
-                  <h3 style={{ 
-                    fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
-                    fontSize: '30px', 
-                    color: '#633b2c', 
-                    fontWeight: 400, 
-                    margin: '0 0 12px 0' 
-                  }}>
-                    Enquiry Received
-                  </h3>
-                  <p style={{ 
-                    fontFamily: '"General Sans", sans-serif', 
-                    fontSize: '15px', 
-                    color: '#60554a', 
-                    maxWidth: '420px', 
-                    margin: '0 auto', 
-                    lineHeight: 1.6 
-                  }}>
-                    Thank you, <strong>{formData.name}</strong>. Our admissions team has received your enquiry regarding <strong>{formData.therapy}</strong> and will contact you at <strong>{formData.email}</strong> within 24–48 hours.
-                  </p>
-                </div>
-                
-                <button 
-                  onClick={() => {
-                    setIsSubmitted(false);
-                    setFormData({
-                      name: '',
-                      email: '',
-                      phone: '',
-                      therapy: '',
-                      message: '',
-                      agree: false,
-                      marketing: false
-                    });
-                  }}
-                  style={{
-                    background: 'transparent',
-                    border: '1px solid rgba(132, 94, 53, 0.3)',
-                    color: '#845e35',
-                    padding: '10px 24px',
-                    borderRadius: '100px',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    fontFamily: '"General Sans", sans-serif'
-                  }}
-                >
-                  Submit another enquiry
-                </button>
-              </div>
-            )}
-
-          </div>
-
-          {/* RIGHT SIDE: Authentic Al Novelle interior photograph */}
-          <div className="appointment-image-side scroll-reveal reveal-from-right reveal-delay-1" style={{ 
-            width: '46%', 
-            position: 'relative',
-            minHeight: '560px',
-            background: '#F5EFE6'
-          }}>
-            <img 
-              src="/academy-images/polished-al-novelle-training-centre-interior.png" 
-              alt="Al Novelle training space in Abu Dhabi" 
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            />
-            
-            {/* Elegant glassmorphic general inquiries card overlay */}
-            <div className="glass-inquiries-card" style={{ 
-              position: 'absolute',
-              bottom: '24px',
-              left: '24px',
-              right: '24px',
-              background: 'rgba(132, 94, 53, 0.45)',
-              backdropFilter: 'blur(16px)',
-              WebkitBackdropFilter: 'blur(16px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              borderRadius: '24px',
-              padding: '28px',
-              color: '#FFFFFF',
-              textAlign: 'center',
-              boxShadow: '0 8px 32px 0 rgba(74, 55, 40, 0.12)'
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              background: '#FFFFFF',
+              padding: '6px 14px',
+              borderRadius: '100px',
+              fontSize: '11px',
+              letterSpacing: '1.8px',
+              fontWeight: 700,
+              color: '#633b2c',
+              textTransform: 'uppercase',
+              fontFamily: '"General Sans", sans-serif',
+              marginBottom: '16px',
+              border: '1px solid rgba(197, 160, 89, 0.3)',
+              width: 'fit-content'
             }}>
-              <div style={{ 
-                width: '36px', 
-                height: '36px', 
-                borderRadius: '50%', 
-                background: '#FFFFFF', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                margin: '0 auto 12px auto',
-                boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
-              }}>
-                <img 
-                  src="/logos/gold-logomark.png" 
-                  alt="Al Novelle" 
-                  style={{ width: '18px', height: '18px', objectFit: 'contain' }}
-                />
-              </div>
-              
-              <h3 style={{ 
-                fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
-                fontSize: '20px', 
-                color: '#FFFFFF', 
-                fontWeight: 400, 
-                margin: '0 0 12px 0',
-                letterSpacing: '-0.01em'
-              }}>
-                General Enquiries
-              </h3>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
+              ACADEMY ENROLMENT &amp; TOURS
+            </span>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13.5px', fontWeight: 500, fontFamily: '"General Sans", sans-serif' }}>
-                <a href="tel:+971502348625" className="inquiry-link" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                  <span>📞</span> +971 50 234 8625
-                </a>
-                <a href="tel:+971507629543" className="inquiry-link" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                  <span>📞</span> +971 50 762 9543
-                </a>
-                <a href="mailto:hello@novelle.ae" className="inquiry-link" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                    <path d="m3 7 9 6 9-6"></path>
-                  </svg>
-                  hello@novelle.ae
-                </a>
-                <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontWeight: 700, marginTop: '6px' }}>
-                  Chat on WhatsApp
-                </a>
-              </div>
+            <h2 style={{
+              fontFamily: '"Hedvig Letters Serif", Georgia, serif',
+              fontSize: 'clamp(2.1rem, 3.4vw, 2.9rem)',
+              color: '#633b2c',
+              fontWeight: 400,
+              lineHeight: 1.2,
+              margin: '0 0 16px 0',
+              letterSpacing: '-0.02em'
+            }}>
+              Book your visit today
+            </h2>
+
+            <p style={{
+              fontFamily: '"General Sans", sans-serif',
+              fontSize: '15.5px',
+              color: '#60554a',
+              lineHeight: 1.65,
+              margin: '0 0 32px 0',
+              fontWeight: 450,
+              maxWidth: '480px'
+            }}>
+              Tour our Abu Dhabi clinical suites, consult with our admissions team, and discover the right aesthetic qualification path for your professional career.
+            </p>
+
+            {/* CTAs */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '28px' }}>
+              <a
+                href={WA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: '#633b2c',
+                  color: '#FFFFFF',
+                  padding: '13px 24px',
+                  borderRadius: '100px',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  fontFamily: '"General Sans", sans-serif',
+                  boxShadow: '0 4px 16px rgba(99, 59, 44, 0.2)',
+                  transition: 'background 0.3s ease'
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = '#845E35')}
+                onMouseLeave={e => (e.currentTarget.style.background = '#633b2c')}
+              >
+                <WhatsAppIcon />
+                <span>Enquire on WhatsApp</span>
+              </a>
+
+              <Link
+                href="/courses"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  background: '#FFFFFF',
+                  color: '#633b2c',
+                  padding: '13px 22px',
+                  borderRadius: '100px',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  fontFamily: '"General Sans", sans-serif',
+                  border: '1px solid rgba(197, 160, 89, 0.4)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = '#FAF6F0';
+                  e.currentTarget.style.borderColor = '#c5a059';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = '#FFFFFF';
+                  e.currentTarget.style.borderColor = 'rgba(197, 160, 89, 0.4)';
+                }}
+              >
+                View Programmes <span>→</span>
+              </Link>
             </div>
 
+            {/* Contact Micro Info */}
+            <div style={{
+              display: 'flex',
+              gap: '20px',
+              fontFamily: '"General Sans", sans-serif',
+              fontSize: '12.5px',
+              color: '#7a6b63',
+              flexWrap: 'wrap'
+            }}>
+              <span>📍 Al Zahiyah (16), Abu Dhabi</span>
+              <span>📞 +971 50 234 8625</span>
+              <span>✉️ hello@novelle.ae</span>
+            </div>
+          </div>
+
+          {/* Right: Authentic Academy Interior Photo */}
+          <div style={{
+            position: 'relative',
+            minHeight: '380px',
+            background: '#D9CDBF'
+          }}>
+            <img
+              src="/academy-images/al-novelle-training-centre-interior.png"
+              alt="Al Novelle training centre reception in Abu Dhabi"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+            />
           </div>
 
         </div>
@@ -506,41 +181,9 @@ export default function BookConsultation() {
       </div>
 
       <style dangerouslySetInnerHTML={{__html: `
-        .admissions-input:focus {
-          border-color: #845e35 !important;
-          background-color: #ffffff !important;
-          box-shadow: 0 4px 12px rgba(132, 94, 53, 0.05);
-        }
-        .btn-book-appointment:hover {
-          background: #6d4d2b !important;
-          box-shadow: 0 4px 15px rgba(109, 77, 43, 0.25);
-        }
-        .inquiry-link:hover {
-          text-decoration: underline !important;
-          opacity: 0.9;
-        }
-        @media (max-width: 950px) {
-          .appointment-grand-card {
-            flex-direction: column !important;
-            border-radius: 24px !important;
-          }
-          .appointment-form-side {
-            width: 100% !important;
-            padding: 40px 24px !important;
-          }
-          .appointment-image-side {
-            width: 100% !important;
-            height: 380px !important;
-            min-height: auto !important;
-          }
-          .form-double-row {
+        @media (max-width: 900px) {
+          .visit-split-card {
             grid-template-columns: 1fr !important;
-            gap: 16px !important;
-          }
-          .form-submit-row {
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            gap: 16px !important;
           }
         }
       `}} />

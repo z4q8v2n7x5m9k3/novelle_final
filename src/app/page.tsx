@@ -4,18 +4,18 @@ import path from 'path';
 import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
+import HomeKickerBar from '@/components/HomeKickerBar';
 import BigStatement from '@/components/BigStatement';
-import HomeAboutPreview from '@/components/HomeAboutPreview';
 import HomeCoursesStrip from '@/components/HomeCoursesStrip';
 import FoundersSection from '@/components/FoundersSection';
 import VisionMission from '@/components/VisionMission';
+import Testimonials from '@/components/Testimonials';
 import GalleryPreview from '@/components/GalleryPreview';
+import BlogPreview from '@/components/BlogPreview';
 import FAQs from '@/components/FAQs';
 import BookConsultation from '@/components/BookConsultation';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import UAEIdentity from '@/components/UAEIdentity';
-import BlogPreview from '@/components/BlogPreview';
 
 export const metadata: Metadata = {
   title: 'Al Novelle | Aesthetic Training Academy in Abu Dhabi',
@@ -54,34 +54,34 @@ export default function Home() {
       {/* Hero — 16 approved courses in orbital carousel with direct hash links & functional CTAs */}
       <Hero content={homepageContent.hero} />
       
-      {/* Big Statement — editorial serif statement with aesthetic icons */}
+      {/* 4-Pillar Kicker Bar matching Inspiration under Hero */}
+      <HomeKickerBar />
+
+      {/* About Novelle, Philosophy & Institutional Numbers matching Inspiration */}
       <BigStatement content={homepageContent.bigStatement} />
 
-      {/* Featured Courses Strip — flagship courses immediately visible after intro */}
+      {/* Featured Training Programmes matching Inspiration's treatments strip */}
       <HomeCoursesStrip />
 
-      {/* Why We Started Novelle — concise, badge-driven, clean editorial layout */}
-      <HomeAboutPreview />
-      
-      {/* Completely Redesigned Luxury Founders Section — Dr. Azaiba Salim Kara & Dr. Seeta Yadav */}
+      {/* Clinical Leadership Behind Al Novelle — Dr. Azaiba Salim Kara & Dr. Seeta Yadav */}
       <FoundersSection />
 
-      {/* Vision & Mission — Authentic 2-column layout with student support card */}
+      {/* Supervised Clinical Practice — Concise 1-line title & authentic workstation photography */}
       <VisionMission />
 
-      {/* UAE Identity — Born in Abu Dhabi, Built for Real Practice */}
-      <UAEIdentity />
+      {/* What Our Learners Say — 4.9 rating and graduate practitioner feedback */}
+      <Testimonials />
 
       {/* Gallery Preview — Authentic Al Novelle interior photography */}
       <GalleryPreview />
 
-      {/* Academy Insights — Retained blog preview */}
+      {/* Academy Insights — 3-card grid matching Inspiration's notes section */}
       <BlogPreview />
 
-      {/* FAQs — Accurate location and verified contact details */}
+      {/* FAQs — Questions, answered accordion */}
       <FAQs />
 
-      {/* Contact & Enquiry Form — hello@novelle.ae and approved course list */}
+      {/* Book Your Visit Today — Split luxury card with reception photo right above footer */}
       <BookConsultation />
 
       <Footer />
