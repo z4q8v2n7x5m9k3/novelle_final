@@ -1,10 +1,10 @@
 import React from 'react';
 
 const principles = [
-  ['01', 'UAE-Based Academy'],
-  ['02', 'Practical Aesthetic Education'],
-  ['03', 'Safety-Led Learning'],
-  ['04', 'Professional Excellence'],
+  ['01', 'Abu Dhabi Campus'],
+  ['02', 'Supervised Workstations'],
+  ['03', 'Accredited Curriculums'],
+  ['04', 'Evidence-Based Practice'],
 ];
 
 export default function UAEIdentity() {
@@ -13,17 +13,15 @@ export default function UAEIdentity() {
       <div className="container uae-editorial-shell">
         <div className="uae-editorial-copy scroll-reveal reveal-from-left">
           <span className="section-eyebrow">BORN IN ABU DHABI</span>
-          <h2>Born in Abu Dhabi.<br />Built for Excellence.</h2>
+          <h2>Born in Abu Dhabi.<br />Built for Real Practice.</h2>
           <p>
-            Novelle is rooted in the UAE&apos;s culture of ambition, innovation, and quality. From Abu Dhabi,
-            we aim to develop confident professionals through structured aesthetic education, practical
-            learning, and a commitment to higher standards.
+            Al Novelle is rooted in the UAE&apos;s ambition for quality, medical rigor, and higher educational standards. Based in Abu Dhabi, we develop knowledgeable practitioners prepared for responsible clinical and salon environments.
           </p>
         </div>
 
         <div className="uae-brand-card scroll-reveal reveal-from-right reveal-delay-1">
           <div className="uae-card-heading">
-            <span>OUR HOME</span>
+            <span>OUR ACADEMY</span>
             <strong>Abu Dhabi, UAE</strong>
           </div>
           <div className="uae-principles">

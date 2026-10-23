@@ -1,21 +1,21 @@
 {
   "brandName": "Al Novelle",
   "phone": "050 234 8625",
+  "phoneSecondary": "050 762 9543",
   "email": "hello@novelle.ae",
-  "address": "Al Zahiyah, Abu Dhabi, UAE",
+  "address": "Unit 1001, LAVG Building, Al Zahiyah (16), Abu Dhabi, UAE",
+  "legalName": "Al Novelle Advanced Aesthetic Training LLC",
+  "tradeLicence": "CN-6573432",
   "homepage": {
     "hero": {
       "title": "Build Your Future in Aesthetic Education",
       "subtitle": "ABU DHABI · UAE · EST. 2026",
-      "description": "A premium training academy for beauty therapy, clinical aesthetics, and advanced laser technologies — built for learners who want recognised skills, hands-on confidence, and a serious career in aesthetics.",
-      "backgroundImage": "/academy-images/academy-approach-session.png"
+      "description": "Abu Dhabi’s training academy for beauty therapy, clinical aesthetics, and laser technologies — delivering structured science, supervised practice, and professional confidence.",
+      "backgroundImage": "/academy-images/al-novelle-training-centre-interior.png"
     },
     "bigStatement": {
       "image1": "/academy-images/training-consultation.png",
       "image2": "/academy-images/laser-device-training.png"
-    },
-    "academyApproach": {
-      "image": "/academy-images/academy-approach-session.png"
     }
   }
 }

@@ -1,6 +1,9 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { COURSE_CATALOGUE } from '@/data/courses';
+
+const WA_URL = 'https://wa.me/971502348625?text=Hello%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
 
 export default function Hero({ content }: { content?: any }) {
   const [scrollY, setScrollY] = useState(0);
@@ -12,23 +15,9 @@ export default function Hero({ content }: { content?: any }) {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const categories = [
-    { label: "Aesthetic Training", img: "/academy-images/training-consultation.png" },
-    { label: "Beauty Education", img: "/academy-images/practical-class-mannequin.png" },
-    { label: "Laser Awareness", img: "/academy-images/academy-approach-session.png" },
-    { label: "SPMU Training", img: "/academy-images/laser-device-training.png" },
-    { label: "Practical Learning", img: "/academy-images/academy-lounge-classroom.png" },
-    { label: "Career Guidance", img: "/academy-images/training-consultation.png" },
-    { label: "Academy Tour", img: "/academy-images/practical-class-mannequin.png" },
-    { label: "Skin Science", img: "/academy-images/laser-device-training.png" },
-    { label: "Safety Training", img: "/academy-images/academy-approach-session.png" },
-    { label: "Professional Growth", img: "/academy-images/student-support-admissions.png" },
-    { label: "Beauty Therapy", img: "/academy-images/training-consultation.png" },
-    { label: "Laser Therapy", img: "/academy-images/laser-device-training.png" },
-    { label: "Device Training", img: "/academy-images/practical-class-mannequin.png" },
-    { label: "Practical Class", img: "/academy-images/academy-lounge-classroom.png" },
-    { label: "Skin Science", img: "/academy-images/student-support-admissions.png" }
-  ];
+
+  // Display the approved catalogue courses in the orbital presentation (16 items)
+  const heroCourses = COURSE_CATALOGUE.slice(0, 16);
 
   return (
     <section className="framer-1bf1z5p-wrapper" style={{
@@ -84,7 +73,7 @@ export default function Hero({ content }: { content?: any }) {
           max-width: 1820px;
           border-radius: 40px;
           position: relative;
-          padding: 80px 24px 340px 24px;
+          padding: 80px 24px 350px 24px;
           overflow: hidden;
           box-shadow: 0 20px 50px rgba(99, 59, 44, 0.05);
           display: flex;
@@ -98,7 +87,7 @@ export default function Hero({ content }: { content?: any }) {
           left: 0;
           width: 100%;
           height: 120%;
-          background-image: url('${content?.backgroundImage || "/academy-images/academy-approach-session.png"}');
+          background-image: url('${content?.backgroundImage || "/academy-images/al-novelle-training-centre-interior.png"}');
           background-size: cover;
           background-position: center;
           z-index: 0;
@@ -110,19 +99,19 @@ export default function Hero({ content }: { content?: any }) {
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(circle at center 26%, rgba(28, 16, 10, 0.72) 0%, rgba(49, 27, 17, 0.58) 36%, rgba(49, 27, 17, 0.34) 66%, rgba(49, 27, 17, 0.18) 100%),
-            linear-gradient(to bottom, rgba(18, 12, 9, 0.86) 0%, rgba(49, 27, 17, 0.58) 46%, rgba(49, 27, 17, 0.30) 100%);
+            radial-gradient(circle at center 26%, rgba(28, 16, 10, 0.76) 0%, rgba(49, 27, 17, 0.62) 36%, rgba(49, 27, 17, 0.40) 66%, rgba(49, 27, 17, 0.22) 100%),
+            linear-gradient(to bottom, rgba(18, 12, 9, 0.88) 0%, rgba(49, 27, 17, 0.62) 46%, rgba(49, 27, 17, 0.34) 100%);
           z-index: 1;
         }
         .hero-content-top {
           position: relative;
           z-index: 10;
-          max-width: 800px;
+          max-width: 820px;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 20px;
-          margin-top: 40px;
+          gap: 18px;
+          margin-top: 24px;
         }
         .hero-tagline,
         .hero-title,
@@ -142,7 +131,7 @@ export default function Hero({ content }: { content?: any }) {
           letter-spacing: 2px;
           text-transform: uppercase;
         }
-          .hero-title {
+        .hero-title {
           font-family: var(--font-heading), Georgia, serif;
           font-size: clamp(2.2rem, 5vw, 4rem);
           color: #ffffff !important;
@@ -151,31 +140,34 @@ export default function Hero({ content }: { content?: any }) {
           letter-spacing: -0.02em;
         }
         .hero-description {
-          font-size: clamp(15px, 2.5vw, 17px);
-          color: rgba(255, 253, 249, 0.9);
+          font-size: clamp(15px, 2.2vw, 17px);
+          color: rgba(255, 253, 249, 0.92);
           line-height: 1.6;
-          max-width: 620px;
-          margin-bottom: 20px;
+          max-width: 640px;
+          margin-bottom: 8px;
         }
         .hero-btn-container {
           display: flex;
           gap: 16px;
           justify-content: center;
           flex-wrap: wrap;
-          margin-bottom: 40px;
+          margin-bottom: 24px;
+          z-index: 10;
         }
         .hero-btn-primary {
           background-color: var(--deep-gold);
           color: var(--white);
-          padding: 12px 24px;
-          min-width: 160px;
+          padding: 13px 28px;
+          min-width: 170px;
           text-align: center;
           border-radius: 30px;
-          font-size: 13px;
-          font-weight: 500;
+          font-size: 13.5px;
+          font-weight: 600;
           letter-spacing: 0.5px;
           transition: all 0.3s ease;
           border: 1px solid var(--deep-gold);
+          text-decoration: none;
+          display: inline-block;
         }
         .hero-btn-primary:hover {
           background-color: #a87848;
@@ -185,22 +177,24 @@ export default function Hero({ content }: { content?: any }) {
           box-shadow: 0 8px 20px rgba(152, 106, 62, 0.3);
         }
         .hero-btn-secondary {
-          background-color: rgba(255, 255, 255, 0.1);
+          background-color: rgba(255, 255, 255, 0.12);
           color: var(--white);
-          padding: 12px 24px;
-          min-width: 160px;
+          padding: 13px 28px;
+          min-width: 170px;
           text-align: center;
           border-radius: 30px;
-          font-size: 13px;
-          font-weight: 500;
+          font-size: 13.5px;
+          font-weight: 600;
           letter-spacing: 0.5px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.3);
           transition: all 0.3s ease;
           backdrop-filter: blur(10px);
+          text-decoration: none;
+          display: inline-block;
         }
         .hero-btn-secondary:hover {
           background-color: var(--white);
-          color: var(--charcoal);
+          color: #311B11;
           transform: translateY(-2px);
         }
         .hero-carousel-wrapper {
@@ -219,7 +213,10 @@ export default function Hero({ content }: { content?: any }) {
           width: 100%;
           height: 100%;
           border-radius: 50%;
-          animation: spin 80s linear infinite;
+          animation: spin 85s linear infinite;
+        }
+        .hero-carousel-spin:hover {
+          animation-play-state: paused;
         }
         .hero-orbit-item {
           position: absolute;
@@ -233,9 +230,9 @@ export default function Hero({ content }: { content?: any }) {
           align-items: flex-start;
           pointer-events: none;
         }
-         .hero-treatment-pill {
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.18);
+        .hero-treatment-pill {
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.22);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           border-radius: 9999px;
@@ -254,23 +251,23 @@ export default function Hero({ content }: { content?: any }) {
           text-decoration: none;
         }
         .hero-treatment-pill:hover {
-          background: rgba(255, 255, 255, 0.18);
-          border-color: rgba(255, 255, 255, 0.4);
+          background: rgba(255, 255, 255, 0.22);
+          border-color: rgba(255, 255, 255, 0.5);
           transform: scale(1.08);
-          box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
         }
         .hero-pill-img {
           width: 36px;
           height: 36px;
           border-radius: 50%;
           object-fit: cover;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.35);
         }
         .hero-pill-text {
           writing-mode: vertical-rl;
           text-orientation: mixed;
           transform: rotate(180deg);
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 500;
           color: #ffffff;
           white-space: nowrap;
@@ -323,7 +320,6 @@ export default function Hero({ content }: { content?: any }) {
         .hero-center-badge:hover .hero-badge-cta {
           color: var(--gold-dark);
         }
-        /* Seamless single SVG path replaces absolute flanking shapes */
         .hero-badge-logo {
           width: 32px;
           height: 32px;
@@ -332,7 +328,7 @@ export default function Hero({ content }: { content?: any }) {
         }
         .hero-badge-cta {
           font-size: 13px;
-          font-weight: 500;
+          font-weight: 600;
           color: var(--charcoal);
           letter-spacing: 0.2px;
           text-align: center;
@@ -341,7 +337,7 @@ export default function Hero({ content }: { content?: any }) {
         /* Responsive spacing rules */
         @media (min-width: 1200px) {
           .hero-main-card {
-            padding: 88px 40px 350px 40px;
+            padding: 88px 40px 360px 40px;
           }
           .hero-carousel-wrapper {
             width: 700px;
@@ -369,7 +365,7 @@ export default function Hero({ content }: { content?: any }) {
             height: 42px;
           }
           .hero-pill-text {
-            font-size: 12.5px;
+            font-size: 12px;
           }
           .hero-center-curve-svg {
             width: 380px;
@@ -410,7 +406,7 @@ export default function Hero({ content }: { content?: any }) {
           }
           .hero-main-card {
             border-radius: 20px;
-            padding: 60px 16px 260px 16px;
+            padding: 60px 16px 270px 16px;
           }
           .hero-carousel-wrapper {
             width: 460px;
@@ -449,7 +445,6 @@ export default function Hero({ content }: { content?: any }) {
             height: 75px;
             padding-top: 10px;
           }
-          /* Seamless mobile SVG centering scales path automatically */
           .hero-badge-logo {
             width: 28px;
             height: 28px;
@@ -478,26 +473,35 @@ export default function Hero({ content }: { content?: any }) {
           <h1 className="hero-title">
             Build Your Future in Aesthetic Education
           </h1>
-          <p className="hero-description" style={{ marginBottom: '36px' }}>
-            Abu Dhabi’s premium training academy for beauty therapy, clinical aesthetics, and laser technologies, helping learners gain recognised skills, supervised practical experience, and the confidence to grow professionally.
+          <p className="hero-description">
+            Abu Dhabi’s training academy for beauty therapy, clinical aesthetics, and laser technologies — delivering structured science, supervised practice, and professional confidence.
           </p>
 
+          {/* RETAINED COURSE & ADMISSIONS CTA BUTTONS */}
+          <div className="hero-btn-container">
+            <Link href="/courses" className="hero-btn-primary">
+              Explore Courses
+            </Link>
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="hero-btn-secondary">
+              Speak to Admissions
+            </a>
+          </div>
         </div>
 
         {/* RADIAL SPINNING TREATMENT PILLS CAROUSEL */}
         <div className="hero-carousel-wrapper">
           <div className="hero-carousel-spin">
-            {categories.map((cat, idx) => {
-              const angle = idx * 24; // 15 items placed at 24 degree increments
+            {heroCourses.map((cat, idx) => {
+              const angle = idx * (360 / heroCourses.length);
               return (
                 <div 
-                  key={idx} 
+                  key={cat.id} 
                   className="hero-orbit-item"
                   style={{ transform: `rotate(${angle}deg)` } as React.CSSProperties}
                 >
-                  <Link href="/courses" className="hero-treatment-pill" aria-label={`Explore ${cat.label} programmes`}>
-                    <img src={cat.img} alt={cat.label} className="hero-pill-img" />
-                    <span className="hero-pill-text">{cat.label}</span>
+                  <Link href={`/courses#${cat.id}`} className="hero-treatment-pill" aria-label={`Explore ${cat.title}`}>
+                    <img src={cat.image} alt={cat.title} className="hero-pill-img" />
+                    <span className="hero-pill-text">{cat.pillLabel}</span>
                   </Link>
                 </div>
               );

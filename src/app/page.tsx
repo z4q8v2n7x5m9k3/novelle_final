@@ -4,9 +4,9 @@ import path from 'path';
 import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
+import AccreditationTrust from '@/components/AccreditationTrust';
 import BigStatement from '@/components/BigStatement';
-import AcademyApproach from '@/components/AcademyApproach';
-import VisionMission from '@/components/VisionMission';
+import FoundersSection from '@/components/FoundersSection';
 import GalleryPreview from '@/components/GalleryPreview';
 import FAQs from '@/components/FAQs';
 import BookConsultation from '@/components/BookConsultation';
@@ -16,15 +16,9 @@ import UAEIdentity from '@/components/UAEIdentity';
 import FacilityRental from '@/components/FacilityRental';
 import BlogPreview from '@/components/BlogPreview';
 
-// Removed sections per client request:
-// - ProgrammesGrid (Our Programmes section - client marked remove)
-// - WhyNovelle (Aesthetic Leaders Start Here / Why Students Choose Novelle - client marked remove)
-// - FacultyPreview (replaced by Founders section on About page)
-// - Testimonials (fake testimonials - client marked remove)
-
 export const metadata: Metadata = {
-  title: 'Novelle | Aesthetic Training Academy in Abu Dhabi',
-  description: 'Novelle is an aesthetic training academy in Abu Dhabi offering structured education in beauty, aesthetics, laser and professional practice.',
+  title: 'Al Novelle | Aesthetic Training Academy in Abu Dhabi',
+  description: 'Al Novelle is an aesthetic training academy in Abu Dhabi offering structured education in beauty therapy, clinical aesthetics, and laser technologies.',
   alternates: {
     canonical: 'https://novelle.ae/',
   },
@@ -43,15 +37,12 @@ export default function Home() {
     hero: {
       title: "Build Your Future in Aesthetic Education",
       subtitle: "Abu Dhabi · UAE · Est. 2026",
-      description: "Abu Dhabi's premium training academy for beauty therapy, clinical aesthetics, and laser technologies.",
-      backgroundImage: "/academy-images/academy-approach-session.png"
+      description: "Abu Dhabi's training academy for beauty therapy, clinical aesthetics, and laser technologies.",
+      backgroundImage: "/academy-images/al-novelle-training-centre-interior.png"
     },
     bigStatement: {
       image1: "/academy-images/training-consultation.png",
       image2: "/academy-images/laser-device-training.png"
-    },
-    academyApproach: {
-      image: "/academy-images/academy-approach-session.png"
     }
   };
 
@@ -59,39 +50,39 @@ export default function Home() {
     <main>
       <Navigation />
       
-      {/* Hero — heading spacing fixed: "Build Your Future in Aesthetic Education" */}
+      {/* Hero — 16 approved courses in orbital carousel with functional CTAs */}
       <Hero content={homepageContent.hero} />
       
-      {/* Big Statement — fake rating widget removed */}
+      {/* Accreditation Trust Strip — CIBTAC Accredited Centre & NCLC Certified, USA */}
+      <AccreditationTrust />
+
+      {/* Big Statement — clean refined headline */}
       <BigStatement content={homepageContent.bigStatement} />
       
-      {/* Academy Approach — CIBTAC/NCLC removed, Explore Courses btn removed */}
-      <AcademyApproach content={homepageContent.academyApproach} />
-      
-      {/* Vision & Mission — badges updated, no CIBTAC/NCLC */}
-      <VisionMission />
+      {/* Founders Introduction — Dr. Azaiba Salim Kara & Dr. Seeta Yadav */}
+      <FoundersSection />
 
-      {/* Born in Abu Dhabi — UAE identity section */}
+      {/* UAE Identity — Born in Abu Dhabi */}
       <UAEIdentity />
 
-      {/* Gallery Preview — updated subtitle, TODO image comments */}
+      {/* Gallery Preview — Authentic Al Novelle interior photography */}
       <GalleryPreview />
 
-      {/* Academy Insights — retained as requested, using approved article content */}
+      {/* Academy Insights — Retained blog preview */}
       <BlogPreview />
 
-      {/* FAQs — replaced with client-provided FAQs */}
+      {/* FAQs — Accurate location and verified contact details */}
       <FAQs />
 
-      {/* Facility Rental / Training Space Enquiries section */}
+      {/* Facility Rental / Training Space Enquiries */}
       <FacilityRental />
 
-      {/* Contact Form — email fixed, WhatsApp fallback on submit */}
+      {/* Contact & Enquiry Form — hello@novelle.ae and approved course list */}
       <BookConsultation />
 
       <Footer />
 
-      {/* Floating WhatsApp button — site-wide */}
+      {/* Floating WhatsApp button */}
       <WhatsAppButton />
     </main>
   );

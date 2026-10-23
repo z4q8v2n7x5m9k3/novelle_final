@@ -1,5 +1,8 @@
 'use client';
 import React, { useState } from 'react';
+import { COURSE_CATALOGUE } from '@/data/courses';
+
+const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
 
 export default function BookConsultation() {
   const [formData, setFormData] = useState({
@@ -8,7 +11,8 @@ export default function BookConsultation() {
     phone: '',
     therapy: '',
     message: '',
-    agree: false
+    agree: false,
+    marketing: false
   });
   
   const [isPending, setIsPending] = useState(false);
@@ -28,11 +32,9 @@ export default function BookConsultation() {
     e.preventDefault();
     setIsPending(true);
     try {
-      // Build WhatsApp message from form data
       const waMessage = encodeURIComponent(
-        `Hello Novelle Academy, I would like to enquire about your courses.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nProgramme of Interest: ${formData.therapy}\nMessage: ${formData.message}`
+        `Hello Al Novelle, I would like to enquire about your courses.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nProgramme of Interest: ${formData.therapy}\nMessage: ${formData.message}`
       );
-      // Try API first, then fallback to WhatsApp
       try {
         const res = await fetch('/api/inquiries', {
           method: 'POST',
@@ -43,7 +45,6 @@ export default function BookConsultation() {
         const result = await res.json();
         if (!result.delivered) window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
       } catch {
-        // If API fails, open WhatsApp
         window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
       }
     } finally {
@@ -54,23 +55,23 @@ export default function BookConsultation() {
 
   return (
     <section className="section-padding" style={{ background: '#FAF6F0', padding: '100px 24px 120px 24px' }} id="book-consultation">
-      {/* Outer container aligning perfectly with the global layout */}
       <div className="container" style={{ maxWidth: '1400px', margin: '0 auto' }}>
         
         {/* Grand 2-Column Appointment Card */}
         <div className="appointment-grand-card" style={{ 
-          background: '#eae0d5', // Exact warm light peach-beige background from port 3001
+          background: '#eae0d5',
           borderRadius: '32px',
           overflow: 'hidden',
           display: 'flex',
           boxShadow: '0 10px 40px rgba(74, 55, 40, 0.02)',
+          border: '1px solid rgba(197, 160, 89, 0.2)',
           transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
         }}>
           
           {/* LEFT SIDE: The Request Form or Success State */}
           <div className="appointment-form-side scroll-reveal reveal-from-left" style={{ 
             width: '54%', 
-            padding: '64px',
+            padding: '56px 48px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center'
@@ -79,11 +80,11 @@ export default function BookConsultation() {
             {!isSubmitted ? (
               <>
                 {/* Header */}
-                <div style={{ marginBottom: '32px' }}>
+                <div style={{ marginBottom: '28px' }}>
                   <h2 style={{ 
                     fontFamily: '"Hedvig Letters Serif", Georgia, serif',
                     fontSize: 'clamp(2rem, 3.5vw, 2.7rem)', 
-                    color: '#633b2c', // Main text, primary brand brown
+                    color: '#633b2c',
                     fontWeight: 400,
                     margin: '0 0 12px 0',
                     lineHeight: 1.2,
@@ -94,21 +95,21 @@ export default function BookConsultation() {
                   <p style={{ 
                     fontFamily: '"General Sans", "Inter", sans-serif',
                     fontSize: '15px', 
-                    color: '#60554a', // Soft luxury charcoal-brown
+                    color: '#60554a',
                     margin: 0,
                     lineHeight: 1.5
                   }}>
-                    Choose the programme that matches your goals in beauty therapy, laser technologies, clinical aesthetics, or advanced skin education.
+                    Connect with Al Novelle educators to discuss entry requirements, course curriculums, and upcoming intakes in Abu Dhabi.
                   </p>
                 </div>
 
                 {/* The Actual Form */}
-                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                   
                   {/* Row 1: Name and Email */}
-                  <div className="form-double-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                  <div className="form-double-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>Name*</label>
+                      <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>Full Name*</label>
                       <input 
                         type="text" 
                         name="name"
@@ -131,7 +132,7 @@ export default function BookConsultation() {
                       />
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>Email*</label>
+                      <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>Email Address*</label>
                       <input 
                         type="email" 
                         name="email"
@@ -156,14 +157,14 @@ export default function BookConsultation() {
                   </div>
 
                   {/* Row 2: Phone and Programme selection */}
-                  <div className="form-double-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                  <div className="form-double-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>Phone*</label>
+                      <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>Phone Number*</label>
                       <input 
                         type="tel" 
                         name="phone"
                         required
-                        placeholder="Phone number" 
+                        placeholder="e.g. +971 50 000 0000" 
                         value={formData.phone}
                         onChange={handleChange}
                         className="admissions-input"
@@ -204,14 +205,12 @@ export default function BookConsultation() {
                             fontFamily: '"General Sans", sans-serif'
                           }}
                         >
-                          <option value="" disabled>Select</option>
-                          <option value="Beauty Therapy">Beauty Therapy</option>
-                          <option value="Body Treatments">Body Treatments</option>
-                          <option value="Laser Treatment">Laser Treatment</option>
-                          <option value="Laser & Aesthetics">Laser & Aesthetics</option>
-                          <option value="Semi-Permanent Makeup">Semi-Permanent Makeup</option>
+                          <option value="" disabled>Select a course</option>
+                          {COURSE_CATALOGUE.map(c => (
+                            <option key={c.id} value={c.title}>{c.title}</option>
+                          ))}
+                          <option value="General Admissions Enquiry">General Admissions Enquiry</option>
                         </select>
-                        {/* Custom Down Arrow Chevron */}
                         <div style={{ 
                           position: 'absolute', 
                           right: '18px', 
@@ -230,16 +229,16 @@ export default function BookConsultation() {
 
                   {/* Textarea */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>How we can help?</label>
+                    <label style={{ fontSize: '12px', fontWeight: 600, color: '#60554a', fontFamily: '"General Sans", sans-serif' }}>How can we help?</label>
                     <textarea 
                       name="message"
-                      rows={4}
-                      placeholder="Type here" 
+                      rows={3}
+                      placeholder="Ask about schedule, syllabus, or entry requirements..." 
                       value={formData.message}
                       onChange={handleChange}
                       className="admissions-input"
                       style={{ 
-                        padding: '16px 20px', 
+                        padding: '14px 20px', 
                         borderRadius: '12px', 
                         border: '1px solid rgba(132, 94, 53, 0.1)', 
                         background: '#f3ebe0',
@@ -253,8 +252,8 @@ export default function BookConsultation() {
                     />
                   </div>
 
-                  {/* Agree Checkbox */}
-                  <label className="checkbox-container" style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', marginTop: '4px' }}>
+                  {/* Admissions Consent */}
+                  <label className="checkbox-container" style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer', marginTop: '4px' }}>
                     <input 
                       type="checkbox" 
                       name="agree"
@@ -267,16 +266,39 @@ export default function BookConsultation() {
                         accentColor: '#845e35', 
                         cursor: 'pointer',
                         borderRadius: '4px',
-                        border: '1px solid rgba(132, 94, 53, 0.3)'
+                        border: '1px solid rgba(132, 94, 53, 0.3)',
+                        marginTop: '2px'
                       }} 
                     />
                     <span style={{ fontSize: '13px', color: '#60554a', userSelect: 'none', lineHeight: 1.4, fontFamily: '"General Sans", sans-serif' }}>
-                      I agree to allow the academy to contact me regarding enrolment.
+                      I agree to allow Al Novelle to contact me regarding course admissions.*
+                    </span>
+                  </label>
+
+                  {/* Marketing Consent (Separate, Unchecked by default) */}
+                  <label className="checkbox-container" style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer' }}>
+                    <input 
+                      type="checkbox" 
+                      name="marketing"
+                      checked={formData.marketing}
+                      onChange={handleChange}
+                      style={{ 
+                        width: '18px', 
+                        height: '18px', 
+                        accentColor: '#845e35', 
+                        cursor: 'pointer',
+                        borderRadius: '4px',
+                        border: '1px solid rgba(132, 94, 53, 0.3)',
+                        marginTop: '2px'
+                      }} 
+                    />
+                    <span style={{ fontSize: '13px', color: '#60554a', userSelect: 'none', lineHeight: 1.4, fontFamily: '"General Sans", sans-serif' }}>
+                      Keep me informed about future workshops and academy updates. (Optional)
                     </span>
                   </label>
 
                   {/* Form Button & Reply Time */}
-                  <div className="form-submit-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '16px' }}>
+                  <div className="form-submit-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '12px', gap: '16px', flexWrap: 'wrap' }}>
                     <button 
                       type="submit" 
                       disabled={isPending}
@@ -284,7 +306,7 @@ export default function BookConsultation() {
                       style={{ 
                         display: 'inline-flex',
                         alignItems: 'center',
-                        background: '#845e35', // Exact bronze color
+                        background: '#845e35',
                         color: '#FFFFFF', 
                         padding: '6px 32px 6px 6px', 
                         borderRadius: '100px', 
@@ -297,7 +319,6 @@ export default function BookConsultation() {
                         boxShadow: '0 4px 12px rgba(132, 94, 53, 0.15)'
                       }}
                     >
-                      {/* Circle flower/logomark badge on left */}
                       <span style={{ 
                         width: '32px', 
                         height: '32px', 
@@ -312,11 +333,11 @@ export default function BookConsultation() {
                       }}>
                         <img 
                           src="/logos/gold-logomark.png" 
-                          alt="Novelle Logo Badge" 
+                          alt="Al Novelle Logo Badge" 
                           style={{ width: '18px', height: '18px', objectFit: 'contain' }}
                         />
                       </span>
-                      {isPending ? 'Requesting...' : 'Book an appointment'}
+                      {isPending ? 'Submitting...' : 'Send Enquiry'}
                     </button>
                     
                     <span style={{ fontSize: '13px', color: '#60554a', fontWeight: 500, fontFamily: '"General Sans", sans-serif' }}>
@@ -327,7 +348,7 @@ export default function BookConsultation() {
                 </form>
               </>
             ) : (
-              /* GORGEOUS SUCCESS STATE */
+              /* SUCCESS STATE */
               <div style={{ textAlign: 'center', padding: '40px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
                 <div style={{ 
                   width: '80px', 
@@ -349,22 +370,22 @@ export default function BookConsultation() {
                 <div>
                   <h3 style={{ 
                     fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
-                    fontSize: '32px', 
+                    fontSize: '30px', 
                     color: '#633b2c', 
                     fontWeight: 400, 
                     margin: '0 0 12px 0' 
                   }}>
-                    Request Received
+                    Enquiry Received
                   </h3>
                   <p style={{ 
                     fontFamily: '"General Sans", sans-serif', 
-                    fontSize: '16px', 
+                    fontSize: '15px', 
                     color: '#60554a', 
                     maxWidth: '420px', 
                     margin: '0 auto', 
                     lineHeight: 1.6 
                   }}>
-                    Thank you, <strong>{formData.name}</strong>. Our admissions team has received your enquiry for <strong>{formData.therapy}</strong> and will contact you at <strong>{formData.email}</strong> or <strong>{formData.phone}</strong> within the next 24 to 48 hours.
+                    Thank you, <strong>{formData.name}</strong>. Our admissions team has received your enquiry regarding <strong>{formData.therapy}</strong> and will contact you at <strong>{formData.email}</strong> within 24–48 hours.
                   </p>
                 </div>
                 
@@ -377,7 +398,8 @@ export default function BookConsultation() {
                       phone: '',
                       therapy: '',
                       message: '',
-                      agree: false
+                      agree: false,
+                      marketing: false
                     });
                   }}
                   style={{
@@ -389,28 +411,26 @@ export default function BookConsultation() {
                     fontSize: '13px',
                     fontWeight: 600,
                     cursor: 'pointer',
-                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                    fontFamily: '"General Sans", sans-serif',
-                    marginTop: '12px'
+                    fontFamily: '"General Sans", sans-serif'
                   }}
-                  className="btn-success-reset"
                 >
-                  Submit another request
+                  Submit another enquiry
                 </button>
               </div>
             )}
+
           </div>
 
-          {/* RIGHT SIDE: Gorgeous Portrait Image & Glassmorphic Contact Details */}
-          <div className="appointment-image-side scroll-reveal reveal-from-right reveal-delay-2" style={{ 
+          {/* RIGHT SIDE: Authentic Al Novelle interior photograph */}
+          <div className="appointment-image-side scroll-reveal reveal-from-right reveal-delay-1" style={{ 
             width: '46%', 
             position: 'relative',
-            minHeight: '620px'
+            minHeight: '560px',
+            background: '#F5EFE6'
           }}>
-            {/* Moisty hydrated aesthetic face skin picture from Port 3001 */}
             <img 
-              src="/academy-images/academy-approach-session.png" 
-              alt="Novelle academy admissions and course guidance" 
+              src="/academy-images/polished-al-novelle-training-centre-interior.png" 
+              alt="Al Novelle training space in Abu Dhabi" 
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
             
@@ -420,58 +440,61 @@ export default function BookConsultation() {
               bottom: '24px',
               left: '24px',
               right: '24px',
-              background: 'rgba(132, 94, 53, 0.35)', // Warm luxury brown translucent glass
+              background: 'rgba(132, 94, 53, 0.45)',
               backdropFilter: 'blur(16px)',
               WebkitBackdropFilter: 'blur(16px)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
               borderRadius: '24px',
-              padding: '32px',
+              padding: '28px',
               color: '#FFFFFF',
               textAlign: 'center',
               boxShadow: '0 8px 32px 0 rgba(74, 55, 40, 0.12)'
             }}>
-              {/* White badge enclosing the gold logomark */}
               <div style={{ 
-                width: '40px', 
-                height: '40px', 
+                width: '36px', 
+                height: '36px', 
                 borderRadius: '50%', 
                 background: '#FFFFFF', 
                 display: 'flex', 
                 alignItems: 'center', 
                 justifyContent: 'center',
-                margin: '0 auto 16px auto',
+                margin: '0 auto 12px auto',
                 boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
               }}>
                 <img 
                   src="/logos/gold-logomark.png" 
-                  alt="Inquiry Badge Logo" 
-                  style={{ width: '20px', height: '20px', objectFit: 'contain' }}
+                  alt="Al Novelle" 
+                  style={{ width: '18px', height: '18px', objectFit: 'contain' }}
                 />
               </div>
               
-              {/* Title */}
               <h3 style={{ 
                 fontFamily: '"Hedvig Letters Serif", Georgia, serif', 
-                fontSize: '22px', 
+                fontSize: '20px', 
                 color: '#FFFFFF', 
                 fontWeight: 400, 
-                margin: '0 0 16px 0',
+                margin: '0 0 12px 0',
                 letterSpacing: '-0.01em'
               }}>
-                General inquiries
+                General Enquiries
               </h3>
 
-              {/* Contacts */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', fontWeight: 500, fontFamily: '"General Sans", sans-serif' }}>
-                <a href="tel:0502348625" className="inquiry-link" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                  <span>📞</span> 050 234 8625 / 050 762 9543
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13.5px', fontWeight: 500, fontFamily: '"General Sans", sans-serif' }}>
+                <a href="tel:+971502348625" className="inquiry-link" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                  <span>📞</span> +971 50 234 8625
+                </a>
+                <a href="tel:+971507629543" className="inquiry-link" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                  <span>📞</span> +971 50 762 9543
                 </a>
                 <a href="mailto:hello@novelle.ae" className="inquiry-link" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <rect x="3" y="5" width="18" height="14" rx="2"></rect>
                     <path d="m3 7 9 6 9-6"></path>
                   </svg>
                   hello@novelle.ae
+                </a>
+                <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontWeight: 700, marginTop: '6px' }}>
+                  Chat on WhatsApp
                 </a>
               </div>
             </div>
@@ -482,7 +505,6 @@ export default function BookConsultation() {
 
       </div>
 
-      {/* Styled JSX for Responsive Mobile-First adjustments */}
       <style dangerouslySetInnerHTML={{__html: `
         .admissions-input:focus {
           border-color: #845e35 !important;
@@ -492,10 +514,6 @@ export default function BookConsultation() {
         .btn-book-appointment:hover {
           background: #6d4d2b !important;
           box-shadow: 0 4px 15px rgba(109, 77, 43, 0.25);
-        }
-        .btn-success-reset:hover {
-          background: rgba(132, 94, 53, 0.05) !important;
-          border-color: #845e35 !important;
         }
         .inquiry-link:hover {
           text-decoration: underline !important;
@@ -512,7 +530,7 @@ export default function BookConsultation() {
           }
           .appointment-image-side {
             width: 100% !important;
-            height: 480px !important;
+            height: 380px !important;
             min-height: auto !important;
           }
           .form-double-row {

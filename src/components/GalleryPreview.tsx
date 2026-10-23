@@ -38,7 +38,7 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
       className="gallery-preview-section" 
       style={{ 
         background: '#FAF8F5', 
-        padding: hideHeader ? '40px 24px 120px 24px' : '120px 24px', 
+        padding: hideHeader ? '20px 24px 100px 24px' : '100px 24px', 
         color: '#4A3728',
         position: 'relative',
         overflow: 'hidden'
@@ -50,7 +50,7 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
         {!hideHeader && (
           <div className="scroll-reveal reveal-from-left" style={{ 
             textAlign: 'center', 
-            marginBottom: '70px',
+            marginBottom: '60px',
           }}>
             <span style={{ 
               display: 'inline-flex',
@@ -59,7 +59,7 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
               padding: '6px 14px', 
               borderRadius: '100px',
               fontSize: '11px', 
-              letterSpacing: '0.5px',
+              letterSpacing: '1px',
               fontWeight: 700,
               color: '#845E35',
               textTransform: 'uppercase',
@@ -77,48 +77,43 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.15,
-              marginBottom: '24px',
-              marginTop: '16px',
+              marginBottom: '20px',
+              marginTop: '12px',
               letterSpacing: '-0.01em'
             }}>
-              A Glimpse Inside Novelle
+              A Glimpse Inside Al Novelle
             </h2>
             
             <p style={{
               fontFamily: '"General Sans", sans-serif',
               fontSize: '15px',
               color: '#7A6B63',
-              lineHeight: 1.6,
+              lineHeight: 1.65,
               fontWeight: '500',
               maxWidth: '680px',
               margin: '0 auto'
             }}>
-              Explore Novelle's academy environment, training spaces, practical learning moments, clinical equipment, and refined aesthetic education atmosphere.
+              Explore Al Novelle&apos;s training spaces, practical clinical suites, equipment stations, and educational atmosphere in Abu Dhabi.
             </p>
           </div>
         )}
 
-        {/* TODO: Replace with actual Novelle academy images provided by client. */}
-        {/* Staggered Column Masonry Grid - High-end editorial feel with no text overlays */}
-        <div 
-          className="gallery-masonry"
-          style={{ 
-          }}
-        >
+        {/* Staggered Column Masonry Grid - High-end editorial feel with authentic training centre imagery */}
+        <div className="gallery-masonry">
           {/* Column 1 */}
           <div className="gallery-masonry-col">
             <div className="gallery-frame scroll-reveal reveal-from-left reveal-delay-1" style={{ height: '420px' }}>
               <img 
-                src="/academy-images/academy-lounge-classroom.png" 
-                alt="Academy interior space" 
+                src="/academy-images/polished-al-novelle-training-centre-interior.png" 
+                alt="Al Novelle training suite" 
                 className="gallery-frame-img"
                 loading="lazy"
               />
             </div>
             <div className="gallery-frame scroll-reveal reveal-from-left reveal-delay-3" style={{ height: '300px' }}>
               <img 
-                src="/academy-images/practical-class-mannequin.png" 
-                alt="Practical training session" 
+                src="/academy-images/refined-al-novelle-training-centre-interior-1.png" 
+                alt="Aesthetic treatment workstations" 
                 className="gallery-frame-img"
                 loading="lazy"
               />
@@ -129,16 +124,16 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
           <div className="gallery-masonry-col col-shifted">
             <div className="gallery-frame scroll-reveal reveal-from-right reveal-delay-2" style={{ height: '320px' }}>
               <img 
-                src="/academy-images/laser-device-training.png" 
-                alt="Clinical aesthetics equipment" 
+                src="/academy-images/elegant-al-novelle-training-centre-1.png" 
+                alt="Supervised practical practice stations" 
                 className="gallery-frame-img"
                 loading="lazy"
               />
             </div>
             <div className="gallery-frame scroll-reveal reveal-from-right reveal-delay-4" style={{ height: '400px' }}>
               <img 
-                src="/academy-images/academy-approach-session.png" 
-                alt="Training room environment" 
+                src="/academy-images/al-novelle-training-centre-interior.png" 
+                alt="Clinical demonstration and training environment" 
                 className="gallery-frame-img"
                 loading="lazy"
               />
@@ -149,16 +144,16 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
           <div className="gallery-masonry-col">
             <div className="gallery-frame scroll-reveal reveal-from-left reveal-delay-3" style={{ height: '450px' }}>
               <img 
-                src="/academy-images/student-support-admissions.png" 
-                alt="Reception suite details" 
+                src="/academy-images/refined-aesthetic-training-centre-interior.png" 
+                alt="Consultation and reception area" 
                 className="gallery-frame-img"
                 loading="lazy"
               />
             </div>
             <div className="gallery-frame scroll-reveal reveal-from-right reveal-delay-5" style={{ height: '280px' }}>
               <img 
-                src="/academy-images/training-consultation.png" 
-                alt="Relaxing clinical suite" 
+                src="/academy-images/polished-aesthetic-training-centre-interior.png" 
+                alt="Aesthetic equipment and clinical suite" 
                 className="gallery-frame-img"
                 loading="lazy"
               />
@@ -170,13 +165,13 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
         {!hideHeader && (
           <div className="scroll-reveal reveal-from-right reveal-delay-4" style={{ 
             textAlign: 'center', 
-            marginTop: '70px',
+            marginTop: '60px',
           }}>
             <Link href="/gallery" className="btn-premium">
               <div className="btn-icon-wrapper">
-                <img src="/logos/gold-logomark.png" alt="Icon" />
+                <img src="/logos/gold-logomark.png" alt="" />
               </div>
-              Explore Gallery
+              Explore Full Gallery
             </Link>
           </div>
         )}
@@ -187,13 +182,13 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
         .gallery-masonry {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 32px;
+          gap: 28px;
         }
         
         .gallery-masonry-col {
           display: flex;
           flex-direction: column;
-          gap: 32px;
+          gap: 28px;
         }
 
         .col-shifted {
@@ -207,6 +202,7 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
           box-shadow: 0 10px 30px rgba(74, 55, 40, 0.04);
           background: #F3ECE3;
           width: 100%;
+          border: 1px solid rgba(197, 160, 89, 0.15);
         }
 
         .gallery-frame-img {
@@ -244,7 +240,6 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
             flex-direction: column;
             gap: 16px;
           }
-          /* Hide the 2nd and 3rd columns so only the first 2 images remain */
           .gallery-masonry-col:not(:first-child) {
             display: none !important;
           }

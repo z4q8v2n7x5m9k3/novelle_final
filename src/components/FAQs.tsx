@@ -3,32 +3,32 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 export default function FAQs() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0); // Default first item open
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const faqItems = [
     {
-      q: "Where is Novelle located?",
-      a: "Novelle is located at 1001, LAVG Building, Al Zahiyah, Abu Dhabi, UAE."
+      q: "Where is Al Novelle located?",
+      a: "Al Novelle is located at Unit 1001, LAVG Building, Al Zahiyah (16), Abu Dhabi, UAE."
     },
     {
-      q: "What type of courses does Novelle offer?",
-      a: "Novelle offers aesthetic, beauty, laser, and professional training programmes. Updated course details will be shared according to the official course list."
+      q: "What types of courses does Al Novelle offer?",
+      a: "Al Novelle offers approved training across Facial Skin Care, Electrical Facials, Dermaplaning, Body Treatments, Massage Therapy, Beauty Therapy, Skincare Science, and related aesthetic disciplines."
     },
     {
-      q: "How can I enquire about admissions?",
-      a: "You can contact the admissions team through WhatsApp, phone, or email at hello@novelle.ae."
+      q: "What accreditations does Al Novelle hold?",
+      a: "Al Novelle is a CIBTAC Accredited Centre and NCLC Certified (USA). Practical training collaborations are held with partner clinical facilities in Abu Dhabi."
     },
     {
-      q: "Are courses practical-based?",
-      a: "Novelle focuses on structured learning, hands-on practice, safety awareness, and professional skill development."
+      q: "How can I enquire about admissions or fees?",
+      a: "You can reach our admissions desk on WhatsApp (+971 50 234 8625), by phone (+971 50 762 9543), or by emailing hello@novelle.ae."
     },
     {
-      q: "What are your business hours?",
-      a: "We are open Monday to Saturday, 9:00 AM to 6:00 PM. We are closed on Sundays."
+      q: "Are the courses hands-on and practical?",
+      a: "Yes. Al Novelle focuses on supervised practical learning in dedicated clinical workstations, supported by rigorous underpinning skin science and hygiene protocols."
     },
     {
-      q: "How do I get started?",
-      a: "Reach out via WhatsApp, call us, or send an email to hello@novelle.ae. Our admissions team will guide you through the next steps."
+      q: "What are your academy opening hours?",
+      a: "Our current operating schedule is Monday to Saturday, 9:00 AM to 6:00 PM (Closed on Sundays). Please contact admissions to confirm specific workshop and intake schedules."
     }
   ];
 
@@ -37,46 +37,46 @@ export default function FAQs() {
   };
 
   return (
-    <section className="faq-section" style={{ background: '#FAF6F0', padding: '120px 24px 130px 24px', overflow: 'hidden' }}>
+    <section className="faq-section" style={{ background: '#FAF6F0', padding: '100px 24px 110px 24px', overflow: 'hidden' }}>
       <div className="container" style={{ maxWidth: '1400px', margin: '0 auto' }}>
         
         {/* Main 2-Column Responsive Layout */}
         <div className="faq-split-grid" style={{ 
           display: 'grid', 
           gridTemplateColumns: '1fr 1.3fr', 
-          gap: '120px',
+          gap: '80px',
           alignItems: 'start'
         }}>
           
           {/* LEFT SIDE: Header & Image Card */}
-          <div className="faq-left-col" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+          <div className="faq-left-col" style={{ display: 'flex', flexDirection: 'column', gap: '36px' }}>
             
             {/* Header */}
             <div>
-              <div className="scroll-reveal reveal-from-left" style={{ marginBottom: '20px' }}>
+              <div className="scroll-reveal reveal-from-left" style={{ marginBottom: '16px' }}>
                 <span style={{ 
                   display: 'inline-flex',
                   alignItems: 'center',
                   background: '#FFFFFF', 
                   padding: '8px 16px', 
                   borderRadius: '100px',
-                  fontSize: '13px', 
-                  letterSpacing: '1px',
+                  fontSize: '11px', 
+                  letterSpacing: '2px',
                   fontWeight: 600,
                   color: '#633b2c',
                   textTransform: 'uppercase',
                   fontFamily: '"General Sans", sans-serif',
-                  marginBottom: '24px',
+                  marginBottom: '20px',
                   border: '1px solid rgba(197, 160, 89, 0.3)',
                   boxShadow: '0 4px 12px rgba(99, 59, 44, 0.04)'
                 }}>
                   <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-                  FAQS
+                  FREQUENT QUESTIONS
                 </span>
               </div>
               <h2 className="scroll-reveal reveal-from-left reveal-delay-1" style={{ 
                 fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: 'clamp(2.4rem, 4vw, 3.4rem)', 
+                fontSize: 'clamp(2.2rem, 3.5vw, 3rem)', 
                 color: '#4A3728', 
                 fontWeight: 400,
                 margin: 0,
@@ -96,8 +96,8 @@ export default function FAQs() {
               boxShadow: '0 8px 30px rgba(74, 55, 40, 0.02)'
             }}>
               <img 
-                src="/academy-images/student-support-admissions.png" 
-                alt="Novelle academy admissions guidance" 
+                src="/academy-images/al-novelle-training-centre-interior.png" 
+                alt="Al Novelle admissions and training space" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
               
@@ -107,64 +107,68 @@ export default function FAQs() {
                 bottom: '20px',
                 left: '20px',
                 right: '20px',
-                background: 'rgba(140, 118, 98, 0.35)', // Warm luxury brown glass
+                background: 'rgba(140, 118, 98, 0.45)',
                 backdropFilter: 'blur(16px)',
                 WebkitBackdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
                 borderRadius: '24px',
-                padding: '24px 32px',
-                color: '#FFFFFF',
+                padding: '24px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 gap: '16px'
               }}>
-                <div style={{ textAlign: 'left' }}>
-                  <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '20px', fontWeight: 400, margin: '0 0 6px 0', color: '#FFFFFF' }}>
+                <div>
+                  <h3 style={{ 
+                    fontFamily: '"Hedvig Letters Serif", Georgia, serif',
+                    fontSize: '20px', 
+                    color: '#FFFFFF', 
+                    fontWeight: 400, 
+                    margin: '0 0 4px 0' 
+                  }}>
                     Still have questions?
                   </h3>
-                  <p style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', margin: 0, opacity: 0.9, lineHeight: 1.4 }}>
-                    Our admissions team can guide you on eligibility, course level, and the right training pathway.
+                  <p style={{ 
+                    fontFamily: '"General Sans", sans-serif',
+                    fontSize: '13px', 
+                    color: 'rgba(255, 255, 255, 0.9)', 
+                    margin: 0, 
+                    fontWeight: 400 
+                  }}>
+                    Our admissions team is available to help.
                   </p>
                 </div>
 
-                {/* Contact Us button with circular logo badge */}
-                <a href="https://wa.me/971502348625?text=Hello%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses." target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', flexShrink: 0 }}>
-                  <span className="faq-contact-btn" style={{ 
+                <a 
+                  href="https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20have%20a%20question%20about%20your%20programmes." 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="faq-contact-btn"
+                  style={{ 
                     display: 'inline-flex',
                     alignItems: 'center',
+                    gap: '8px',
                     background: '#FFFFFF',
-                    color: '#4A3728',
-                    padding: '8px 24px 8px 8px',
+                    color: '#633b2c',
+                    padding: '10px 20px',
                     borderRadius: '100px',
                     fontSize: '13px',
                     fontWeight: 600,
-                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-                  }}>
-                    {/* Flower badge */}
-                    <span style={{ 
-                      width: '28px', 
-                      height: '28px', 
-                      borderRadius: '50%', 
-                      background: '#F5EFE6', 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'center',
-                      marginRight: '10px',
-                    }}>
-                      <img src="/logos/gold-logomark.png" alt="Novelle" style={{ width: '14px', height: '14px' }} />
-                    </span>
-                    Chat on WhatsApp
-                  </span>
+                    textDecoration: 'none',
+                    fontFamily: '"General Sans", sans-serif',
+                    flexShrink: 0,
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  Ask Admissions →
                 </a>
               </div>
-
             </div>
 
           </div>
 
-          {/* RIGHT SIDE: Interactive Accordion Stack */}
-          <div className="faq-right-col" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          {/* RIGHT SIDE: Accordion Items */}
+          <div className="faq-right-col" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {faqItems.map((item, index) => {
               const isOpen = activeIndex === index;
               return (
@@ -173,9 +177,9 @@ export default function FAQs() {
                   className={`faq-accordion-item scroll-reveal reveal-from-right reveal-delay-${Math.min(index + 1, 6)} ${isOpen ? 'active' : ''}`}
                   onClick={() => handleToggle(index)}
                   style={{ 
-                    background: isOpen ? '#FFFFFF' : '#FFFFFF', 
+                    background: '#FFFFFF', 
                     borderRadius: '24px',
-                    padding: '24px 32px', // Reduced padding
+                    padding: '24px 28px',
                     cursor: 'pointer',
                     border: '1px solid rgba(197, 160, 89, 0.2)',
                     boxShadow: isOpen ? '0 12px 40px rgba(99, 59, 44, 0.08)' : '0 4px 15px rgba(99, 59, 44, 0.03)',
@@ -186,7 +190,7 @@ export default function FAQs() {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px' }}>
                     <h3 style={{ 
                       fontFamily: '"Hedvig Letters Serif", Georgia, serif',
-                      fontSize: '18px', // Reduced text size
+                      fontSize: '18px',
                       fontWeight: 400,
                       color: '#633b2c',
                       margin: 0,
@@ -198,15 +202,15 @@ export default function FAQs() {
 
                     {/* Toggle Button */}
                     <span style={{ 
-                      width: '44px', 
-                      height: '44px', 
+                      width: '40px', 
+                      height: '40px', 
                       borderRadius: '50%', 
                       background: isOpen ? '#633b2c' : 'transparent',
                       color: isOpen ? '#FFFFFF' : '#633b2c',
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'center',
-                      fontSize: isOpen ? '22px' : '26px',
+                      fontSize: isOpen ? '20px' : '24px',
                       fontWeight: isOpen ? 400 : 300,
                       border: isOpen ? 'none' : '1px solid rgba(197, 160, 89, 0.4)',
                       transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -222,11 +226,11 @@ export default function FAQs() {
                     opacity: isOpen ? 1 : 0, 
                     overflow: 'hidden', 
                     transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-                    marginTop: isOpen ? '24px' : '0px'
+                    marginTop: isOpen ? '20px' : '0px'
                   }}>
                     <p style={{ 
                       fontFamily: '"General Sans", sans-serif',
-                      fontSize: '15px', // Reduced size
+                      fontSize: '14.5px',
                       color: '#8c776e', 
                       lineHeight: 1.7, 
                       fontWeight: 500,
@@ -245,7 +249,6 @@ export default function FAQs() {
 
       </div>
 
-      {/* Styled JSX for Mobile and Hover Transitions */}
       <style dangerouslySetInnerHTML={{__html: `
         .faq-accordion-item:hover {
           transform: translateY(-2px);
@@ -257,20 +260,16 @@ export default function FAQs() {
           color: #FFFFFF !important;
           box-shadow: 0 4px 12px rgba(152, 106, 62, 0.2);
         }
-        .faq-contact-btn:hover span {
-          background: #FFFFFF !important;
-          color: #986A3E !important;
-        }
         @media (max-width: 950px) {
           .faq-split-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
           }
           .faq-left-col {
-            order: 1 !important; /* Header and Image Card at the top matching mobile screenshot */
+            order: 1 !important;
           }
           .faq-right-col {
-            order: 2 !important; /* Accordion items below it */
+            order: 2 !important;
           }
           .faq-image-card {
             height: 280px !important;
