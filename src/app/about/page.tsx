@@ -159,7 +159,7 @@ export default function AboutPage() {
                 margin: '0 0 18px 0',
                 letterSpacing: '-0.02em'
               }}>
-                Why We Started Novelle
+                Why We Started Al Novelle
               </h2>
 
               <p style={{ fontFamily: '"General Sans", sans-serif', fontSize: '15.5px', color: '#8c776e', lineHeight: 1.75, margin: '0 0 16px 0', fontWeight: 500 }}>
@@ -167,7 +167,7 @@ export default function AboutPage() {
               </p>
 
               <p style={{ fontFamily: '"General Sans", sans-serif', fontSize: '15.5px', color: '#8c776e', lineHeight: 1.75, margin: '0 0 28px 0', fontWeight: 400 }}>
-                We started Novelle to change that. As clinicians and educators who value science, quality and patient safety, we built an academy where learners are taught properly, assessed fairly and prepared to practise responsibly. Our aim is simple: to help set a higher, consistent standard for beauty and aesthetic education, starting in Abu Dhabi.
+                We started Al Novelle to change that. As clinicians and educators who value science, quality and patient safety, we built an academy where learners are taught properly, assessed fairly and prepared to practise responsibly. Our aim is simple: to help set a higher, consistent standard for beauty and aesthetic education, starting in Abu Dhabi.
               </p>
 
               <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
@@ -291,7 +291,7 @@ export default function AboutPage() {
               border: '1px solid rgba(197, 160, 89, 0.35)'
             }}>
               <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-              THE PEOPLE BEHIND NOVELLE
+              THE PEOPLE BEHIND AL NOVELLE
             </span>
 
             <h2 style={{
@@ -303,7 +303,7 @@ export default function AboutPage() {
               margin: '0 0 10px 0',
               letterSpacing: '-0.015em'
             }}>
-              Two Founders. One Shared Clinical Standard.
+              Two Founders, One Shared Clinical Standard
             </h2>
             <p style={{ maxWidth: '680px', margin: 0, color: '#8c776e', fontSize: '15.5px', lineHeight: 1.65, fontWeight: 500 }}>
               Experienced aesthetic clinicians and clinical educators united by a commitment to responsible, science-backed learning in Abu Dhabi.
@@ -339,7 +339,7 @@ export default function AboutPage() {
                   boxShadow: '0 6px 18px rgba(99, 59, 44, 0.08)'
                 }}>
                   <img 
-                    src="/about/professional-learning-session.jpeg" 
+                    src="/founders/dr-azaiba-salim-kara.jpg" 
                     alt="Dr. Azaiba Salim Kara" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                   />
@@ -490,7 +490,7 @@ export default function AboutPage() {
               border: '1px solid rgba(197, 160, 89, 0.35)'
             }}>
               <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-              THE NOVELLE STANDARD
+              THE AL NOVELLE STANDARD
             </span>
             <h2 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
@@ -532,7 +532,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Book Your Visit Today — Embedded Interactive Booking Form & Campus Photo */}
+      {/* Book Your Visit Today — Embedded Interactive Booking Form & Academy Photo */}
       <BookConsultation />
 
       <Footer />

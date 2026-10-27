@@ -32,8 +32,8 @@ const specialists: Specialist[] = [
     experience: '10+ years',
     certification: 'NCLC Certified, USA',
     schedule: 'Sun, Tue, Thu',
-    ratingBadge: '★ 4.9 · 10+ years clinical experience',
-    image: '/about/professional-learning-session.jpeg',
+    ratingBadge: '10+ Years UAE Clinical Practice',
+    image: '/founders/dr-azaiba-salim-kara.jpg',
     leads: [
       { title: 'Laser Physics & Clinical Safety', meta: 'Full Protocol · Abu Dhabi', href: '/courses#laser-therapies' },
       { title: 'Advanced Skin Rejuvenation', meta: 'Clinical Bays · Practical', href: '/courses#chemical-peels-science' }
@@ -52,8 +52,8 @@ const specialists: Specialist[] = [
     experience: '8+ years',
     certification: 'CIBTAC Lead Educator',
     schedule: 'Mon, Wed, Sat',
-    ratingBadge: '★ 4.9 · 8+ years educational experience',
-    image: '/founders/dr-seeta-yadav.jpeg',
+    ratingBadge: 'CIBTAC Lead Educator · Curriculum Director',
+    image: '/founders/dr-seeta-yadav.jpg',
     leads: [
       { title: 'Anatomy, Physiology & Skin Science', meta: 'Foundational Science · Abu Dhabi', href: '/courses#facial-skin-care-treatments' },
       { title: 'Facial Electrotherapy & Technology', meta: 'Equipped Suites · Practical', href: '/courses#beauty-therapy' }

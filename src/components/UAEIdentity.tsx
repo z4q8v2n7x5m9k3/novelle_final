@@ -1,7 +1,7 @@
 import React from 'react';
 
 const principles = [
-  ['01', 'Abu Dhabi Campus'],
+  ['01', 'Abu Dhabi Academy'],
   ['02', 'Supervised Workstations'],
   ['03', 'Accredited Curriculums'],
   ['04', 'Evidence-Based Practice'],

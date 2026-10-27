@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { COURSE_CATALOGUE } from '@/data/courses';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20book%20a%20campus%20visit.';
+const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20book%20an%20academy%20visit.';
 
 const WhatsAppIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" style={{ flexShrink: 0 }}>
@@ -51,7 +51,7 @@ export default function BookConsultation() {
     setIsPending(true);
     try {
       const waMsg = encodeURIComponent(
-        `Hello Al Novelle, I would like to book a campus visit.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nProgramme: ${formData.course || 'General Enquiry'}\nPreferred Date: ${formData.date || 'Earliest available'}`
+        `Hello Al Novelle, I would like to book an academy visit.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nProgramme: ${formData.course || 'General Enquiry'}\nPreferred Date: ${formData.date || 'Earliest available'}`
       );
       try {
         await fetch('/api/inquiries', {
@@ -241,30 +241,10 @@ export default function BookConsultation() {
                   <button
                     type="submit"
                     disabled={isPending}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '10px',
-                      background: '#1D130C',
-                      color: '#FFFFFF',
-                      padding: '13px 28px',
-                      borderRadius: '100px',
-                      fontSize: '13.5px',
-                      fontWeight: 600,
-                      border: 'none',
-                      cursor: 'pointer',
-                      fontFamily: '"General Sans", sans-serif',
-                      boxShadow: '0 4px 14px rgba(29, 19, 12, 0.2)',
-                      transition: 'background 0.25s ease'
-                    }}
-                    onMouseEnter={e => (e.currentTarget.style.background = '#845E35')}
-                    onMouseLeave={e => (e.currentTarget.style.background = '#1D130C')}
+                    className="btn-premium-dark"
                   >
-                    <img src="/logos/gold-logomark.png" alt="" style={{ width: '15px', height: '15px', objectFit: 'contain' }} />
-                    <span>{isPending ? 'Booking...' : 'Book Campus Visit'}</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                    </svg>
+                    <span className="btn-icon-wrapper"><img src="/logos/gold-logomark.png" alt="" /></span>
+                    <span>{isPending ? 'Booking...' : 'Book a Visit'}</span>
                   </button>
 
                   <a
@@ -316,7 +296,7 @@ export default function BookConsultation() {
                   Visit Request Received
                 </h3>
                 <p style={{ fontFamily: '"General Sans", sans-serif', fontSize: '14px', color: '#60554a', margin: 0 }}>
-                  Thank you, <strong>{formData.name}</strong>. Our admissions desk has received your request and will confirm your campus tour schedule shortly.
+                  Thank you, <strong>{formData.name}</strong>. Our admissions desk has received your request and will confirm your academy visit schedule shortly.
                 </p>
                 <a
                   href={WA_URL}

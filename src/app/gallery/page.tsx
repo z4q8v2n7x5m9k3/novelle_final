@@ -21,8 +21,8 @@ const GALLERY_IMAGES = [
   },
   {
     src: '/academy-images/al-novelle-training-centre-interior.png',
-    title: 'Demonstration Classroom',
-    desc: 'Structured lecture and visual demonstration environment'
+    title: 'Training Auditorium',
+    desc: 'Auditorium space for classroom learning, lectures and training sessions.'
   },
   {
     src: '/academy-images/elegant-al-novelle-training-centre-1.png',
@@ -31,8 +31,8 @@ const GALLERY_IMAGES = [
   },
   {
     src: '/academy-images/refined-aesthetic-training-centre-interior.png',
-    title: 'Consultation & Welcome Suite',
-    desc: 'Student reception and consultation area'
+    title: 'Reception & Welcome Area',
+    desc: 'Reception and enquiry area for visitors and prospective students.'
   },
   {
     src: '/academy-images/polished-aesthetic-training-centre-interior.png',
@@ -42,11 +42,11 @@ const GALLERY_IMAGES = [
   {
     src: '/academy-images/refined-al-novelle-training-centre-interior-1.png',
     title: 'Treatment Stations',
-    desc: 'Ergonomic treatment beds and safety preparation tools'
+    desc: 'Ergonomic treatment bays for supervised learner practice'
   },
   {
     src: '/academy-images/refined-al-novelle-training-centre-interior-2.png',
-    title: 'Skincare & Dermaplaning Area',
+    title: 'Skincare & Dermal Training Area',
     desc: 'Clinical hygiene and tool sanitation stations'
   },
   {
@@ -56,8 +56,8 @@ const GALLERY_IMAGES = [
   },
   {
     src: '/academy-images/polished-al-novelle-training-center-interior.png',
-    title: 'Aesthetic Device Suite',
-    desc: 'Equipment for device-based facial and epilation training'
+    title: 'Academy Interior',
+    desc: 'Educational facility and training interior at Unit 1001, LAVG Building, Abu Dhabi.'
   }
 ];
 
@@ -177,7 +177,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Book Your Visit Today — Embedded Interactive Booking Form & Campus Photo */}
+      {/* Book Your Visit Today — Embedded Interactive Booking Form & Academy Photo */}
       <BookConsultation />
 
       <Footer />

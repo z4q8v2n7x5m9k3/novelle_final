@@ -22,7 +22,7 @@ const reviews: Review[] = [
   {
     id: '2',
     index: '02 / 04',
-    quote: "Novelle gave me clinical structure, manual confidence, and authentic practical exposure. Training in an equipped clinic environment with live demonstration models completely changes how prepared you feel for UAE clinic accreditation.",
+    quote: "Al Novelle gave me clinical structure, manual confidence, and authentic practical exposure. Training in an equipped clinic environment with live demonstration models completely changes how prepared you feel for UAE clinic accreditation.",
     author: "Aisha Al Mansoori",
     role: "Advanced Beauty Therapy Graduate · 2025",
     avatar: "/founders/dr-seeta-yadav.jpeg"
@@ -97,7 +97,7 @@ export default function Testimonials() {
           textAlign: 'left'
         }} className="reviews-split-grid">
           
-          {/* Left Column: Title + 4.9 Score Block */}
+          {/* Left Column: Title + Client-Requested 750 Reviews Block */}
           <div>
             <h2 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
@@ -105,13 +105,40 @@ export default function Testimonials() {
               color: '#633b2c',
               fontWeight: 400,
               lineHeight: 1.2,
-              margin: '0 0 24px 0',
+              margin: '0 0 16px 0',
               letterSpacing: '-0.02em'
             }}>
               What our learners say
             </h2>
 
-            {/* Eyebrow / Subtitle without unverified rating claims */}
+            {/* 750 Reviews Client Specification */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+              <span style={{
+                fontFamily: '"General Sans", sans-serif',
+                fontSize: '28px',
+                color: '#1D130C',
+                fontWeight: 600,
+                lineHeight: 1,
+                letterSpacing: '-0.02em'
+              }}>
+                750 Reviews
+              </span>
+              <span style={{
+                fontSize: '11px',
+                fontFamily: '"General Sans", sans-serif',
+                color: '#986A3E',
+                background: '#FAF6F0',
+                padding: '4px 10px',
+                borderRadius: '100px',
+                border: '1px solid rgba(197, 160, 89, 0.3)',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                letterSpacing: '0.04em'
+              }}>
+                Candidate Feedback
+              </span>
+            </div>
+
             <p style={{
               fontFamily: '"General Sans", sans-serif',
               fontSize: '14px',
@@ -119,7 +146,7 @@ export default function Testimonials() {
               lineHeight: 1.65,
               margin: 0
             }}>
-              Authentic feedback from healthcare practitioners and licensed therapists undergoing supervised clinical training at our Abu Dhabi campus.
+              Authentic feedback from healthcare practitioners and licensed therapists undergoing supervised clinical training at our Abu Dhabi academy.
             </p>
           </div>
 

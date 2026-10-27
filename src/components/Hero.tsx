@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { COURSE_CATALOGUE } from '@/data/courses';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
+const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
 
 export default function Hero({ content }: { content?: any }) {
   const [scrollY, setScrollY] = useState(0);
@@ -270,13 +270,13 @@ export default function Hero({ content }: { content?: any }) {
           writing-mode: vertical-rl;
           text-orientation: mixed;
           transform: rotate(180deg);
-          font-size: 11.5px;
+          font-size: 10.5px;
           font-weight: 500;
           color: #ffffff;
           white-space: nowrap;
-          letter-spacing: 0.3px;
+          letter-spacing: 0.2px;
           flex-shrink: 0;
-          max-height: 120px;
+          max-height: 130px;
           overflow: hidden;
           text-overflow: ellipsis;
         }
@@ -539,7 +539,7 @@ export default function Hero({ content }: { content?: any }) {
         {/* INNER PREMIUM CENTER BUTTON */}
         <Link href="/courses" className="hero-center-badge">
           <div className="hero-badge-logo-container">
-            <img src="/logos/gold-logomark.png" alt="NOVELLE" className="hero-badge-logo" />
+            <img src="/logos/gold-logomark.png" alt="Al Novelle" className="hero-badge-logo" />
           </div>
           <span className="hero-badge-cta">Explore our programmes</span>
         </Link>

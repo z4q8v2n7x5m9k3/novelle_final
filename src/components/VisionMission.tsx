@@ -190,7 +190,7 @@ export default function VisionMission() {
                     fontFamily: '"General Sans", sans-serif',
                     marginBottom: '2px'
                   }}>
-                    ABU DHABI CAMPUS
+                    ABU DHABI ACADEMY
                   </span>
                   <strong style={{ 
                     fontSize: '14px', 

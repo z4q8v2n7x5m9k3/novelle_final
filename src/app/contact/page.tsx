@@ -516,7 +516,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Book Your Visit Today — Embedded Interactive Booking Form & Campus Photo */}
+      {/* Book Your Visit Today — Embedded Interactive Booking Form & Academy Photo */}
       <BookConsultation />
 
       <Footer />

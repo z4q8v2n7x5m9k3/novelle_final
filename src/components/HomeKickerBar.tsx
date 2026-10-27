@@ -4,7 +4,7 @@ import React from 'react';
 const highlights = [
   {
     num: '01',
-    title: 'Abu Dhabi Campus',
+    title: 'Abu Dhabi Academy',
     description: 'Purpose-built aesthetic academy located in the heart of Abu Dhabi, UAE.'
   },
   {

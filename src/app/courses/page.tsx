@@ -110,18 +110,6 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
           }}>
             {course.badge}
           </span>
-          <span style={{ 
-            background: 'rgba(255, 255, 255, 0.92)', 
-            backdropFilter: 'blur(8px)',
-            color: '#633b2c', 
-            fontSize: '11px', 
-            fontWeight: 700, 
-            letterSpacing: '0.04em', 
-            padding: '5px 12px', 
-            borderRadius: '100px' 
-          }}>
-            {course.duration}
-          </span>
         </div>
 
         {isPendingIntake && (
@@ -173,17 +161,11 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
           {course.description}
         </p>
 
-        {/* Trainer & Eligibility metadata */}
-        <div style={{ borderTop: '1px solid rgba(197, 160, 89, 0.15)', paddingTop: '14px', marginTop: 'auto', marginBottom: '18px', display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '12px', color: '#7A6B63', fontFamily: '"General Sans", sans-serif' }}>
-          {course.trainer && (
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>Faculty:</span>
-              <strong style={{ color: '#633b2c' }}>{course.trainer}</strong>
-            </div>
-          )}
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span>Target:</span>
-            <span style={{ color: '#8c776e' }}>{course.audience}</span>
+        {/* Target Audience Metadata (No Faculty as per client instruction) */}
+        <div style={{ borderTop: '1px solid rgba(197, 160, 89, 0.15)', paddingTop: '14px', marginTop: 'auto', marginBottom: '18px', display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px', color: '#7A6B63', fontFamily: '"General Sans", sans-serif' }}>
+          <div style={{ display: 'flex', gap: '6px', alignItems: 'baseline', flexWrap: 'wrap' }}>
+            <span style={{ fontWeight: 600, color: '#986A3E' }}>Target Audience:</span>
+            <span style={{ color: '#633b2c', lineHeight: 1.5 }}>{course.audience}</span>
           </div>
         </div>
 
@@ -395,7 +377,7 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* Book Your Visit Today — Embedded Interactive Booking Form & Campus Photo */}
+      {/* Book Your Visit Today — Embedded Interactive Booking Form & Academy Photo */}
       <BookConsultation />
 
       <Footer />

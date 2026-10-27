@@ -42,7 +42,7 @@ export default function HomeAboutPreview() {
               boxShadow: '0 4px 12px rgba(99, 59, 44, 0.03)'
             }}>
               <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#c5a059', marginRight: '8px' }}></span>
-              THE NOVELLE PHILOSOPHY
+              THE AL NOVELLE PHILOSOPHY
             </span>
 
             <h2 style={{
@@ -76,7 +76,7 @@ export default function HomeAboutPreview() {
               margin: '0 0 28px 0',
               fontWeight: 400
             }}>
-              We established Novelle to change that. As clinicians and educators, we built an academy where learners are taught rigorously, assessed fairly, and prepared for responsible real-world practice starting right here in Abu Dhabi.
+              We established Al Novelle to change that. As clinicians and educators, we built an academy where learners are taught rigorously, assessed fairly, and prepared for responsible real-world practice starting right here in Abu Dhabi.
             </p>
 
             {/* Clean Editorial Pointers */}

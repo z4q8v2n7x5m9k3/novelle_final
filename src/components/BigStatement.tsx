@@ -78,7 +78,7 @@ export default function BigStatement({ content }: { content?: any }) {
                 flexShrink: 0
               }}>
                 <img 
-                  src="/about/professional-learning-session.jpeg" 
+                  src="/founders/dr-azaiba-salim-kara.jpg" 
                   alt="Dr. Azaiba Salim Kara" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -95,7 +95,7 @@ export default function BigStatement({ content }: { content?: any }) {
                 flexShrink: 0
               }}>
                 <img 
-                  src="/founders/dr-seeta-yadav.jpeg" 
+                  src="/founders/dr-seeta-yadav.jpg" 
                   alt="Dr. Seeta Yadav" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />

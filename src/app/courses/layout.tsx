@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Aesthetic Training Courses in Abu Dhabi | Novelle',
-  description: 'Explore Novelle\'s aesthetic, beauty, laser and professional training programmes in Abu Dhabi.',
+  title: 'Aesthetic Training Courses in Abu Dhabi | Al Novelle',
+  description: 'Explore Al Novelle\'s aesthetic, beauty, laser and professional training programmes in Abu Dhabi.',
   alternates: {
     canonical: 'https://novelle.ae/courses',
   },
   openGraph: {
-    title: 'Aesthetic Training Courses in Abu Dhabi | Novelle',
-    description: 'Explore Novelle\'s aesthetic, beauty, laser and professional training programmes in Abu Dhabi.',
+    title: 'Aesthetic Training Courses in Abu Dhabi | Al Novelle',
+    description: 'Explore Al Novelle\'s aesthetic, beauty, laser and professional training programmes in Abu Dhabi.',
     url: 'https://novelle.ae/courses',
-    siteName: 'Novelle Academy',
+    siteName: 'Al Novelle Academy',
   },
 };
 

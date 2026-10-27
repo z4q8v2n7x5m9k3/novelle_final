@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
+const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
 
 export default function WhatsAppButton() {
   return (

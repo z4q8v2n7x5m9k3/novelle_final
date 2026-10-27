@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Novelle Blog | Aesthetic Education & Insights Abu Dhabi',
-  description: 'Expert-led insights on aesthetic education, safety protocols, and beauty training in the UAE.',
+  title: 'Al Novelle Blog | Aesthetic Education & Insights Abu Dhabi',
+  description: 'Expert-led insights on aesthetic education, safety protocols, and beauty training in the UAE from Al Novelle Academy.',
   alternates: {
     canonical: 'https://novelle.ae/blog',
   },
   openGraph: {
-    title: 'Novelle Blog | Aesthetic Education & Insights Abu Dhabi',
-    description: 'Expert-led insights on aesthetic education, safety protocols, and beauty training in the UAE.',
+    title: 'Al Novelle Blog | Aesthetic Education & Insights Abu Dhabi',
+    description: 'Expert-led insights on aesthetic education, safety protocols, and beauty training in the UAE from Al Novelle Academy.',
     url: 'https://novelle.ae/blog',
-    siteName: 'Novelle Academy',
+    siteName: 'Al Novelle Academy',
   },
 };
 

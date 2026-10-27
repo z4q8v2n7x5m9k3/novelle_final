@@ -134,7 +134,7 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
             <div className="gallery-frame scroll-reveal reveal-from-right reveal-delay-4" style={{ height: '400px' }}>
               <img 
                 src="/academy-images/al-novelle-training-centre-interior.png" 
-                alt="Clinical demonstration and training environment" 
+                alt="Training Auditorium space for lectures and demonstrations" 
                 className="gallery-frame-img"
                 loading="lazy"
               />
@@ -146,7 +146,7 @@ export default function GalleryPreview({ hideHeader = false }: GalleryPreviewPro
             <div className="gallery-frame scroll-reveal reveal-from-left reveal-delay-3" style={{ height: '450px' }}>
               <img 
                 src="/academy-images/refined-aesthetic-training-centre-interior.png" 
-                alt="Consultation and reception area" 
+                alt="Al Novelle Reception and Welcome Area" 
                 className="gallery-frame-img"
                 loading="lazy"
               />

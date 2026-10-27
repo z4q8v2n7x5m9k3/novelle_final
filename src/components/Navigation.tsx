@@ -47,8 +47,8 @@ export default function Navigation() {
     <header className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-menu-active' : ''}`}>
       <div className="navbar-inner">
         <div className="navbar-logo">
-          <Link href="/" aria-label="Novelle home">
-            <img src="/logos/wordmark_%20gold1.svg" alt="NOVELLE" />
+          <Link href="/" aria-label="Al Novelle home">
+            <img src="/logos/wordmark_%20gold1.svg" alt="Al Novelle" />
           </Link>
         </div>
 
@@ -89,7 +89,7 @@ export default function Navigation() {
       />
 
       <aside className={`mobile-drawer ${mobileMenuOpen ? 'open' : ''}`} aria-hidden={!mobileMenuOpen}>
-        <div className="mobile-menu-kicker"><span>Explore Novelle</span><span>Abu Dhabi · UAE</span></div>
+        <div className="mobile-menu-kicker"><span>Explore Al Novelle</span><span>Abu Dhabi · UAE</span></div>
         <nav className="mobile-menu-grid" aria-label="Mobile navigation">
           {links.map(([number, label, href]) => (
             <Link href={href} className={`mobile-nav-link ${isActive(href) ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)} key={href}>
