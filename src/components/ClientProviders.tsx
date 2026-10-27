@@ -40,25 +40,29 @@ export default function ClientProviders({ children }: { children: React.ReactNod
         el.classList.add('scroll-reveal');
       }
 
-      // If already in viewport on mount, reveal immediately with smooth ease
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        el.classList.add('is-visible');
-      } else {
-        observer.observe(el);
-      }
+      observer.observe(el);
     };
 
-    document.querySelectorAll<HTMLElement>('.scroll-reveal, section').forEach(setupElement);
+    // Initial batch observation
+    requestAnimationFrame(() => {
+      document.querySelectorAll<HTMLElement>('.scroll-reveal, section').forEach(setupElement);
+    });
 
+    // Throttled observer for any lazy loaded elements
+    let rafId: number | null = null;
     const mutation = new MutationObserver(() => {
-      document.querySelectorAll<HTMLElement>('.scroll-reveal:not(.is-visible), section:not(.is-visible)').forEach(setupElement);
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        document.querySelectorAll<HTMLElement>('section:not(.is-visible):not(.scroll-reveal)').forEach(setupElement);
+        rafId = null;
+      });
     });
     mutation.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       observer.disconnect();
       mutation.disconnect();
+      if (rafId) cancelAnimationFrame(rafId);
     };
   }, [pathname]);
 

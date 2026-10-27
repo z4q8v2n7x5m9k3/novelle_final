@@ -15,6 +15,7 @@ interface Specialist {
   schedule: string;
   ratingBadge: string;
   image: string;
+  imagePosition?: string;
   leads: { title: string; meta: string; href: string }[];
   consultUrl: string;
   aboutHash: string;
@@ -34,6 +35,7 @@ const specialists: Specialist[] = [
     schedule: 'Sun, Tue, Thu',
     ratingBadge: '10+ Years UAE Clinical Practice',
     image: '/founders/dr-azaiba-salim-kara.jpg',
+    imagePosition: 'center top',
     leads: [
       { title: 'Laser Physics & Clinical Safety', meta: 'Full Protocol · Abu Dhabi', href: '/courses#laser-therapies' },
       { title: 'Advanced Skin Rejuvenation', meta: 'Clinical Bays · Practical', href: '/courses#chemical-peels-science' }
@@ -54,6 +56,7 @@ const specialists: Specialist[] = [
     schedule: 'Mon, Wed, Sat',
     ratingBadge: 'CIBTAC Lead Educator · Curriculum Director',
     image: '/founders/dr-seeta-yadav.jpg',
+    imagePosition: 'center top',
     leads: [
       { title: 'Anatomy, Physiology & Skin Science', meta: 'Foundational Science · Abu Dhabi', href: '/courses#facial-skin-care-treatments' },
       { title: 'Facial Electrotherapy & Technology', meta: 'Equipped Suites · Practical', href: '/courses#beauty-therapy' }
@@ -240,15 +243,18 @@ export default function FoundersSection() {
         }} className="specialist-main-grid">
           
           {/* Left: Compact Portrait Photo with Floating Pill */}
-          <div style={{
-            position: 'relative',
-            borderRadius: '24px',
-            overflow: 'hidden',
-            boxShadow: '0 16px 45px rgba(99, 59, 44, 0.08)',
-            border: '1px solid rgba(197, 160, 89, 0.32)',
-            background: '#F5EFE6',
-            height: '420px'
-          }}>
+          <div 
+            className="specialist-photo-wrapper"
+            style={{
+              position: 'relative',
+              borderRadius: '24px',
+              overflow: 'hidden',
+              boxShadow: '0 16px 45px rgba(99, 59, 44, 0.08)',
+              border: '1px solid rgba(197, 160, 89, 0.32)',
+              background: '#F5EFE6',
+              height: '460px'
+            }}
+          >
             <img 
               key={active.id}
               src={active.image} 
@@ -257,6 +263,7 @@ export default function FoundersSection() {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
+                objectPosition: active.imagePosition || 'center top',
                 animation: 'fadeInPhoto 0.4s ease'
               }}
             />
@@ -462,6 +469,9 @@ export default function FoundersSection() {
           .specialist-main-grid {
             grid-template-columns: 1fr !important;
             gap: 32px !important;
+          }
+          .specialist-photo-wrapper {
+            height: 420px !important;
           }
         }
       `}} />

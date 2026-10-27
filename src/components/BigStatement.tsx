@@ -80,7 +80,7 @@ export default function BigStatement({ content }: { content?: any }) {
                 <img 
                   src="/founders/dr-azaiba-salim-kara.jpg" 
                   alt="Dr. Azaiba Salim Kara" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 />
               </div>
 
@@ -97,7 +97,7 @@ export default function BigStatement({ content }: { content?: any }) {
                 <img 
                   src="/founders/dr-seeta-yadav.jpg" 
                   alt="Dr. Seeta Yadav" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 />
               </div>
             </div>

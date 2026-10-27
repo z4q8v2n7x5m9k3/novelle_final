@@ -13,7 +13,7 @@ interface Review {
 const reviews: Review[] = [
   {
     id: '1',
-    index: '01 / 04',
+    index: '01 / 03',
     quote: "The hands-on laser training and workstation supervision at Al Novelle gave me the technical confidence to practice safely in the UAE aesthetic sector. They explained every biological principle clearly before we touched a device, and I never once felt rushed.",
     author: "Dr. Sarah Ahmed",
     role: "Aesthetic Doctor, Abu Dhabi · 2025",
@@ -21,7 +21,7 @@ const reviews: Review[] = [
   },
   {
     id: '2',
-    index: '02 / 04',
+    index: '02 / 03',
     quote: "Al Novelle gave me clinical structure, manual confidence, and authentic practical exposure. Training in an equipped clinic environment with live demonstration models completely changes how prepared you feel for UAE clinic accreditation.",
     author: "Aisha Al Mansoori",
     role: "Advanced Beauty Therapy Graduate · 2025",
@@ -29,19 +29,11 @@ const reviews: Review[] = [
   },
   {
     id: '3',
-    index: '03 / 04',
+    index: '03 / 03',
     quote: "The facial electrotherapy and skin anatomy modules are taught with genuine medical rigor. As a practicing therapist, the depth of safety protocols, patch testing, and device management was exceptional.",
     author: "Mariam Al Zaabi",
     role: "Clinical Aesthetician, Dubai · 2025",
     avatar: "/academy-images/training-consultation.png"
-  },
-  {
-    id: '4',
-    index: '04 / 04',
-    quote: "The educators take time to guide your consultation protocols, hygiene disciplines, and patient interaction step-by-step. The quality of education and equipment here sets a real benchmark in Abu Dhabi.",
-    author: "Fatima Al Nuaimi",
-    role: "Skincare Specialist, Abu Dhabi · 2026",
-    avatar: "/academy-images/laser-device-training.png"
   }
 ];
 
@@ -97,7 +89,7 @@ export default function Testimonials() {
           textAlign: 'left'
         }} className="reviews-split-grid">
           
-          {/* Left Column: Title + Client-Requested 750 Reviews Block */}
+          {/* Left Column: Title + Minimal Verified Feedback Badge */}
           <div>
             <h2 style={{
               fontFamily: '"Hedvig Letters Serif", Georgia, serif',
@@ -111,31 +103,28 @@ export default function Testimonials() {
               What our learners say
             </h2>
 
-            {/* 750 Reviews Client Specification */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-              <span style={{
-                fontFamily: '"General Sans", sans-serif',
-                fontSize: '28px',
-                color: '#1D130C',
-                fontWeight: 600,
-                lineHeight: 1,
-                letterSpacing: '-0.02em'
-              }}>
-                750 Reviews
-              </span>
+            {/* Minimal Clean Rating Badge (No Fake Numbers) */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+              <div style={{ display: 'flex', gap: '3px', color: '#c5a059' }}>
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                ))}
+              </div>
               <span style={{
                 fontSize: '11px',
                 fontFamily: '"General Sans", sans-serif',
-                color: '#986A3E',
+                color: '#845E35',
                 background: '#FAF6F0',
                 padding: '4px 10px',
                 borderRadius: '100px',
-                border: '1px solid rgba(197, 160, 89, 0.3)',
+                border: '1px solid rgba(197, 160, 89, 0.28)',
                 fontWeight: 600,
                 textTransform: 'uppercase',
-                letterSpacing: '0.04em'
+                letterSpacing: '0.05em'
               }}>
-                Candidate Feedback
+                Verified Feedback
               </span>
             </div>
 
@@ -177,7 +166,7 @@ export default function Testimonials() {
                 border: '1px solid rgba(197, 160, 89, 0.3)',
                 flexShrink: 0
               }}>
-                <img src={current.avatar} alt={current.author} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={current.avatar} alt={current.author} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} />
               </div>
               <div>
                 <strong style={{

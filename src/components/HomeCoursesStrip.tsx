@@ -159,17 +159,17 @@ export default function HomeCoursesStrip() {
                     <img 
                       src={img} 
                       alt="Al Novelle Learner" 
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} 
                     />
                   </div>
                 ))}
               </div>
               <div>
-                <strong style={{ display: 'block', fontSize: '13px', color: '#633b2c', fontFamily: '"General Sans", sans-serif', lineHeight: 1.1 }}>
-                  750+
+                <strong style={{ display: 'block', fontSize: '13px', color: '#633b2c', fontFamily: '"General Sans", sans-serif', lineHeight: 1.2 }}>
+                  Doctor-Led Training
                 </strong>
                 <span style={{ fontSize: '11px', color: '#8c776e', fontFamily: '"General Sans", sans-serif' }}>
-                  Five-star reviews
+                  Supervised clinical workstations
                 </span>
               </div>
             </div>

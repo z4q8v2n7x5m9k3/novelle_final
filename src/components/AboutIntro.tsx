@@ -37,7 +37,7 @@ export default function AboutIntro() {
           <div className="rating-widget glass-panel">
             <div className="rating-score">5.0</div>
             <div className="rating-stars">★★★★★</div>
-            <div className="rating-text">Based on 500+ reviews</div>
+            <div className="rating-text">Doctor-Led Clinical Excellence</div>
           </div>
         </div>
       </div>
