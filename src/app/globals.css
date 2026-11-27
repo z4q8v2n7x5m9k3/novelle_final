@@ -2177,23 +2177,24 @@ ul {
 
 /* Final responsive width and brand-fit calibration. */
 main > section {
-  padding-left: 16px !important;
-  padding-right: 16px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
 
 .container,
 main > section > div[style*="max-width"] {
-  max-width: 1440px !important;
+  max-width: 1360px !important;
 }
 
-.container {
+.container,
+main > section > div[style*="max-width"] {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
 .navbar {
-  left: 16px;
-  right: 16px;
+  left: 24px;
+  right: 24px;
   width: auto;
   padding: 13px 24px;
 }
@@ -2214,14 +2215,31 @@ main > section > div[style*="max-width"] {
 
 @media (max-width: 768px) {
   main > section {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   .navbar {
-    left: 8px !important;
-    right: 8px !important;
+    left: 12px !important;
+    right: 12px !important;
     padding: 8px 8px 8px 12px !important;
+  }
+
+  #about-academy,
+  #featured-programmes,
+  #specialists,
+  #clinical-training,
+  #reviews,
+  #academy-insights,
+  #faqs,
+  #book-visit,
+  .gallery-preview-section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .site-footer {
+    padding-top: 56px;
   }
 
   .navbar-logo img {
