@@ -40,7 +40,7 @@ const specialists: Specialist[] = [
       { title: 'Laser Physics & Clinical Safety', meta: 'Full Protocol · Abu Dhabi', href: '/courses#laser-therapies' },
       { title: 'Advanced Skin Rejuvenation', meta: 'Clinical Bays · Practical', href: '/courses#chemical-peels-science' }
     ],
-    consultUrl: 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20consult%20with%20Dr.%20Azaiba%20Salim%20Kara.',
+    consultUrl: 'https://wa.me/971507629543?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20consult%20with%20Dr.%20Azaiba%20Salim%20Kara.',
     aboutHash: '/about#azaiba'
   },
   {
@@ -61,7 +61,7 @@ const specialists: Specialist[] = [
       { title: 'Anatomy, Physiology & Skin Science', meta: 'Foundational Science · Abu Dhabi', href: '/courses#facial-skin-care-treatments' },
       { title: 'Facial Electrotherapy & Technology', meta: 'Equipped Suites · Practical', href: '/courses#beauty-therapy' }
     ],
-    consultUrl: 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20consult%20with%20Dr.%20Seeta%20Yadav.',
+    consultUrl: 'https://wa.me/971507629543?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20consult%20with%20Dr.%20Seeta%20Yadav.',
     aboutHash: '/about#seeta'
   }
 ];

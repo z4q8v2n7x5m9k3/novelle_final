@@ -99,7 +99,7 @@ export default function Navigation() {
         </nav>
         <div className="mobile-menu-footer">
           <Link href="/courses" onClick={() => setMobileMenuOpen(false)}>Explore Courses <span>→</span></Link>
-          <a href="https://wa.me/971502348625" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://wa.me/971507629543" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
       </aside>
     </header>

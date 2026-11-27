@@ -145,7 +145,7 @@ export default function AcademyApproach({ content }: { content?: any }) {
 
             <div className="academy-cta-row scroll-reveal reveal-from-right reveal-delay-6">
               <a
-                href="https://wa.me/971502348625?text=Hello%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses."
+                href="https://wa.me/971507629543?text=Hello%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-premium"

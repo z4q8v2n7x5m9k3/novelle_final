@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { COURSE_CATALOGUE } from '@/data/courses';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
+const WA_URL = 'https://wa.me/971507629543?text=Hello%20Al%20Novelle%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
 
 export default function Hero({ content }: { content?: any }) {
   const [scrollY, setScrollY] = useState(0);

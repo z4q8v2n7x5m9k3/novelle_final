@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20enquire%20about%20your%20training%20facility%20and%20academy%20visits.';
+const WA_URL = 'https://wa.me/971507629543?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20enquire%20about%20your%20training%20facility%20and%20academy%20visits.';
 
 export default function FacilityRental() {
   return (

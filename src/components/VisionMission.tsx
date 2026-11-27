@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20know%20more%20about%20your%20clinical%20training%20facilities.';
+const WA_URL = 'https://wa.me/971507629543?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20know%20more%20about%20your%20clinical%20training%20facilities.';
 
 export default function VisionMission() {
   return (

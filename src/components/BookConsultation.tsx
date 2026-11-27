@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { COURSE_CATALOGUE } from '@/data/courses';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20book%20an%20academy%20visit.';
+const WA_URL = 'https://wa.me/971507629543?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20book%20an%20academy%20visit.';
 
 const WhatsAppIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" style={{ flexShrink: 0 }}>
@@ -60,7 +60,7 @@ export default function BookConsultation() {
           body: JSON.stringify({ source: 'Book Your Visit Form', ...formData })
         });
       } catch {}
-      window.open(`https://wa.me/971502348625?text=${waMsg}`, '_blank');
+      window.open(`https://wa.me/971507629543?text=${waMsg}`, '_blank');
       setIsSubmitted(true);
     } finally {
       setIsPending(false);
@@ -339,7 +339,7 @@ export default function BookConsultation() {
               </span>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                 <PhoneIcon />
-                <span>+971 50 234 8625</span>
+                <span>050 762 9543</span>
               </span>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                 <MailIcon />

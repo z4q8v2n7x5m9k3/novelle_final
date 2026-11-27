@@ -7,7 +7,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import AccreditationTrust from '@/components/AccreditationTrust';
 import { COURSE_CATALOGUE, Course } from '@/data/courses';
 
-const WA_BASE_URL = 'https://wa.me/971502348625';
+const WA_BASE_URL = 'https://wa.me/971507629543';
 
 function useInView() {
   const [visible, setVisible] = useState(false);

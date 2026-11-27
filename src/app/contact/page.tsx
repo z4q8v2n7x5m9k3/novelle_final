@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { COURSE_CATALOGUE } from '@/data/courses';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
+const WA_URL = 'https://wa.me/971507629543?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -46,9 +46,9 @@ export default function ContactPage() {
         });
         if (!res.ok) throw new Error('API unavailable');
         const result = await res.json();
-        if (!result.delivered) window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
+        if (!result.delivered) window.open(`https://wa.me/971507629543?text=${waMessage}`, '_blank');
       } catch {
-        window.open(`https://wa.me/971502348625?text=${waMessage}`, '_blank');
+        window.open(`https://wa.me/971507629543?text=${waMessage}`, '_blank');
       }
     } finally {
       setIsPending(false);
@@ -157,7 +157,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 style={{ fontFamily: '"Hedvig Letters Serif", Georgia, serif', fontSize: '20px', color: '#633b2c', fontWeight: 400, margin: '0 0 4px 0' }}>Chat on WhatsApp</h3>
-                  <p style={{ fontFamily: '"General Sans", sans-serif', fontSize: '14px', color: '#8c776e', margin: 0 }}>+971 50 234 8625</p>
+                  <p style={{ fontFamily: '"General Sans", sans-serif', fontSize: '14px', color: '#8c776e', margin: 0 }}>050 762 9543</p>
                 </div>
               </div>
             </a>
@@ -172,8 +172,7 @@ export default function ContactPage() {
               <div>
                 <h3 style={{ fontFamily: '"Hedvig Letters Serif", Georgia, serif', fontSize: '20px', color: '#633b2c', fontWeight: 400, margin: '0 0 4px 0' }}>Telephone</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  <a href="tel:+971502348625" style={{ fontFamily: '"General Sans", sans-serif', fontSize: '14px', color: '#8c776e', textDecoration: 'none' }}>+971 50 234 8625</a>
-                  <a href="tel:+971507629543" style={{ fontFamily: '"General Sans", sans-serif', fontSize: '14px', color: '#8c776e', textDecoration: 'none' }}>+971 50 762 9543</a>
+                  <a href="tel:+971507629543" style={{ fontFamily: '"General Sans", sans-serif', fontSize: '14px', color: '#8c776e', textDecoration: 'none' }}>050 762 9543</a>
                 </div>
               </div>
             </div>

@@ -29,8 +29,7 @@ export default function Footer() {
           <div className="footer-contact">
             <h3>Get in Touch</h3>
             <p>Unit 1001, LAVG Building,<br />Al Zahiyah (16), Abu Dhabi, UAE</p>
-            <a href="tel:+971502348625">+971 50 234 8625</a>
-            <a href="tel:+971507629543">+971 50 762 9543</a>
+            <a href="tel:+971507629543">050 762 9543</a>
             <a href="mailto:hello@novelle.ae" style={{ color: '#845E35', fontWeight: 600 }}>hello@novelle.ae</a>
           </div>
 

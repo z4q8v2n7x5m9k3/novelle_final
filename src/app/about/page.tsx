@@ -7,7 +7,7 @@ import BookConsultation from '@/components/BookConsultation';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
-const WA_URL = 'https://wa.me/971502348625?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
+const WA_URL = 'https://wa.me/971507629543?text=Hello%20Al%20Novelle%2C%20I%20would%20like%20to%20know%20more%20about%20your%20courses.';
 
 const standards = [
   ['01', 'Practical Learning', 'Supervised skills developed through guided clinical and salon experience in our Abu Dhabi academy.'],
