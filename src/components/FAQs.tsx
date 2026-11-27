@@ -20,7 +20,7 @@ export default function FAQs() {
     },
     {
       q: "How can I enquire about admissions or fees?",
-      a: "You can reach our admissions desk on WhatsApp or by phone at 050 762 9543, or by emailing hello@novelle.ae."
+      a: "You can reach our admissions desk on WhatsApp or by phone at +971 50 762 9543, or by emailing hello@novelle.ae."
     },
     {
       q: "Are the courses hands-on and practical?",

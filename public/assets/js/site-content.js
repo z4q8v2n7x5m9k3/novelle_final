@@ -27,7 +27,7 @@ window.NOVELLE_CONTENT = {
     badge1: "FDA Approved",
     badge2: "Board Certified",
     address: "123 Medical Plaza, Suite 200\u2028\u2028New York, NY 10001",
-    phone: "050 762 9543",
+    phone: "+971 50 762 9543",
     email: "example@gmail.com",
     copyright: "© 2026 Novelle. All rights reserved"
   }

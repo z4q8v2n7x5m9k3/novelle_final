@@ -339,7 +339,7 @@ export default function BookConsultation() {
               </span>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                 <PhoneIcon />
-                <span>050 762 9543</span>
+                <span>+971 50 762 9543</span>
               </span>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                 <MailIcon />

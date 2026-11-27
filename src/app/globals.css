@@ -2174,3 +2174,64 @@ ul {
   .about-final-cta-inner { max-width: 1160px; padding: 48px 40px; }
   .about-final-cta h2 { font-size: clamp(2.25rem, 3vw, 3rem); }
 }
+
+/* Final responsive width and brand-fit calibration. */
+main > section {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.container,
+main > section > div[style*="max-width"] {
+  max-width: 1440px !important;
+}
+
+.container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.navbar {
+  left: 16px;
+  right: 16px;
+  width: auto;
+  padding: 13px 24px;
+}
+
+.navbar-logo img {
+  width: auto;
+  height: 24px;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+.footer-brand > img {
+  width: auto;
+  height: 22px;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  main > section {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .navbar {
+    left: 8px !important;
+    right: 8px !important;
+    padding: 8px 8px 8px 12px !important;
+  }
+
+  .navbar-logo img {
+    width: auto !important;
+    height: 18px !important;
+    max-width: 112px !important;
+  }
+
+  .footer-brand > img {
+    height: 20px;
+    max-width: 126px;
+  }
+}
